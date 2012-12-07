@@ -1,13 +1,14 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+# [Hampden-Sydney College Online Gift Form](https://secure.hsc.edu/gifts/)
 
-HTML5 Boilerplate is a professional front-end template that helps you build fast, robust, adaptable, and future-proof websites. Spend more time developing and less time reinventing the wheel.
-
-This project is the product of many years of iterative development and combined community knowledge. It does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
+This gift form utilizes the HTML5 Boilerplate project to create a more successful payment option for users. This project focuses on the ease of use and adaptability among devices and orientations. 
 
 
-## Quick start
+## Requirements
 
-Clone the git repo - `git clone git://github.com/h5bp/html5-boilerplate.git` - or [download it](https://github.com/h5bp/html5-boilerplate/zipball/master)
+To use this effectively you must have:
+* PHP 5
+* Javascript enabled
+* An internet connection
 
 
 ## Features
@@ -31,18 +32,7 @@ Clone the git repo - `git clone git://github.com/h5bp/html5-boilerplate.git` - o
 
 ## Contributing
 
-Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boilerplate/wiki/contribute). Hundreds of developers have helped make the HTML5 Boilerplate what it is today.
-
-
-## Project information
-
-* Source: http://github.com/h5bp/html5-boilerplate
-* Web: http://html5boilerplate.com
-* Docs: http://html5boilerplate.com/docs
-* Twitter: http://twitter.com/h5bp
-
-
-## License
+Anyone and everyone is welcome to [contribute](https://github.com/kkirsche/Online-Gift-Form/fork). All contributions are subject to review for security purposes. 
 
 ### Major components:
 
@@ -50,6 +40,3 @@ Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boi
 * Modernizr: MIT/BSD license
 * Normalize.css: Public Domain
 
-### Everything else:
-
-The Unlicense (aka: public domain)
