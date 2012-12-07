@@ -282,9 +282,6 @@ include "functions.php";
                             <label>Last Name:</label>
                                 <input type="text" name="usersLastName" size="30" />
                                 <br />
-                            <label>Employer Name (Optional):</label>
-                                <input type="text" name="usersEmployer" size="30" />
-                                <br />
                             <label>Street Address:</label>
                                 <input type="text" name="usersStreetAddress" size="30" />
                                 <br />
@@ -297,11 +294,8 @@ include "functions.php";
                             <label>Country:</label>
                                 <input type="text" name="usersCountry" size="30" />
                                 <br />
-                            <label>Home Phone:</label>
+                            <label>Phone:</label>
                                 <input type="text" name="usersHomePhone" size="30" />
-                                <br />
-                            <label>Work Phone:</label>
-                                <input type="text" name="usersWorkPhone" size="30" />
                                 <br />
                             <label>Email:</label>
                                 <input type="email" name="usersEmail" size="45" />

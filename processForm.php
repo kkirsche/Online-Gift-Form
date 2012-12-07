@@ -2,43 +2,84 @@
 <?php
 
 function check_email_address($email) {
-  // First, we check that there's one @ symbol, 
-  // and that the lengths are right.
-  if (!ereg("^[^@]{1,64}@[^@]{1,255}$", $email)) {
-    // Email invalid because wrong number of characters 
-    // in one section or wrong number of @ symbols.
-    return false;
-  }
-  // Split it into sections to make life easier
-  $email_array = explode("@", $email);
-  $local_array = explode(".", $email_array[0]);
-  for ($i = 0; $i < sizeof($local_array); $i++) {
-    if
-(!ereg("^(([A-Za-z0-9!#$%&'*+/=?^_`{|}~-][A-Za-z0-9!#$%&
-↪'*+/=?^_`{|}~\.-]{0,63})|(\"[^(\\|\")]{0,62}\"))$",
-$local_array[$i])) {
-      return false;
-    }
-  }
-  // Check if domain is IP. If not, 
-  // it should be valid domain name
-  if (!ereg("^\[?[0-9\.]+\]?$", $email_array[1])) {
-    $domain_array = explode(".", $email_array[1]);
-    if (sizeof($domain_array) < 2) {
-        return false; // Not enough parts to domain
-    }
-    for ($i = 0; $i < sizeof($domain_array); $i++) {
-      if
-(!ereg("^(([A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9])|
-↪([A-Za-z0-9]+))$",
-$domain_array[$i])) {
-        return false;
+  $isValid = true;
+   $atIndex = strrpos($email, "@");
+   if (is_bool($atIndex) && !$atIndex)
+   {
+      $isValid = false;
+   }
+   else
+   {
+      $domain = substr($email, $atIndex+1);
+      $local = substr($email, 0, $atIndex);
+      $localLen = strlen($local);
+      $domainLen = strlen($domain);
+      if ($localLen < 1 || $localLen > 64)
+      {
+         // local part length exceeded
+         $isValid = false;
       }
-    }
-  }
-  return true;
+      else if ($domainLen < 1 || $domainLen > 255)
+      {
+         // domain part length exceeded
+         $isValid = false;
+      }
+      else if ($local[0] == '.' || $local[$localLen-1] == '.')
+      {
+         // local part starts or ends with '.'
+         $isValid = false;
+      }
+      else if (preg_match('/\\.\\./', $local))
+      {
+         // local part has two consecutive dots
+         $isValid = false;
+      }
+      else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain))
+      {
+         // character not valid in domain part
+         $isValid = false;
+      }
+      else if (preg_match('/\\.\\./', $domain))
+      {
+         // domain part has two consecutive dots
+         $isValid = false;
+      }
+      else if
+(!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/',
+                 str_replace("\\\\","",$local)))
+      {
+         // character not valid in local part unless 
+         // local part is quoted
+         if (!preg_match('/^"(\\\\"|[^"])+"$/',
+             str_replace("\\\\","",$local)))
+         {
+            $isValid = false;
+         }
+      }
+      if ($isValid && !(checkdnsrr($domain,"MX") || 
+ ↪checkdnsrr($domain,"A")))
+      {
+         // domain not found in DNS
+         $isValid = false;
+      }
+   }
+   return $isValid;
 }
 
-$userEmail = $POST['']
+//Get the Gift Amount pieces
+  //one time donations
+  $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
+
+  //recurring donations
+  $recurringGiftPerDonationAmount = $_POST['recurringDonationValue'];
+  $recurringGiftNumberOfPayments = $_POST['numberOfPayments'];
+  $recurringGiftFrequency = $_POST['paymentFrequency'];
+  $totalGiftAmount = $recurringGiftPerDonationAmount * $recurringGiftNumberOfPayments;
+  echo $totalGiftAmount;
+
+
+$userEmail = $_POST['usersEmail'];
+//check the user's email address
+check_email_address($userEmail);
 
 ?>
