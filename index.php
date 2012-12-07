@@ -196,6 +196,7 @@ include "functions.php";
     								<!--Dropdown if selected-->
     								<div id="ifScholarshipsSelected">
     									<label><em>Please select the Scholarship(s) below</em></label> <br />
+                                        <!--ADD ARARY FOR EACH SECTION HERE-->
                                             <p class="indented"><input type = "checkbox" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
                                             <p class="indented"><input type = "checkbox" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
                                             <p class="indented"><input type = "checkbox" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>

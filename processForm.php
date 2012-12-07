@@ -74,8 +74,10 @@ function check_email_address($email) {
   $recurringGiftPerDonationAmount = $_POST['recurringDonationValue'];
   $recurringGiftNumberOfPayments = $_POST['numberOfPayments'];
   $recurringGiftFrequency = $_POST['paymentFrequency'];
+  //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
   $totalGiftAmount = $recurringGiftPerDonationAmount * $recurringGiftNumberOfPayments;
-  echo $totalGiftAmount;
+  
+  
 
 
 $userEmail = $_POST['usersEmail'];
