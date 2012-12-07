@@ -46,6 +46,7 @@ include "functions.php";
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
+    <noscript>This page requires javascript to function correctly</noscript>
 	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
   	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   	<div role="main" id="content">
@@ -76,41 +77,101 @@ include "functions.php";
 		<p>
 			To make a credit card gift to Hampden-Sydney College, simply fill out the form below and continue to the payment information page. Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. If you have any questions, please <a href="mailto:lreinson@hsc.edu" title="Contact Us">Contact Us</a> with any questions or updates. For Stock Gift Donors, please view the instructions <a href="https://secure.hsc.edu/gifts/StockGiftInstructions.pdf" title="Stock Gift Donor Instructions">here</a>.
 		</p>
+                <!--One Time or Recurring Step-->
+                <div class="formStep" id="step0">
+                    <!--Ask whether it's a one-time gift or a recurring gift-->
+                    <div class="centerButtons">
+                        <a href="#" id="oneTimeGift"><img src="img/One-TimeGift.png" class="OTG" alt="I would like to make a one-time gift" /></a>
+                        <a href="#" id="recurringGift"><img src="img/RecurringGift.png" alt="I would like to make a recurring gift" /></a>
+                    </div>
+                </div>
+                <!--End Question Step-->
 
-    		<form id="DonationForm" action="processForm.php" method="post">
+                <form id="DonationForm" action="processForm.php" method="post">
     			<!--First Step-->
     			<div class="formStep" id="step1">
-    				<!--Begin Form Section 1-->
-    					<fieldset>
-    						<legend>Outright Gifts:</legend>
-    							<label for="outright_gift_amount">Total Amount of Your Gift:</label>
-    								$ <input type="number" name="Outright_Gift" id="outright_gift_amount"/>
-    					</fieldset>
+                    <!--One Time Gift-->
+    				<div id="makingAOneTimeGift">
+                        Enter Donation Amount Here: $<input type="number" min="0" name="oneTimeDonationValue" id="oneTimeDonationValue" size="15" value="0" />
+                    </div>
 
-    					<h4>OR</h4>
-    					
-    					<fieldset>
-    						<legend>Monthly Debit Program:</legend>
-    							<p>Make your gift through equal monthly installments through June using your debit or credit card.</p>
-    							<label for="total_monthly_debit_gift">Total Amount of Your Gift:</label>
-    								$ <input type="number" name="TotalMonthlyDebitGift" id="total_monthly_debit_gift" />
-    						<br /><br />
-							<label for="first_installment_date">Date of Your First Installment:</label>
-								<input type="date" name="DateofYourFirstInstallment" id="first_installment_date" /> <br />
-								<span class="donationSubtext">Subsequent monthly charges will be on the 15th of each month.</span>
-						<br /><br />
-							<label for="number_of_installments">Number of Monthly Installments:</label>
-								<input type="number" name="NumberofMonthlyInstallments" id="number_of_installments" /> <br />
-								<span class="donationSubtext">Please include the month you make your first gift and count all subsequent months to June. (i.e. A pledge made in January equals 6 monthly installments).</span>
-						<br /><br />
-							<p>All installments hsould be completed by June 30<sup>th</sup> of the calendar year.</p>
-						
-						<h4>OR</h4>
-						
-						<a href="http://www.hsc.edu/Making-A-Gift/How-to-Give/Pledge-Form.html" title="Make a Pledge">Make a Pledge</a><br />
-						Make a pledge and fulfill your commitment by June 30<sup>th</sup>.
+                    <!--Recurring Gift-->
+                    <div id="makingARecurringGift">
+                       Enter Recurring Gift Amount: $<input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" /><br />
+                       I would like to make this gift <select name="numberOfPayments" id="numberOfPayments">
+                                            <option value="0">X</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
+                                            <option value="32">32</option>
+                                            <option value="33">33</option>
+                                            <option value="34">34</option>
+                                            <option value="35">35</option>
+                                            <option value="36">36</option>
+                                            <option value="37">37</option>
+                                            <option value="38">38</option>
+                                            <option value="39">39</option>
+                                            <option value="40">40</option>
+                                            <option value="41">41</option>
+                                            <option value="42">42</option>
+                                            <option value="43">43</option>
+                                            <option value="44">44</option>
+                                            <option value="45">45</option>
+                                            <option value="46">46</option>
+                                            <option value="47">47</option>
+                                            <option value="48">48</option>
+                                            <option value="49">49</option>
+                                            <option value="50">50</option>
+                                            <option value="51">51</option>
+                                            <option value="52">52</option>
+                                            <option value="53">53</option>
+                                            <option value="54">54</option>
+                                            <option value="55">55</option>
+                                            <option value="56">56</option>
+                                            <option value="57">57</option>
+                                            <option value="58">58</option>
+                                            <option value="59">59</option>
+                                            <option value="60">60</option>
+                                </select> times.<br />
+                            I would like to make my gift: <select name="paymentFrequency" id="paymentFrequency">
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Quarterly">Quarterly</option>
+                                            <option value="Annually">Annually.</option>
+                                </select><br />
+                            
+                        Total Gift Amount of $<span id="totalRecurringDonationValue">0</span><span id="lengthOfTime"></span>.
+                    </div>
     				<!--End Form Section 1-->
     				<div id="first" class="clearfix"></div>
+                    <input class="submit floatLeft" type="submit" name="return_question" id="return_question" value="Previous" />
     				<input class="submit floatRight" type="submit" id="submit_first" name="submit_first" value="Next" />
                 </fieldset>
                     <br />
@@ -120,93 +181,80 @@ include "functions.php";
 
     			<!--Second Step-->
     			<div class="formStep" id="step2">
+                    <p>
+                        <strong>$<span id="showTotalDonationAmount">DONATION_AMOUNT</span> &mdash; Your <span id="typeOfGift">GIFT_TYPE</span> gift amount from the previous page.
+                            <!--If more than one fund is chosen, display the following-->
+                            Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.
+                        </strong>
+                    </p>
 	    				<fieldset>
     						<legend>
-    							Allocate Your Gift
+    							I would like to allocate my gift
     						</legend>
-    							<input type="checkbox" name="Unrestricted" value="unrestricted" />
-    							<label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
-
-    							<input type="checkbox" name="Class_Scholarships" value="class_scholarships" class="enableClassYearSelection" />
-    							<label><strong>Class Scholarships</strong></label>
+    							<input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
+    							<label><strong>to a Scholarship</strong></label>
     								<!--Dropdown if selected-->
-    								<div id="ifClassScholashipsSelected">
-    									<label><em>Please select the appropriate class below</em></label> <br />
-    									<select name="SelectedClassYear">
-    										<option value="NoClass">Choose a Class</option>
-        									<option value="Class_Of_2003">Class of 2003 Scholarship IHO Ralph A. Crawley</option>
-        									<option value="Class_Of_2004">Class of 2004 Scholarship IMO C. Frazier 04 &amp; IHO W. Simms</option>
-        									<option value="Class_Of_2005">Class of 2005 Scholarship IMO Prof. Lee Cohen</option>
-        									<option value="Class_Of_2006">Class of 2006 Scholarship IMO Peter C. Bance Jr</option>
-        									<option value="Class_Of_2007">Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</option>
-        									<option value="Class_Of_2008">Class of 2008 Scholarship IHO Ms. Gerry Pettus</option>
-        									<option value="Class_Of_2009">Class of 2009 Scholarship</option>
-        									<option value="Class_Of_2010">Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</option>
-        									<option value="Class_Of_2011">Class of 2011 Scholarship IHO Ms. Anita Garland</option>
-        									<option value="Class_Of_2012">Class of 2012 Scholarship IHO Mr. Jason M. Ferguson 96</option>
-        									<option value="Class_Of_1951">Class of 1951 Memorial Scholarship</option>
-        									<option value="Class_Of_1953">Class of 1953 Scholarship Endowment</option>
-        									<option value="Class_Of_1954">Class of 1954 Wilson Center Lecture Series</option>   
-       									    <option value="Class_Of_1958">Class of 1958 Summer College Endowment Fund</option>  
-        									<option value="Class_Of_1960">Class of 1960 Good Men Good Citizens Scholarship</option>  
-        									<option value="Class_Of_1961">Class of 1961 Good Men Good Citizens Scholarship</option>
-        									<option value="Class_Of_1980">Class of 1980 Endowed Scholarship</option>
-        								</select>
+    								<div id="ifScholarshipsSelected">
+    									<label><em>Please select the Scholarship(s) below</em></label> <br />
+                                            <p class="indented"><input type = "checkbox" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2009" />Class of 2009 Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
+        									<p class="indented"><input type = "checkbox" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
+        									<p class="indented"><input type = "checkbox" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
+        									<p class="indented"><input type = "checkbox" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
+                                            <p class="indented"><input type = "checkbox" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
+        									<p class="indented"><input type = "checkbox" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" value="Other" />Other <em>(please specify in special instructions)</em></p>
         							</div>
         							<!--End Dropdown-->
         							<br />
 
-   								<input type="checkbox" name="CultureandCommunity" value="culture_and_community" />
-   								<label><strong>Culture and Community</strong> &mdash; Supports the arts at Hampden-Sydney and service opportunities locally and around the world.</label><br />
+   								<input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
+   								<label><strong>to Academics</strong></label><br />
+                                <!--Dropdown if selected-->
+                                    <div id="ifAcademicsSelected">
+                                        <label><em>Please select the department(s) below</em></label> <br />
+                                            <p class="indented"><input type = "checkbox" value="Atkinson_Museum" />Atkinson Museum</p>
+                                            <p class="indented"><input type = "checkbox" value="Bortz_Library" />Bortz Library</p>
+                                            <p class="indented"><input type = "checkbox" value="Culture_and_Community" />Culture and Community</p>
+                                            <p class="indented"><input type = "checkbox" value="Wilson_Center" />the Wilson Center</p>
+                                            <p class="indented"><input type = "checkbox" value="Other" />Other <em>(please specify in special instructions)</em></p>
+                                    </div>
+                                    <!--End Dropdown-->
 
-   								<input type="checkbox" name="OtherFunds" value="other_funds" class="enableOtherFunds" />
-   								<label><strong>Would you like to donate to other funds?</strong></label>
+   								<input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
+   								<label><strong>to Athletics</strong></label>
    								<!--Dropdown if selected-->
-    								<div id="ifOtherFundsSelected">
-    									<label><em>Please select the fund below</em></label> <br />
-    									<div class="scrolllist">
-        									<input type="checkbox" name="BortzLibrary" value="1" /> Bortz Library<br />
-        									<input type="checkbox" name="EstherAtkinsonMuseum" value="1"  />Esther Atkinson Museum<br />
-        									<input type="checkbox" name="EverettStadium" value="1" />Everett Stadium<br />
-        									<input type="checkbox" name="GMGCScholarship" value="1" />Good Men Good Citizens Scholarship<br />
-        									<input type="checkbox" name="KirkAthleticCenter" value="1" />Kirk Athletic Center<br />
-        									<input type="checkbox" name="BaseballBigHittersClub" value="1"  />Baseball Big Hitters Club<br />
-        									<input type="checkbox" name="BasketballRoundballClub" value="1" />Basketball Roundball Club<br /> 
-        									<input type="checkbox" name="CrossCountryHarriers" value="1" />Cross Country Harriers<br />
-        									<input type="checkbox" name="GolfHoleOneClub" value="1" />Golf Hole In One Club<br />
-        									<input type="checkbox" name="FootballGridironClub" value="1" />Football Gridiron Club<br />
-        									<input type="checkbox" name="LacrosseFaceOffClub" value="1" />Lacrosse Face Off Club<br />                                                                       
-        									<input type="checkbox" name="SoccerGoalClub" value="1" />Soccer Goal Club<br />   
-        									<input type="checkbox" name="TennisRacquetClub" value="1" />Tennis Racquet Club<br /> 
-        									<input type="checkbox" name="SwimmingClub" value="1" />Swimming Club<br />
-        									<input type="checkbox" name="RugbyClub" value="1" />Rugby Club<br />  
-        									<input type="checkbox" name="UnrestrictedCapital" value="1" />Unrestricted Capital<br />   
-        									<input type="checkbox" name="WilsonCenter" value="1" />Wilson Center<br />
-        									<input type="checkbox" name="Other" value="1" />Other&mdash;<em>Explain in Special Instructions</em><br />                                
-									</div>
+    								<div id="ifAthleticsAreSelected">
+    									<label><em>Please select the XXXXXXXXXXX below</em></label> <br />
+                                            <p class="indented"><input type="checkbox" name="BaseballBigHittersClub" value="1"  />Baseball Big Hitters Club</p>
+                                            <p class="indented"><input type="checkbox" name="BasketballRoundballClub" value="1" />Basketball Roundball Club</p>
+                                            <p class="indented"><input type="checkbox" name="CrossCountryHarriers" value="1" />Cross Country Harriers</p>
+        									<p class="indented"><input type="checkbox" name="EverettStadium" value="1" />Everett Stadium</p>
+                                            <p class="indented"><input type="checkbox" name="FootballGridironClub" value="1" />Football Gridiron Club</p>
+                                            <p class="indented"><input type="checkbox" name="GolfHoleOneClub" value="1" />Golf Hole In One Club</p>
+        									<p class="indented"><input type="checkbox" name="KirkAthleticCenter" value="1" />Kirk Athletic Center</p>
+        									<p class="indented"><input type="checkbox" name="LacrosseFaceOffClub" value="1" />Lacrosse Face Off Club</p>
+                                            <p class="indented"><input type="checkbox" name="RugbyClub" value="1" />Rugby Club</p>                                                                    
+        									<p class="indented"><input type="checkbox" name="SoccerGoalClub" value="1" />Soccer Goal Club</p>
+                                            <p class="indented"><input type="checkbox" name="SwimmingClub" value="1" />Swimming Club</p>  
+        									<p class="indented"><input type="checkbox" name="TennisRacquetClub" value="1" />Tennis Racquet Club</p>	                              
         							</div>
         							<!--End Dropdown-->
         							<br />
-
-        							<input type="checkbox" name="InMemoryOf" value="in_memory_of" class="enableInMemoryOf" />
-   								<label><strong>Is Your Donation In Memory of Someone?</strong></label>
-   								<!--Dropdown if selected-->
-    								<div id="ifInMemoryOfSelected">
-    									<label><em>Who is your gift in memory of?</em></label> <br />
-    									<input type="text" name="nameOfInMemory" size="85" value="" />
-        							</div>
-        							<!--End Dropdown-->
+                                    <input type="checkbox" name="Unrestricted" value="unrestricted" />
+                                    <label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
         							<br />
-        							
-        							<input type="checkbox" name="InHonorOf" value="in_honor_of" class="enableInHonorOf" />
-   								<label><strong>Is Your Donation In Honor of Someone?</strong></label>
-   								<!--Dropdown if selected-->
-    								<div id="ifInHonorOfSelected">
-    									<label><em>Who is your gift in honor of?</em></label> <br />
-    									<input type="text" name="nameOfInHonor" size="85" value="" />
-        							</div>
-        							<!--End Dropdown-->
-        							<br /><br />
         							<label><strong>Special Instructions</strong></label><br />
         							<textarea name="specinstr" cols="100" rows="3" onKeyDown="limitText(this.form.specinstr,this.form.countdown,255);" onKeyUp="limitText(this.form.specinstr,this.form.countdown,255);">
         							</textarea> 
@@ -217,18 +265,12 @@ include "functions.php";
     					<div class="clearfix"></div>
                         <br />
                 <input class="submit floatLeft" type="submit" name="return_first" id="return_first" value="Previous" />
-    			<input class="submit floatRight" type="submit" name="submit_second" id="submit_second" value="Next" />
+    			<input class="submit floatRight" type="submit" name="submit_second" id="submit_second" value="Next" onclick="replaceDonationAmount()" />
                 <br />
     			</div>
     			<!--End Second Step-->
     			
     			<div class="formStep" id="step3">
-    				<p>
-                        <strong>$DONATION_AMOUNT &mdash; Your one time gift amount from the previous page.
-                            <!--If more than one fund is chosen, display the following-->
-                            Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.
-                        </strong>
-                    </p>
 
                         <fieldset>
                             <legend>
@@ -329,8 +371,10 @@ include "functions.php";
   <script src="js/plugins.js"></script>
   <!--Hide or Show Class Year Selection-->
   <!--Rotation of the different "Steps"-->
+  <script src="js/jquery.formatCurrency-1.4.0.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/jquery.creditCardValidator.js"></script>
+
   <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
@@ -341,7 +385,5 @@ include "functions.php";
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
  </script>
-
- 
 </body>
 </html>

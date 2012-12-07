@@ -337,6 +337,14 @@ p {
   float: left;
   border: 0px;
 }
+.centerButtons {
+  margin: 0 auto;
+  width: 510px;
+}
+.indented {
+  margin: 0px;
+  text-indent: 5em;
+}
 
 input[type="radio"],input[type="checkbox"], .radio, .checkbox{margin:0 .25em 0 0;}
 /* ==|== media queries ======================================================
