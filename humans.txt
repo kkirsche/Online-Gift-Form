@@ -3,41 +3,55 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site:
-  Twitter:
-  Location:
+  Graphic Designer: Kevin Kirsche
+  Site: http://razerdesign.com
+  Twitter: http://twitter.com/kkirsche
+  Location: Hampden-Sydney, VA
 
-/* THANKS */
-  Names (& URL):
+  Web Master: Cheryle Dixon
 
 /* SITE */
-  Standards: HTML5, CSS3
+  Standards: HTML5, CSS3, PHP5
   Components: Modernizr, jQuery
   Software:
 
 
+                        .s$$$Ss.
+            .8,         $$$. _. .              ..sS$$$$$"  ...,.;
+ o.   ,@..  88        =.$"$'  '          ..sS$$$$$$$$$$$$s. _;"'
+  @@@.@@@. .88.   `  ` ""l. .sS$$.._.sS$$$$$$$$$$$$S'"'
+   .@@@q@@.8888o.         .s$$$$$$$$$$$$$$$$$$$$$'
+     .:`@@@@33333.       .>$$$$$$$$$$$$$$$$$$$$'
+     .: `@@@@333'       ..>$$$$$$$$$$$$$$$$$$$'
+      :  `@@333.     `.,   s$$$$$$$$$$$$$$$$$'
+      :   `@33       $$ S.s$$$$$$$$$$$$$$$$$'
+      .S   `Y      ..`  ,"$' `$$$$$$$$$$$$$$
+      $s  .       ..S$s,    . .`$$$$$$$$$$$$.
+      $s .,      ,s ,$$$$,,sS$s.$$$$$$$$$$$$$.
+      / /$$SsS.s. ..s$$$$$$$$$$$$$$$$$$$$$$$$$.
+     /`.`$$$$$dN.ssS$$'`$$$$$$$$$$$$$$$$$$$$$$$.
+    ///   `$$$$$$$$$'    `$$$$$$$$$$$$$$$$$$$$$$.
+   ///|     `S$$S$'       `$$$$$$$$$$$$$$$$$$$$$$.
+  / /                      $$$$$$$$$$$$$$$$$$$$$.
+                           `$$$$$$$$$$$$$$$$$$$$$s.
+                            $$$"'        .?T$$$$$$$
+                           .$'        ...      ?$$#\
+                           !       -=S$$$$$s
+                         .!       -=s$$'  `$=-_      :
+                        ,        .$$$'     `$,       .|
+                       ,       .$$$'          .        ,
+                      ,     ..$$$'
+                          .s$$$'                 `s     .
+                   .   .s$$$$'                    $s. ..$s
+                  .  .s$$$$'                      `$s=s$$$
+                    .$$$$'                         ,    $$s
+               `   " .$$'                               $$$
+               ,   s$$'                              .  $$$s
+            ` .s..s$'                                .s ,$$
+             .s$$$'                                   "s$$$,
+          -   $$$'                                     .$$$$.
+        ."  .s$$s                                     .$',',$.
+        $s.s$$$$S..............   ................    $$....s$s......
+         `""'           `     ```"""""""""""""""         `""   ``
 
-                               -o/-
-                               +oo//-
-                              :ooo+//:
-                             -ooooo///-
-                             /oooooo//:
-                            :ooooooo+//-
-                           -+oooooooo///-
-           -://////////////+oooooooooo++////////////::
-            :+ooooooooooooooooooooooooooooooooooooo+:::-
-              -/+ooooooooooooooooooooooooooooooo+/::////:-
-                -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-
-                     -:+ooooooooooooooooo+:://////:--
-                       /ooooooooooooooooo+//////:-
-                      -ooooooooooooooooooo////-
-                      /ooooooooo+oooooooooo//:
-                     :ooooooo+/::/+oooooooo+//-
-                    -oooooo/::///////+oooooo///-
-                    /ooo+::://////:---:/+oooo//:
-                   -o+/::///////:-      -:/+o+//-
-                   :-:///////:-            -:/://
-                     -////:-                 --//:
-                       --                       -:
+         Bring it -R4z3r
