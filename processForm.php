@@ -259,19 +259,21 @@ function check_Credit_Card($cc, $extra_check = false){
           }
           //we also want to have the special instructions, just in case.
           $selected_items['SpecialInstructions'] = $mysqli->real_escape_string($_POST['specinstr']);
-      }
+    }
 
-    $userfirstName = $mysqli->real_escape_string($_POST['usersFirstName']);
-    $userlastName = $mysqli->real_escape_string($_POST['usersLastName']);
-    $userAddress1 = $mysqli->real_escape_string($_POST['usersStreetAddress']);
-    $userAddress2 = $mysqli->real_escape_string($_POST['usersSecondaryAddress']);
-    $userCity = $mysqli->real_escape_string($_POST['usersCity']);
-    $userCountry = $mysqli->real_escape_string($_POST['usersCountry']);
-    $userPhoneNumber = $mysqli->real_escape_string($_POST['usersPhoneNumber']);
-    $userEmail = $mysqli->real_escape_string($_POST['usersEmail']);
+    //make an array of the user information
+    $userInfo = array();
+    $userInfo['firstName'] = $mysqli->real_escape_string($_POST['usersFirstName']);
+    $userInfo['lastName'] = $mysqli->real_escape_string($_POST['usersLastName']);
+    $userInfo['address1'] = $mysqli->real_escape_string($_POST['usersStreetAddress']);
+    $userInfo['address2'] = $mysqli->real_escape_string($_POST['usersSecondaryAddress']);
+    $userInfo['city'] = $mysqli->real_escape_string($_POST['usersCity']);
+    $userInfo['country'] = $mysqli->real_escape_string($_POST['usersCountry']);
+    $userInfo['phoneNumber'] = $mysqli->real_escape_string($_POST['usersPhoneNumber']);
+    $userInfo['email'] = $mysqli->real_escape_string($_POST['usersEmail']);
     //check the user's email address
-    if (check_email_address($userEmail) == true) {
-        $to = $userEmail;
+    if (check_email_address($userInfo['email']) == true) {
+        $to = $userInfo['email'];
         $headers = 'From: noreply@hsc.edu' . "\r\n" . 'Reply-To:webmaster@hsc.edu' . 'X-Mailer: PHP/' . phpversion();
         $subject = "Your Donation was Received!";
         $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
