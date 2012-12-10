@@ -257,10 +257,9 @@ include "functions.php";
                                     <label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
         							<br />
         							<label><strong>Special Instructions</strong></label><br />
-        							<textarea name="specinstr" cols="100" rows="3" onKeyDown="limitText(this.form.specinstr,this.form.countdown,255);" onKeyUp="limitText(this.form.specinstr,this.form.countdown,255);">
-        							</textarea> 
+        							<textarea name="specinstr" cols="100" rows="5"></textarea> 
         							<br />
-        							<span style="font-size: .5em;">You have <input readonly type="text" name="countdown" size="3" value="255" /> characters left.</span>
+        	
     					</fieldset>
     				<!--End Form Section 2-->
     					<div class="clearfix"></div>
