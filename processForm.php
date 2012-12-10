@@ -25,7 +25,7 @@ if(mysqli_connect_errno()) {
     }
 
     if($error == "Form key error!") {
-        die("There was an error with the form key. This usually means someone was doing something bad.");
+        die("There was an error with the form key. For your safety, the form was not processed. Please return to the donation form, and try again.");
     } else {
 // ====================================================================================================// 
 // ! Our formKey is correct, now let's get the form data                                               //
