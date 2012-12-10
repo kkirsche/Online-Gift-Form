@@ -275,6 +275,22 @@ function check_Credit_Card($cc, $extra_check = false){
         "email" => $mysqli->real_escape_string($_POST['usersEmail'])
     );
     
+    //Make an array of the credit card information
+    $userCreditCardInfo = array(
+        "nameOnCreditCard" => $mysqli->real_escape_string($_POST['nameOnCard']),
+        "creditCardNumber" => $mysqli->real_escape_string($_POST['numberOnCard']),
+        "creditCardSecurityCode" => $mysqli->real_escape_string($_POST['securityCodeOnCard']),
+        "creditCardExpirationDate" => $mysqli->real_escape_string($_POST['expirationMonthOnCard'] . "/" . $_POST['expirationYearOnCard'])
+    );
+
+    if(check_Credit_Card($userCreditCardInfo['creditCardNumber'])) {
+        $userCreditCardInfo['creditCardType'] = check_Credit_Card($userCreditCardInfo['creditCardNumber']);
+    } else {
+        echo "Invalid Credit Card Number";
+    }
+
+
+
     //check the user's email address
     if (check_email_address($userInfo['email']) == true) {
         $to = $userInfo['email'];
