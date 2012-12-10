@@ -7,7 +7,12 @@
 		return $today;
 	}
 
+<<<<<<< HEAD
 	class formKey {
+=======
+	class formKey
+{
+>>>>>>> 03ef36c27546f51899ef76d1d0324e9321942bf0
 	//Here we store the generated form key
 	private $formKey;
 	//Here we store the old form key (more info at step 4)
