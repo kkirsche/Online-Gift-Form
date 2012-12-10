@@ -295,7 +295,7 @@ include "functions.php";
                                 <input type="text" name="usersCountry" size="30" />
                                 <br />
                             <label>Phone:</label>
-                                <input type="text" name="usersHomePhone" size="30" />
+                                <input type="text" name="usersPhoneNumber" size="30" />
                                 <br />
                             <label>Email:</label>
                                 <input type="email" name="usersEmail" size="45" />
