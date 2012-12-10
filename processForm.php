@@ -1,100 +1,25 @@
 <?php
 session_start();
 require("functions.php");
-//configure for below
-//let's make it so we can use MySQLi. This is an example for local host only. NEVER use this type of database name, password, etc. in a production environment.
+// ====================================================================================================// 
+// ! Connect to MySQLi to allow escaping of inputs, and form processing.                               //
+// ====================================================================================================//
 $mysqli = new mysqli("localhost", "UserGiftForm", "Nev3rUseTh1sP4ssw0rdEverAgain!", "OnlineGiftForm");
 
 if(mysqli_connect_errno()) {
     printf("Connection failed: %s\n", mysqli_connect_error());
     exit();
 }
-
-//Start up with our functions
-function check_email_address($email) {
-    //Give them the benefit of the doubt that it is a correct email address
-    $isValid = true;
-    $atIndex = strrpos($email, "@");
-    if (is_bool($atIndex) && !$atIndex) {
-      $isValid = false;
-    } else {
-      $domain = substr($email, $atIndex+1);
-      $local = substr($email, 0, $atIndex);
-      $localLen = strlen($local);
-      $domainLen = strlen($domain);
-      if ($localLen < 1 || $localLen > 64) {
-         // local part length exceeded
-         $isValid = false;
-      } else if ($domainLen < 1 || $domainLen > 255) {
-         // domain part length exceeded
-         $isValid = false;
-      } else if ($local[0] == '.' || $local[$localLen-1] == '.') {
-         // local part starts or ends with '.'
-         $isValid = false;
-      } else if (preg_match('/\\.\\./', $local)) {
-         // local part has two consecutive dots
-         $isValid = false;
-      } else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain))
-      {
-         // character not valid in domain part
-         $isValid = false;
-      } else if (preg_match('/\\.\\./', $domain))
-      {
-         // domain part has two consecutive dots
-         $isValid = false;
-      } else if
-        (!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/',
-                 str_replace("\\\\","",$local)))
-        {
-            // character not valid in local part unless 
-            // local part is quoted
-            if (!preg_match('/^"(\\\\"|[^"])+"$/',
-               str_replace("\\\\","",$local)))
-            {
-                $isValid = false;
-            }
-        }
-
-        if ($isValid && !(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A")))
-        {
-            // domain not found in DNS
-            $isValid = false;
-        }
-    }
-   return $isValid;
-}
-
-function check_Credit_Card($cc, $extra_check = false){
-    $cards = array(
-        "visa" => "(4\d{12}(?:\d{3})?)",
-        "amex" => "(3[47]\d{13})",
-        "jcb" => "(35[2-8][89]\d\d\d{10})",
-        "maestro" => "((?:5020|5038|6304|6579|6761)\d{12}(?:\d\d)?)",
-        "solo" => "((?:6334|6767)\d{12}(?:\d\d)?\d?)",
-        "mastercard" => "(5[1-5]\d{14})",
-        "switch" => "(?:(?:(?:4903|4905|4911|4936|6333|6759)\d{12})|(?:(?:564182|633110)\d{10})(\d\d)?\d?)",
-    );
-    $names = array("Visa", "American Express", "JCB", "Maestro", "Solo", "Mastercard", "Switch");
-    $matches = array();
-    $pattern = "#^(?:".implode("|", $cards).")$#";
-    $result = preg_match($pattern, str_replace(" ", "", $cc), $matches);
-    if($extra_check && $result > 0){
-        $result = (validatecard($cc))?1:0;
-    }
-    return ($result>0)?$names[sizeof($matches)-2]:false;
-}
-
-
-    //check the form key
-    //Validate the form key
+// ====================================================================================================// 
+// ! Do formKey() check to ensure that our form came form the right place                              //
+// ====================================================================================================//
+    //Create the formKey variable
     $formKey = new formKey();
-    if(!isset($_POST['form_key']) || !$formKey->validate())
-    {
+    //let's check that it is correct
+    if(!isset($_POST['form_key']) || !$formKey->validate()) {
         //Form key is invalid, show an error
         $error = 'Form key error!';
-    }
-    else
-    {
+    } else {
         //Do the rest of your validation here
         $error = 'No form key error!';
     }
@@ -102,16 +27,19 @@ function check_Credit_Card($cc, $extra_check = false){
     if($error == "Form key error!") {
         die("There was an error with the form key. This usually means someone was doing something bad.");
     } else {
-    //Get the Gift Amount pieces
-    //one time donations
-    $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
+// ====================================================================================================// 
+// ! Our formKey is correct, now let's get the form data                                               //
+// ====================================================================================================//
+        //Get the Gift Amount pieces
+        //one time donations
+        $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
 
-    //recurring donations
-    $recurringGift = array(
-        "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
-        "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
-        "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
-    );
+        //recurring donations
+        $recurringGift = array(
+            "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
+            "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
+            "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
+        );
   //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
   $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
 
@@ -301,7 +229,9 @@ function check_Credit_Card($cc, $extra_check = false){
             "creditCardSecurityCode" => $mysqli->real_escape_string($_POST['securityCodeOnCard']),
             "creditCardExpirationDate" => $mysqli->real_escape_string($_POST['expirationMonthOnCard'] . "/" . $_POST['expirationYearOnCard'])
         );
-
+// ====================================================================================================// 
+// ! Validate the data that we have taken from the form                                                //
+// ====================================================================================================//
         if(check_Credit_Card($userCreditCardInfo['creditCardNumber'])) {
             $userCreditCardInfo['creditCardType'] = check_Credit_Card($userCreditCardInfo['creditCardNumber']);
         } else {
@@ -326,5 +256,4 @@ function check_Credit_Card($cc, $extra_check = false){
             echo "The e-mail was invalid";
         }
     }
-}
 ?>
