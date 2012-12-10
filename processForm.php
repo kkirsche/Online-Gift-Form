@@ -176,8 +176,21 @@ function check_email_address($email) {
   }
 
 
-$userEmail = $_POST['usersEmail'];
+$userEmail = $mysqli->real_escape_string($_POST['usersEmail']);
 //check the user's email address
-check_email_address($userEmail);
+if (check_email_address($userEmail) == true) {
+    $to = $userEmail;
+    $headers = "From: noreply@hsc.edu\r\n" . "X-Mailer: php";
+    $subject = "Your Donation was Received!";
+    $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
+    //we have composed our message. Now let's send it on
+    if(mail($to, $subject, $message, $headers)) {
+        echo("<p>Message sent!</p>");
+    } else {
+        echo "<p>Message delivery failed :( </p>";
+    }
+} else {
+    echo "The e-mail was invalid";
+}
 
 ?>
