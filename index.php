@@ -215,7 +215,7 @@ include "functions.php";
                                             <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
                                             <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
         									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Other" />Other <em>(please specify in special instructions)</em></p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
         							</div>
         							<!--End Dropdown-->
         							<br />
@@ -225,11 +225,11 @@ include "functions.php";
                                 <!--Dropdown if selected-->
                                     <div id="ifAcademicsSelected">
                                         <label><em>Please select the department(s) below</em></label> <br />
-                                            <p class="indented"><input type = "checkbox" value="Atkinson_Museum" />Atkinson Museum</p>
-                                            <p class="indented"><input type = "checkbox" value="Bortz_Library" />Bortz Library</p>
-                                            <p class="indented"><input type = "checkbox" value="Culture_and_Community" />Culture and Community</p>
-                                            <p class="indented"><input type = "checkbox" value="Wilson_Center" />the Wilson Center</p>
-                                            <p class="indented"><input type = "checkbox" value="Other" />Other <em>(please specify in special instructions)</em></p>
+                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Atkinson_Museum" />Atkinson Museum</p>
+                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Bortz_Library" />Bortz Library</p>
+                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Culture_and_Community" />Culture and Community</p>
+                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Wilson_Center" />the Wilson Center</p>
+                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Other_Academic_Area" />Other <em>(please specify in special instructions)</em></p>
                                     </div>
                                     <!--End Dropdown-->
 
@@ -238,18 +238,18 @@ include "functions.php";
    								<!--Dropdown if selected-->
     								<div id="ifAthleticsAreSelected">
     									<label><em>Please select the XXXXXXXXXXX below</em></label> <br />
-                                            <p class="indented"><input type="checkbox" name="BaseballBigHittersClub" value="1"  />Baseball Big Hitters Club</p>
-                                            <p class="indented"><input type="checkbox" name="BasketballRoundballClub" value="1" />Basketball Roundball Club</p>
-                                            <p class="indented"><input type="checkbox" name="CrossCountryHarriers" value="1" />Cross Country Harriers</p>
-        									<p class="indented"><input type="checkbox" name="EverettStadium" value="1" />Everett Stadium</p>
-                                            <p class="indented"><input type="checkbox" name="FootballGridironClub" value="1" />Football Gridiron Club</p>
-                                            <p class="indented"><input type="checkbox" name="GolfHoleOneClub" value="1" />Golf Hole In One Club</p>
-        									<p class="indented"><input type="checkbox" name="KirkAthleticCenter" value="1" />Kirk Athletic Center</p>
-        									<p class="indented"><input type="checkbox" name="LacrosseFaceOffClub" value="1" />Lacrosse Face Off Club</p>
-                                            <p class="indented"><input type="checkbox" name="RugbyClub" value="1" />Rugby Club</p>                                                                    
-        									<p class="indented"><input type="checkbox" name="SoccerGoalClub" value="1" />Soccer Goal Club</p>
-                                            <p class="indented"><input type="checkbox" name="SwimmingClub" value="1" />Swimming Club</p>  
-        									<p class="indented"><input type="checkbox" name="TennisRacquetClub" value="1" />Tennis Racquet Club</p>	                              
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Baseball_Big_Hitters_Club"  />Baseball Big Hitters Club</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Basketball_Roundball_Club" />Basketball Roundball Club</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Cross_Country_Harriers" />Cross Country Harriers</p>
+        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Everett_Stadium" />Everett Stadium</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Football_Gridiron_Club" />Football Gridiron Club</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Golf_Hole_In_One_Club" />Golf Hole In One Club</p>
+        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Kirk_Athletic_Center" />Kirk Athletic Center</p>
+        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Lacrosse_Face_Off_Club" />Lacrosse Face Off Club</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Rugby_Club" />Rugby Club</p>                                                                    
+        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Soccer_Goal_Club" />Soccer Goal Club</p>
+                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Swimming_Club" />Swimming Club</p>  
+        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Tennis_Racquet_Club" />Tennis Racquet Club</p>	                              
         							</div>
         							<!--End Dropdown-->
         							<br />
