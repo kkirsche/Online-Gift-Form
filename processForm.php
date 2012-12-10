@@ -180,7 +180,7 @@ $userEmail = $mysqli->real_escape_string($_POST['usersEmail']);
 //check the user's email address
 if (check_email_address($userEmail) == true) {
     $to = $userEmail;
-    $headers = "From: noreply@hsc.edu\r\n" . "X-Mailer: php";
+    $headers = 'From: noreply@hsc.edu' . "\r\n" . 'Reply-To:webmaster@hsc.edu' . 'X-Mailer: PHP/' . phpversion();
     $subject = "Your Donation was Received!";
     $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
     //we have composed our message. Now let's send it on
