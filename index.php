@@ -97,7 +97,7 @@ include "functions.php";
 
                     <!--Recurring Gift-->
                     <div id="makingARecurringGift">
-                       Enter Recurring Gift Amount: $<input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" /><br />
+                       Enter Recurring Gift Amount: $<input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" /><sup>*</sup><br />
                        I would like to make this gift <select name="numberOfPayments" id="numberOfPayments">
                                             <option value="0">X</option>
                                             <option value="1">1</option>
@@ -257,7 +257,7 @@ include "functions.php";
                                     <label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
         							<br />
         							<label><strong>Special Instructions</strong></label><br />
-        							<textarea name="specinstr" cols="100" rows="5"></textarea> 
+        							<textarea name="specinstr" cols="100" rows="5" placeholder="Enter Special Instructions Here"></textarea> 
         							<br />
         	
     					</fieldset>
@@ -277,28 +277,28 @@ include "functions.php";
                                 Donor Information
                             </legend>
                             <label>First Name:</label>
-                                <input type="text" name="usersFirstName" size="20" />
+                                <input type="text" name="usersFirstName" size="20" placeholder="John" />
                                 &nbsp;
                             <label>Last Name:</label>
-                                <input type="text" name="usersLastName" size="30" />
+                                <input type="text" name="usersLastName" size="30" placeholder="Doe" />
                                 <br />
                             <label>Street Address:</label>
-                                <input type="text" name="usersStreetAddress" size="30" />
+                                <input type="text" name="usersStreetAddress" size="30" placeholder="123 ABC Avenue" />
                                 <br />
                             <label>Apt, Suite, Bldg. (Optional):</label>
-                                <input type="text" name="usersSecondaryAddress" size="30" />
+                                <input type="text" name="usersSecondaryAddress" size="30" placeholder="Apt. 123" />
                                 <br />
                             <label>City:</label>
-                                <input type="text" name="usersCity" size="30" />
+                                <input type="text" name="usersCity" size="30" placeholder="Richmond" />
                                 <br />
                             <label>Country:</label>
-                                <input type="text" name="usersCountry" size="30" />
+                                <input type="text" name="usersCountry" size="30" placeholder="United States" />
                                 <br />
                             <label>Phone:</label>
-                                <input type="text" name="usersPhoneNumber" size="30" />
+                                <input type="text" name="usersPhoneNumber" size="30" placeholder="(434) 123&ndash;4567" />
                                 <br />
                             <label>Email:</label>
-                                <input type="email" name="usersEmail" size="45" />
+                                <input type="email" name="usersEmail" size="45" placeholder='John.Doe@hsc.edu' />
                                 <br />
                         </fieldset>
                         <div class="clearfix"></div>
@@ -316,16 +316,16 @@ include "functions.php";
                             </legend>
                             <br />
                             <label>Name as it appears on Credit Card:</label>
-                                <input type="text" name="nameOnCard" size="20" />
+                                <input type="text" name="nameOnCard" size="40" placeholder="John R. Doe" />
                                 <br />
                             <label>Credit Card Number:</label>
-                                <input type="text" name="numberOnCard" size="30" />
+                                <input type="number" name="numberOnCard" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                 <br />
-                            <label>Credit Card Verification Code (CVV or CSV):</label>
-                                <input type="text" name="securityCodeOnCard" size="30" />
+                            <label>Credit Card Verification Code (CVC2 for MasterCard, CVV2 for Visa, CID for American Express):</label>
+                                <input type="number" name="securityCodeOnCard" size="30" placeholder="813" min="0" max="9999" />
                                 <br />
                             <label>Expiration Date:</label>
-                                <input type="text" name="expirationMonthOnCard" size="5" />&nbsp;/&nbsp;<input type="text" name="expirationYearOnCard" size="5" />
+                                <input type="number" name="expirationMonthOnCard" size="2" min="01" max="12" placeholder="11" />&nbsp;/&nbsp;<input type="number" name="expirationYearOnCard" size="2" min="0" max="99" placeholder="14" />
                                 <br />
                         </fieldset>
                         <div class="clearfix"></div>
