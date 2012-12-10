@@ -1,5 +1,6 @@
-
 <?php
+session_start();
+require("functions.php");
 //configure for below
 //let's make it so we can use MySQLi. This is an example for local host only. NEVER use this type of database name, password, etc. in a production environment.
 $mysqli = new mysqli("localhost", "UserGiftForm", "Nev3rUseTh1sP4ssw0rdEverAgain!", "OnlineGiftForm");
@@ -82,6 +83,20 @@ function check_Credit_Card($cc, $extra_check = false){
     }
     return ($result>0)?$names[sizeof($matches)-2]:false;
 }
+
+//check the form key
+//Validate the form key
+    $formKey = new formKey();
+    if(!isset($_POST['form_key']) || !$formKey->validate())
+    {
+        //Form key is invalid, show an error
+        $error = 'Form key error!';
+    }
+    else
+    {
+        //Do the rest of your validation here
+        $error = 'No form key error!';
+    }
 
 //Get the Gift Amount pieces
   //one time donations

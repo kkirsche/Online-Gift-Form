@@ -1,5 +1,10 @@
 <?php
-include "functions.php";
+//Start the session
+session_start();
+require("functions.php");
+//Start the form key class
+$formKey = new formKey();
+
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -88,6 +93,7 @@ include "functions.php";
                 <!--End Question Step-->
 
                 <form id="DonationForm" action="processForm.php" method="post">
+                    <?php $formKey->outputKey(); ?>
     			<!--First Step-->
     			<div class="formStep" id="step1">
                     <!--One Time Gift-->
