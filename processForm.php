@@ -88,14 +88,15 @@ function check_Credit_Card($cc, $extra_check = false){
   $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
 
   //recurring donations
-  $recurringGiftPerDonationAmount = $mysqli->real_escape_string($_POST['recurringDonationValue']);
-  $recurringGiftNumberOfPayments = $mysqli->real_escape_string($_POST['numberOfPayments']);
-  $recurringGiftFrequency = $mysqli->real_escape_string($_POST['paymentFrequency']);
+  $recurringGift = array();
+  $recurringGift['donationAmount'] = $mysqli->real_escape_string($_POST['recurringDonationValue']);
+  $recurringGift['numberOfPayments'] = $mysqli->real_escape_string($_POST['numberOfPayments']);
+  $recurringGift['paymentFrequency'] = $mysqli->real_escape_string($_POST['paymentFrequency']);
   //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
-  $totalGiftAmount = $recurringGiftPerDonationAmount * $recurringGiftNumberOfPayments;
+  $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
+  
   //create the array to store our checkbox values.
   $selected_items = array();
-
     //now let's get the values of the checkboxes starting with Scholarships
     if(!empty($_POST['list-items'])) {
         foreach($_POST['list-items'] as $listItem) {
