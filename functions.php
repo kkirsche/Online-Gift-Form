@@ -23,7 +23,7 @@
 				$this->old_formKey = $_SESSION['form_key'];
 			}
 		}
-		
+
 		//Function to generate the form key
 		private function generateKey() {
 			//Get the IP-address of the user
@@ -47,7 +47,7 @@
 		//Function that validated the form key POST data
 		public function validate() {
 			//We use the old formKey and not the new generated version
-			if($_POST['form_key'] == $this->old_formKey) {
+			if($_POST['form_key'] === $this->old_formKey) {
 				//The key is valid, return true.
 				return true;
 			} else {
