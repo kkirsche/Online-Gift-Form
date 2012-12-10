@@ -197,25 +197,25 @@ include "functions.php";
     								<div id="ifScholarshipsSelected">
     									<label><em>Please select the Scholarship(s) below</em></label> <br />
                                         <!--ADD ARARY FOR EACH SECTION HERE-->
-                                            <p class="indented"><input type = "checkbox" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2009" />Class of 2009 Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
-        									<p class="indented"><input type = "checkbox" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
-        									<p class="indented"><input type = "checkbox" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
-        									<p class="indented"><input type = "checkbox" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
-                                            <p class="indented"><input type = "checkbox" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
-        									<p class="indented"><input type = "checkbox" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" value="Other" />Other <em>(please specify in special instructions)</em></p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
+        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
+        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
+        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
+        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Other" />Other <em>(please specify in special instructions)</em></p>
         							</div>
         							<!--End Dropdown-->
         							<br />
