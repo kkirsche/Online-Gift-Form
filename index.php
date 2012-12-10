@@ -318,7 +318,6 @@ include "functions.php";
                             <!--Show the card types-->
                             <ul class="cards">
                                 <li class="visa">Visa</li>
-                                <li class="visa_electron">Visa Electron</li>
                                 <li class="mastercard">MasterCard</li>
                                 <li class="amex">American Express</li>
                             </ul>
