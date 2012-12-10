@@ -315,11 +315,19 @@ include "functions.php";
                                 </strong>
                             </legend>
                             <br />
+                            <!--Show the card types-->
+                            <ul class="cards">
+                                <li class="visa">Visa</li>
+                                <li class="visa_electron">Visa Electron</li>
+                                <li class="mastercard">MasterCard</li>
+                                <li class="amex">American Express</li>
+                            </ul>
+                            
                             <label>Name as it appears on Credit Card:</label>
                                 <input type="text" name="nameOnCard" size="40" placeholder="John R. Doe" />
                                 <br />
                             <label>Credit Card Number:</label>
-                                <input type="number" name="numberOnCard" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
+                                <input type="number" name="numberOnCard" id="creditCardNumber" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                 <br />
                             <label>Credit Card Verification Code (CVC2 for MasterCard, CVV2 for Visa, CID for American Express):</label>
                                 <input type="number" name="securityCodeOnCard" size="30" placeholder="813" min="0" max="9999" />
@@ -376,6 +384,32 @@ include "functions.php";
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
- </script>
+</script>
+<script>
+$(function() {
+
+  $(function() {
+    $('.vertical.maestro').hide().css({
+      opacity: 0
+    });
+    return $('#creditCardNumber').validateCreditCard(function(result) {
+      if (!(result.card_type != null)) {
+        $('.cards li').removeClass('off');
+        $('#creditCardNumber').removeClass('valid');
+        return;
+      }
+      $('.cards li').addClass('off');
+      $('.cards .' + result.card_type.name).removeClass('off');
+
+      if (result.length_valid && result.luhn_valid) {
+        return $('#card_number').addClass('valid');
+      } else {
+        return $('#card_number').removeClass('valid');
+      }
+    });
+  });
+
+}).call(this);
+</script>
 </body>
 </html>

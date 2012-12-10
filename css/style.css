@@ -398,7 +398,7 @@ input {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
-  background-image: url(card_logos.png);
+  background-image: url("http://i.imgur.com/m3DYM.png");
   background-position: 0 0;
   float: left;
   height: 32px;
@@ -415,7 +415,7 @@ input {
 .cards .mastercard {
   background-position: 153px 0;
 }
-.cards .maestro {
+.cards .amex {
   background-position: 102px 0;
 }
 .cards .discover {
@@ -430,7 +430,7 @@ input {
 .cards .mastercard.off {
   background-position: 153px 32px;
 }
-.cards .maestro.off {
+.cards .amex.off {
   background-position: 102px 32px;
 }
 .cards .discover.off {
