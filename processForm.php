@@ -84,13 +84,9 @@ function check_Credit_Card($cc, $extra_check = false){
     return ($result>0)?$names[sizeof($matches)-2]:false;
 }
 
-<<<<<<< HEAD
+
     //check the form key
     //Validate the form key
-=======
-//check the form key
-//Validate the form key
->>>>>>> 03ef36c27546f51899ef76d1d0324e9321942bf0
     $formKey = new formKey();
     if(!isset($_POST['form_key']) || !$formKey->validate())
     {
@@ -101,8 +97,6 @@ function check_Credit_Card($cc, $extra_check = false){
     {
         //Do the rest of your validation here
         $error = 'No form key error!';
-<<<<<<< HEAD
-=======
     }
 
 //Get the Gift Amount pieces
@@ -283,7 +277,6 @@ function check_Credit_Card($cc, $extra_check = false){
           }
           //we also want to have the special instructions, just in case.
           $selected_items['SpecialInstructions'] = $mysqli->real_escape_string($_POST['specinstr']);
->>>>>>> 03ef36c27546f51899ef76d1d0324e9321942bf0
     }
 
     if($error == "Form key error!") {
