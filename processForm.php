@@ -87,14 +87,15 @@ function check_Credit_Card($cc, $extra_check = false){
   //one time donations
   $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
 
-  //recurring donations
-  $recurringGift = array();
-  $recurringGift['donationAmount'] = $mysqli->real_escape_string($_POST['recurringDonationValue']);
-  $recurringGift['numberOfPayments'] = $mysqli->real_escape_string($_POST['numberOfPayments']);
-  $recurringGift['paymentFrequency'] = $mysqli->real_escape_string($_POST['paymentFrequency']);
+    //recurring donations
+    $recurringGift = array(
+        "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
+        "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
+        "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
+    );
   //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
   $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
-  
+
   //create the array to store our checkbox values.
   $selected_items = array();
     //now let's get the values of the checkboxes starting with Scholarships
@@ -263,15 +264,17 @@ function check_Credit_Card($cc, $extra_check = false){
     }
 
     //make an array of the user information
-    $userInfo = array();
-    $userInfo['firstName'] = $mysqli->real_escape_string($_POST['usersFirstName']);
-    $userInfo['lastName'] = $mysqli->real_escape_string($_POST['usersLastName']);
-    $userInfo['address1'] = $mysqli->real_escape_string($_POST['usersStreetAddress']);
-    $userInfo['address2'] = $mysqli->real_escape_string($_POST['usersSecondaryAddress']);
-    $userInfo['city'] = $mysqli->real_escape_string($_POST['usersCity']);
-    $userInfo['country'] = $mysqli->real_escape_string($_POST['usersCountry']);
-    $userInfo['phoneNumber'] = $mysqli->real_escape_string($_POST['usersPhoneNumber']);
-    $userInfo['email'] = $mysqli->real_escape_string($_POST['usersEmail']);
+    $userInfo = array(
+        "firstName" => $mysqli->real_escape_string($_POST['usersFirstName']),
+        "lastName" => $mysqli->real_escape_string($_POST['usersLastName']),
+        "address1" => $mysqli->real_escape_string($_POST['usersLastName']),
+        "address2" => $mysqli->real_escape_string($_POST['usersSecondaryAddress']),
+        "city" => $mysqli->real_escape_string($_POST['usersCity']),
+        "country" => $mysqli->real_escape_string($_POST['usersCountry']),
+        "phoneNumber" => $mysqli->real_escape_string($_POST['usersPhoneNumber']),
+        "email" => $mysqli->real_escape_string($_POST['usersEmail'])
+    );
+    
     //check the user's email address
     if (check_email_address($userInfo['email']) == true) {
         $to = $userInfo['email'];
