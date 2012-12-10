@@ -366,9 +366,7 @@ include "functions.php";
   <script src="js/plugins.js"></script>
   <!--Hide or Show Class Year Selection-->
   <!--Rotation of the different "Steps"-->
-  <script src="js/jquery.formatCurrency-1.4.0.min.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/jquery.creditCardValidator.js"></script>
 
   <!-- end scripts -->
 
