@@ -1,7 +1,7 @@
 
 <?php
 //configure for below
-//let's make it so we can use MySQLi
+//let's make it so we can use MySQLi. This is an example for local host only. NEVER use this type of database name, password, etc. in a production environment.
 $mysqli = new mysqli("localhost", "UserGiftForm", "Nev3rUseTh1sP4ssw0rdEverAgain!", "OnlineGiftForm");
 
 if(mysqli_connect_errno()) {
@@ -11,67 +11,55 @@ if(mysqli_connect_errno()) {
 
 //Start up with our functions
 function check_email_address($email) {
-  $isValid = true;
-   $atIndex = strrpos($email, "@");
-   if (is_bool($atIndex) && !$atIndex)
-   {
+    //Give them the benefit of the doubt that it is a correct email address
+    $isValid = true;
+    $atIndex = strrpos($email, "@");
+    if (is_bool($atIndex) && !$atIndex) {
       $isValid = false;
-   }
-   else
-   {
+    } else {
       $domain = substr($email, $atIndex+1);
       $local = substr($email, 0, $atIndex);
       $localLen = strlen($local);
       $domainLen = strlen($domain);
-      if ($localLen < 1 || $localLen > 64)
-      {
+      if ($localLen < 1 || $localLen > 64) {
          // local part length exceeded
          $isValid = false;
-      }
-      else if ($domainLen < 1 || $domainLen > 255)
-      {
+      } else if ($domainLen < 1 || $domainLen > 255) {
          // domain part length exceeded
          $isValid = false;
-      }
-      else if ($local[0] == '.' || $local[$localLen-1] == '.')
-      {
+      } else if ($local[0] == '.' || $local[$localLen-1] == '.') {
          // local part starts or ends with '.'
          $isValid = false;
-      }
-      else if (preg_match('/\\.\\./', $local))
-      {
+      } else if (preg_match('/\\.\\./', $local)) {
          // local part has two consecutive dots
          $isValid = false;
-      }
-      else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain))
+      } else if (!preg_match('/^[A-Za-z0-9\\-\\.]+$/', $domain))
       {
          // character not valid in domain part
          $isValid = false;
-      }
-      else if (preg_match('/\\.\\./', $domain))
+      } else if (preg_match('/\\.\\./', $domain))
       {
          // domain part has two consecutive dots
          $isValid = false;
-      }
-      else if
-(!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/',
+      } else if
+        (!preg_match('/^(\\\\.|[A-Za-z0-9!#%&`_=\\/$\'*+?^{}|~.-])+$/',
                  str_replace("\\\\","",$local)))
-      {
-         // character not valid in local part unless 
-         // local part is quoted
-         if (!preg_match('/^"(\\\\"|[^"])+"$/',
-             str_replace("\\\\","",$local)))
-         {
+        {
+            // character not valid in local part unless 
+            // local part is quoted
+            if (!preg_match('/^"(\\\\"|[^"])+"$/',
+               str_replace("\\\\","",$local)))
+            {
+                $isValid = false;
+            }
+        }
+
+        if ($isValid && !(checkdnsrr($domain,"MX") || checkdnsrr($domain,"A")))
+        {
+            // domain not found in DNS
             $isValid = false;
-         }
-      }
-      if ($isValid && !(checkdnsrr($domain,"MX") || 
- ↪checkdnsrr($domain,"A")))
-      {
-         // domain not found in DNS
-         $isValid = false;
-      }
-   }
+        }
+    }
    return $isValid;
 }
 
@@ -90,7 +78,6 @@ function check_email_address($email) {
 
     //now let's get the values of the checkboxes starting with Scholarships
     if(!empty($_POST['list-items'])) {
-
         foreach($_POST['list-items'] as $listItem) {
         //check the values and add to the array accordingly
             switch ($listItem) {
@@ -253,23 +240,28 @@ function check_email_address($email) {
           //we also want to have the special instructions, just in case.
           $selected_items['SpecialInstructions'] = $mysqli->real_escape_string($_POST['specinstr']);
       }
-    print_r($selected_items);
 
-$userEmail = $mysqli->real_escape_string($_POST['usersEmail']);
-//check the user's email address
-if (check_email_address($userEmail) == true) {
-    $to = $userEmail;
-    $headers = 'From: noreply@hsc.edu' . "\r\n" . 'Reply-To:webmaster@hsc.edu' . 'X-Mailer: PHP/' . phpversion();
-    $subject = "Your Donation was Received!";
-    $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
-    //we have composed our message. Now let's send it on. Commented out for development sake.
-    //if(mail($to, $subject, $message, $headers)) {
-        //echo("<p>Message sent!</p>");
-    //} else {
+    $userfirstName = $mysqli->real_escape_string($_POST['usersFirstName']);
+    $userlastName = $mysqli->real_escape_string($_POST['usersLastName']);
+    $userAddress1 = $mysqli->real_escape_string($_POST['usersStreetAddress']);
+    $userAddress2 = $mysqli->real_escape_string($_POST['usersSecondaryAddress']);
+    $userCity = $mysqli->real_escape_string($_POST['usersCity']);
+    $userCountry = $mysqli->real_escape_string($_POST['usersCountry']);
+    $userPhoneNumber = $mysqli->real_escape_string($_POST['usersPhoneNumber']);
+    $userEmail = $mysqli->real_escape_string($_POST['usersEmail']);
+    //check the user's email address
+    if (check_email_address($userEmail) == true) {
+        $to = $userEmail;
+        $headers = 'From: noreply@hsc.edu' . "\r\n" . 'Reply-To:webmaster@hsc.edu' . 'X-Mailer: PHP/' . phpversion();
+        $subject = "Your Donation was Received!";
+        $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
+        //we have composed our message. Now let's send it on. Commented out for development sake.
+        //if(mail($to, $subject, $message, $headers)) {
+            //echo("<p>Message sent!</p>");
+        //} else {
         //echo "<p>Message delivery failed :( </p>";
-   //}
-} else {
-    echo "The e-mail was invalid";
-}
-
+    //}
+    } else {
+        echo "The e-mail was invalid";
+    }
 ?>
