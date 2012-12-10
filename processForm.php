@@ -99,9 +99,12 @@ function check_Credit_Card($cc, $extra_check = false){
         $error = 'No form key error!';
     }
 
-//Get the Gift Amount pieces
-  //one time donations
-  $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
+    if($error == "Form key error!") {
+        die("There was an error with the form key. This usually means someone was doing something bad.");
+    } else {
+    //Get the Gift Amount pieces
+    //one time donations
+    $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
 
     //recurring donations
     $recurringGift = array(
@@ -506,4 +509,5 @@ function check_Credit_Card($cc, $extra_check = false){
             echo "The e-mail was invalid";
         }
     }
+}
 ?>
