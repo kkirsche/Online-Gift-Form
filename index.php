@@ -197,25 +197,25 @@ include "functions.php";
     								<div id="ifScholarshipsSelected">
     									<label><em>Please select the Scholarship(s) below</em></label> <br />
                                         <!--ADD ARARY FOR EACH SECTION HERE-->
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
-        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
-        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
-        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
-        									<p class="indented"><input type = "checkbox" name="scholarship_list[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="scholarship_list[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
+        									<p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
+        									<p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
+        									<p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
+        									<p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
         							</div>
         							<!--End Dropdown-->
         							<br />
@@ -225,11 +225,11 @@ include "functions.php";
                                 <!--Dropdown if selected-->
                                     <div id="ifAcademicsSelected">
                                         <label><em>Please select the department(s) below</em></label> <br />
-                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Atkinson_Museum" />Atkinson Museum</p>
-                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Bortz_Library" />Bortz Library</p>
-                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Culture_and_Community" />Culture and Community</p>
-                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Wilson_Center" />the Wilson Center</p>
-                                            <p class="indented"><input type = "checkbox" name="academics_list[]" value="Other_Academic_Area" />Other <em>(please specify in special instructions)</em></p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Atkinson_Museum" />Atkinson Museum</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Bortz_Library" />Bortz Library</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Culture_and_Community" />Culture and Community</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Wilson_Center" />the Wilson Center</p>
+                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Other_Academic_Area" />Other <em>(please specify in special instructions)</em></p>
                                     </div>
                                     <!--End Dropdown-->
 
@@ -238,22 +238,22 @@ include "functions.php";
    								<!--Dropdown if selected-->
     								<div id="ifAthleticsAreSelected">
     									<label><em>Please select the XXXXXXXXXXX below</em></label> <br />
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Baseball_Big_Hitters_Club"  />Baseball Big Hitters Club</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Basketball_Roundball_Club" />Basketball Roundball Club</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Cross_Country_Harriers" />Cross Country Harriers</p>
-        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Everett_Stadium" />Everett Stadium</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Football_Gridiron_Club" />Football Gridiron Club</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Golf_Hole_In_One_Club" />Golf Hole In One Club</p>
-        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Kirk_Athletic_Center" />Kirk Athletic Center</p>
-        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Lacrosse_Face_Off_Club" />Lacrosse Face Off Club</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Rugby_Club" />Rugby Club</p>                                                                    
-        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Soccer_Goal_Club" />Soccer Goal Club</p>
-                                            <p class="indented"><input type="checkbox" name="athletics_list[]" value="Swimming_Club" />Swimming Club</p>  
-        									<p class="indented"><input type="checkbox" name="athletics_list[]" value="Tennis_Racquet_Club" />Tennis Racquet Club</p>	                              
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />Baseball Big Hitters Club</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Basketball_Roundball_Club" />Basketball Roundball Club</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Cross_Country_Harriers" />Cross Country Harriers</p>
+        									<p class="indented"><input type="checkbox" name="list-items[]" value="Everett_Stadium" />Everett Stadium</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Football_Gridiron_Club" />Football Gridiron Club</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Golf_Hole_In_One_Club" />Golf Hole In One Club</p>
+        									<p class="indented"><input type="checkbox" name="list-items[]" value="Kirk_Athletic_Center" />Kirk Athletic Center</p>
+        									<p class="indented"><input type="checkbox" name="list-items[]" value="Lacrosse_Face_Off_Club" />Lacrosse Face Off Club</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Rugby_Club" />Rugby Club</p>                                                                    
+        									<p class="indented"><input type="checkbox" name="list-items[]" value="Soccer_Goal_Club" />Soccer Goal Club</p>
+                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Swimming_Club" />Swimming Club</p>  
+        									<p class="indented"><input type="checkbox" name="list-items[]" value="Tennis_Racquet_Club" />Tennis Racquet Club</p>	                              
         							</div>
         							<!--End Dropdown-->
         							<br />
-                                    <input type="checkbox" name="Unrestricted" value="unrestricted" />
+                                    <input type="checkbox" name="list-items[]" value="unrestricted" />
                                     <label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
         							<br />
         							<label><strong>Special Instructions</strong></label><br />
