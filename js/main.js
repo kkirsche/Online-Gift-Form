@@ -258,6 +258,7 @@ $("document").ready(function(){
     //Prep ajax
     var options = {
         target: "#ajaxReplacement"
+        //beforeSubmit: 
     };
 
     $("#DonationForm").ajaxForm(options);
