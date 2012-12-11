@@ -33,7 +33,7 @@ $formKey = new formKey();
             <header class="wrapper clearfix">
                 <h1 class="title">
                     <a href="http://www.hsc.edu">
-                        <img src="http://www.hsc.edu/images/hpheadernew2.gif" alt="Hampden-Sydney College " id="headerImage">
+                        <img src="http://www.hsc.edu/images/hpheadernew2.gif" alt="Hampden-Sydney College" id="headerImage">
                     </a>
                 </h1>
                 <nav>
