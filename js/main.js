@@ -1,6 +1,6 @@
 //hide the second, third and fourth steps from the user.
 $("document").ready(function(){
-    
+
     //Hide additional steps and the differences between the two steps if they have Javascript
     function hideSteps() {
         //hide the divs
@@ -10,6 +10,7 @@ $("document").ready(function(){
         $("#step4").hide();
         $("#makingAOneTimeGift").hide();
         $("#makingARecurringGift").hide();
+        $("#dialog-modal").hide();
     }
     //Show the submit buttons since we're going to take them through the steps
     function showSubmitSteps() {
@@ -57,7 +58,7 @@ $("document").ready(function(){
                 }
                 $("#lengthOfTime").text(howLong);
             break;
-            
+
             case "Quarterly":
                 howLong = " will be made quarterly over "
                 if (numberOfPayments == 0) {
@@ -152,7 +153,7 @@ $("document").ready(function(){
                 $("#step1").slideToggle("slow");
                 $("#step2").slideToggle("slow");
             }
-        }  else if(typeOfDonation == "total recurring") {   
+        }  else if(typeOfDonation == "total recurring") {
             var validateRecurringGiftAmount = parseInt($("#totalRecurringDonationValue").text());
             if(validateRecurringGiftAmount != 0) {
                 if(validateRecurringGiftAmount < 5) {
@@ -165,11 +166,16 @@ $("document").ready(function(){
                 var validateNumberofTimes = $("#numberOfPayments").val();
                 var validateAmount = $("#recurringDonationValue").val();
                 var validateFrequency = $("#paymentFrequency").val()
-                
+
                 //check if they didn't enter either
                 if(validateAmount == 0) {
-                    alert("Please enter how much the recurring gift amount.");
-                    //lastly, check if they chose how many months but didn't enter a value to donate
+                    $("[name=giftModal]").attr('title', 'Sorry!');
+                    $("#giftModal").text("Please enter a donation amount.");
+                    $(function() {
+                        $( "#dialog-modal" ).dialog({
+                            modal: true
+                        });
+                    });
                 } else if(validateNumberofTimes == 0) {
                     alert("Please select how for how many times you would like to make your donation.");
                 } else if(validateFrequency == 0) {
@@ -180,7 +186,7 @@ $("document").ready(function(){
             alert("How'd you get here?")
         }
     }
-    
+
     hideSteps();
     showSubmitSteps();
     addInteractiveFields();
