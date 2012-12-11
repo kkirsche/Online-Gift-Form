@@ -1,4 +1,3 @@
-//hide the second, third and fourth steps from the user.
 $("document").ready(function(){
 
     //Hide additional steps and the differences between the two steps if they have Javascript
@@ -255,7 +254,14 @@ $("document").ready(function(){
         $("#step3").slideToggle("slow");
         return false;
     });
-    $("#submit_form").click(function() {
-        return true; //submit the form using ajax!
-    });
+    
+    //Prep ajax
+    var options = {
+        target: "#ajaxReplacement"
+    };
+
+    $("#DonationForm").ajaxForm(options);
+    //$("#submit_form").click(function() {
+        //return true; //allow the form to be submitted.
+    //});
 });

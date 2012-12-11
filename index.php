@@ -294,6 +294,7 @@ $formKey = new formKey();
                 <br />
                 </div>
                 <div class="formStep" id="step4">
+                    <div id="ajaxReplacement">
                         <fieldset>
                             <legend>
                                 <strong>
@@ -322,8 +323,9 @@ $formKey = new formKey();
                                 <br />
                         </fieldset>
                         <div class="clearfix"></div>
-                <input class="submit floatLeft" type="submit" name="return_third" id="return_third" value="Previous" />
                 <input class="submit floatRight" type="submit" name="submit_form" id="submit_form" value="Submit" />
+                <input class="submit floatLeft" type="submit" name="return_third" id="return_third" value="Previous" />
+                </div>
                 <div class="clear"></div>
                 <br />
                 </div>
@@ -357,6 +359,7 @@ $formKey = new formKey();
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        <script src="js/jquery.form.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
