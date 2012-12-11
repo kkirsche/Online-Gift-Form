@@ -10,6 +10,11 @@ textarea {
     color: #222;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     background: #dbd7d7;
     font-size: 1em;
@@ -101,6 +106,7 @@ body {
     color: white;
 }
 
+
 /* ==============
     MOBILE: Menu
    ============== */
@@ -184,6 +190,17 @@ footer a {
 }
 footer a:hover {
     color: #ffffff;
+}
+
+.footer-container {
+    height: auto !important;
+    margin: 0 auto -7em;
+}
+footer .wrapper {
+    height: 7em;
+}
+.push {
+    height: 7em;
 }
 .headerTagline {
     display: block;
@@ -278,11 +295,12 @@ footer a:hover {
   background-position: 51px 32px;
 }
 form input {
-    max-width: 100%
+    max-width: 100%;
+    width: auto;
 }
-
-
-
+.break-word {
+    word-wrap: break-word;
+}
 
 /* ==========================================================================
    Media Queries

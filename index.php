@@ -255,7 +255,7 @@ $formKey = new formKey();
                 </div>
                 <!--End Second Step-->
 
-                <div class="formStep" id="step3">
+                <div class="formStep break-word" id="step3">
 
                         <fieldset>
                             <legend>
@@ -334,7 +334,7 @@ $formKey = new formKey();
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
-
+        <div id="addPush"></div>
         <div class="footer-container">
             <footer class="wrapper">
                 <div class="floatLeft">

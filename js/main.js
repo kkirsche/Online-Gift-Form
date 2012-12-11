@@ -151,6 +151,7 @@ $("document").ready(function(){
                 alert("Sorry, but we have a $5 minimum donation.")
             } else {
                 $("#step1").slideToggle("slow");
+                $("#addPush").removeClass("push");
                 $("#step2").slideToggle("slow");
             }
         }  else if(typeOfDonation == "total recurring") {
@@ -160,6 +161,7 @@ $("document").ready(function(){
                     alert("Sorry, but we have a $5 minimum donation.")
             } else {
                     $("#step1").slideToggle("slow");
+                    $("#addPush").removeClass("push");
                     $("#step2").slideToggle("slow");
                 }
             } else {
@@ -199,6 +201,7 @@ $("document").ready(function(){
         $("#makingAOneTimeGift").show();
         $("#typeOfGift").text("one-time");
         $("#step0").slideToggle("slow");
+        $("#addPush").addClass("push");
         $("#step1").slideToggle("slow");
         return false; // prevent the link from submitting
     });
@@ -206,6 +209,7 @@ $("document").ready(function(){
         $("#makingARecurringGift").show();
         $("#typeOfGift").text("total recurring");
         $("#step0").slideToggle("slow");
+        $("#addPush").addClass("push");
         $("#step1").slideToggle("slow");
         return false; // prevent the link from submitting
     });
@@ -224,6 +228,7 @@ $("document").ready(function(){
     //let's add the "Previous" button
     $("#return_question").click(function() {
         $("#step1").slideToggle("slow");
+        $("#addPush").removeClass("push");
         $("#step0").slideToggle("slow");
         $("#makingARecurringGift").hide();
         $("#makingAOneTimeGift").hide();
@@ -231,6 +236,7 @@ $("document").ready(function(){
     });
     $("#return_first").click(function() {
         $("#step2").slideToggle("slow");
+        $("#addPush").addClass("push");
         $("#step1").slideToggle("slow");
         return false;
     });
