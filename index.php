@@ -36,13 +36,6 @@ $formKey = new formKey();
                         <img src="http://www.hsc.edu/images/hpheadernew2.gif" alt="Hampden-Sydney College" id="headerImage">
                     </a>
                 </h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Gifts</a></li>
-                        <li><a href="#">Somewhere else</a></li>
-                    </ul>
-                </nav>
             </header>
         </div>
 
@@ -161,8 +154,9 @@ $formKey = new formKey();
                     </div>
                     <!--End Form Section 1-->
                     <div id="first" class="clearfix"></div>
-                    <input class="submit floatLeft" type="submit" name="return_question" id="return_question" value="Previous" />
                     <input class="submit floatRight" type="submit" id="submit_first" name="submit_first" value="Next" />
+                    <input class="submit floatLeft" type="submit" name="return_question" id="return_question" value="Previous" />
+                    <div class="clear"></div>
                 </fieldset>
                     <br />
                 </div>
@@ -256,6 +250,7 @@ $formKey = new formKey();
                         <br />
                 <input class="submit floatLeft" type="submit" name="return_first" id="return_first" value="Previous" />
                 <input class="submit floatRight" type="submit" name="submit_second" id="submit_second" value="Next" onclick="replaceDonationAmount()" />
+                <div class="clear"></div>
                 <br />
                 </div>
                 <!--End Second Step-->
@@ -295,6 +290,7 @@ $formKey = new formKey();
                         <br />
                 <input class="submit floatLeft" type="submit" name="return_second" id="return_second" value="Previous" />
                 <input class="submit floatRight" type="submit" name="submit_third" id="submit_third" value="Next" />
+                <div class="clear"></div>
                 <br />
                 </div>
                 <div class="formStep" id="step4">
@@ -328,6 +324,7 @@ $formKey = new formKey();
                         <div class="clearfix"></div>
                 <input class="submit floatLeft" type="submit" name="return_third" id="return_third" value="Previous" />
                 <input class="submit floatRight" type="submit" name="submit_form" id="submit_form" value="Submit" />
+                <div class="clear"></div>
                 <br />
                 </div>
         </form>

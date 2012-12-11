@@ -177,6 +177,7 @@ nav a:hover {
 }
 .clear {
     clear: both;
+    margin:0;
 }
 footer a {
     color: #dcdcdc;
@@ -276,9 +277,9 @@ footer a:hover {
 .cards .discover.off {
   background-position: 51px 32px;
 }
-
-
-
+form input {
+    max-width: 100%
+}
 
 
 
