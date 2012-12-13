@@ -19,10 +19,19 @@ $formKey = new formKey();
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <noscript>
+            <style>
+                .jsEnabled {
+                    display: none;
+                }
+            </style>
+        </noscript>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -57,28 +66,58 @@ $formKey = new formKey();
                 </article>
 
                 <!--One Time or Recurring Step-->
-                <div class="formStep" id="step0">
-                    <!--Ask whether it's a one-time gift or a recurring gift-->
-                    <div class="centerButtons">
-                        <a href="#" id="oneTimeGift"><img src="img/One-TimeGift.png" class="OTG" alt="I would like to make a one-time gift" /></a>
-                        <a href="#" id="recurringGift"><img src="img/RecurringGift.png" alt="I would like to make a recurring gift" /></a>
-                    </div>
-                </div>
-                <!--End Question Step-->
+                <div class="formStep">
+                    <div id="step1">
+                        <form id="DonationForm" action="processForm.php" method="post">
+                        <?php $formKey->outputKey(); ?>
+                        <!--Ask whether it's a one-time gift or a recurring gift-->
+                        <div class="centerButtons">
+                            <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" class="OTG" alt="I would like to make a one-time gift" /></a>
+                            <a href="#" class="nextStep" id="recurringGift"><img src="img/RecurringGift.png" alt="I would like to make a recurring gift" /></a>
+                        </div>
+                        <div class="jsDisabled">
+                            <select name="donationType">
+                                <option value="oneTimeGift">One-Time Gift</option>
+                                <option value="recurringDonation">Recurring Donation</option>
+                            </select>
+                        </div>
 
-                <form id="DonationForm" action="processForm.php" method="post">
-                    <?php $formKey->outputKey(); ?>
-                <!--First Step-->
-                <div class="formStep" id="step1">
-                    <!--One Time Gift-->
-                    <div id="makingAOneTimeGift">
-                        Enter Donation Amount Here: $<input type="number" min="0" name="oneTimeDonationValue" id="oneTimeDonationValue" size="15" value="0" />
-                    </div>
+                        <div class="progress">
+                            <div class="bar" style="width: 1%;"></div>
+                        </div>
+                        <p class="centerText">Step 1/5</p>
+                    </div><!--end step 1-->
 
-                    <!--Recurring Gift-->
-                    <div id="makingARecurringGift">
-                       Enter Recurring Gift Amount: $<input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" /><sup>*</sup><br />
-                       I would like to make this gift <select name="numberOfPayments" id="numberOfPayments">
+                
+                    
+                    <!--Step 2-->
+                    <div id="step2">
+                        <!--One Time Gift-->
+                        <div id="makingAOneTimeGift" class="centerText control-group">
+                            <label class="control-label">Enter Donation Amount Here:</label>
+                            <div class="controls">
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input type="number" min="0" name="oneTimeDonationValue" id="oneTimeDonationValue" size="15" value="0" />
+                                    <span class="add-on">.00</span>
+                                </div>
+                                <span id="oneTimeDonationValidateError" class="help-inline"></span>
+                            </div>
+                        </div>
+
+                        <!--Recurring Gift-->
+                        <div id="makingARecurringGift" class="control-group">
+                            <label class="control-label">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</labl>
+                                <div class="controls">
+                                    <div class="input-prepend input-append">
+                                        <span class="add-on">$</span>
+                                        <input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" />
+                                        <span class="add-on">.00</span>
+                                    </div>
+                                    <span id="recurringDonationAmountValidateError" class="help-inline"></span>
+                                    
+                                    I would like to make this gift 
+                                        <select name="numberOfPayments" id="numberOfPayments">
                                             <option value="0">X</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -140,72 +179,85 @@ $formKey = new formKey();
                                             <option value="58">58</option>
                                             <option value="59">59</option>
                                             <option value="60">60</option>
-                                </select> times.<br />
-                            I would like to make my gift: <select name="paymentFrequency" id="paymentFrequency">
-                                            <option value="Monthly">Monthly</option>
-                                            <option value="Quarterly">Quarterly</option>
-                                            <option value="Annually">Annually.</option>
-                                </select><br />
+                                        </select> times.<br />
 
-                        Total Gift Amount of $<span id="totalRecurringDonationValue">0</span><span id="lengthOfTime"></span>.
-                    </div>
-                    <div id="dialog-modal" name="giftModal" title="Basic modal dialog">
-                        <p id="giftModal">Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
-                    </div>
-                    <!--End Form Section 1-->
-                    <div id="first" class="clearfix"></div>
-                    <input class="submit floatRight" type="submit" id="submit_first" name="submit_first" value="Next" />
-                    <input class="submit floatLeft" type="submit" name="return_question" id="return_question" value="Previous" />
-                    <div class="clear"></div>
-                </fieldset>
-                    <br />
-                </div>
-                <!--End First Step-->
+                                    I would like to make my gift:
+                                    <select name="paymentFrequency" id="paymentFrequency">
+                                        <option value="Monthly">Monthly</option>
+                                        <option value="Quarterly">Quarterly</option>
+                                        <option value="Annually">Annually.</option>
+                                    </select>
+                            <br />
+                            Total Gift Amount of
+                            <div class="input-prepend input-append">
+                                <span class="add-on">$</span>
+                                <input type="number" placeholder="0" min="0" id="totalRecurringDonationValue">0</span>
+                                <span class="add-on">.00</span>
+                            </div>
+                            <span id="lengthOfTime"></span>
+                        </div><!--end Controls-->
+                        </div><!--end Recurring Gift-->
+                        
+                        <div id="dialog-modal" name="giftModal" title="Basic modal dialog">
+                            <p id="giftModal">Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
+                        </div>
+                    
+                        <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
+                        <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+
+                        <div class="progress">
+                            <div class="bar" style="width: 20%;"></div>
+                        </div>
+                        <p class="centerText">Step 2/5</p>
+                    </div><!--End Step 2-->
 
 
-                <!--Second Step-->
-                <div class="formStep" id="step2">
-                    <p>
-                        <strong>$<span id="showTotalDonationAmount">DONATION_AMOUNT</span> &mdash; Your <span id="typeOfGift">GIFT_TYPE</span> gift amount from the previous page.
+                    <!--Step 3-->
+                    <div id="step3">
+                        <p><strong><span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span> &mdash; Your <span id="typeOfGift">GIFT_TYPE</span> gift amount from the previous page.</span>
                             <!--If more than one fund is chosen, display the following-->
-                            Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.
-                        </strong>
-                    </p>
+                            Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.</strong>
+                        </p>
                         <fieldset>
-                            <legend>
-                                I would like to allocate my gift
-                            </legend>
-                                <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
-                                <label><strong>to a Scholarship</strong></label>
-                                    <!--Dropdown if selected-->
-                                    <div id="ifScholarshipsSelected">
-                                        <label><em>Please select the Scholarship(s) below</em></label> <br />
-                                        <!--ADD ARARY FOR EACH SECTION HERE-->
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Good_Men_Good_Citizens" />Good Men, Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
-                                    </div>
-                                    <!--End Dropdown-->
-                                    <br />
+                            <legend>I would like to allocate my gift</legend>
 
-                                <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
-                                <label><strong>to Academics</strong></label><br />
+                            <label class="checkbox">
+                                <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
+                                <strong>to a Scholarship</strong>
+                            </label>
+                                <!--Dropdown if selected-->
+                                <div id="ifScholarshipsSelected">
+                                    <label><em>Please select the Scholarship(s) below</em></label> <br />
+                                    <!--ADD ARARY FOR EACH SECTION HERE-->
+                                        <label class="checkbox">
+                                            <input type = "checkbox" name="list-items[]" value="Good_Men_Good_Citizens" />
+                                            Good Men, Good Citizens Scholarship
+                                        </label>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
+                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
+                                </div>
+                                <!--End Dropdown-->
+ 
+                                <label class="checkbox">
+                                    <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
+                                    <strong>to Academics</strong>
+                                </label>
                                 <!--Dropdown if selected-->
                                     <div id="ifAcademicsSelected">
                                         <label><em>Please select the department(s) below</em></label> <br />
@@ -217,8 +269,10 @@ $formKey = new formKey();
                                     </div>
                                     <!--End Dropdown-->
 
-                                <input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
-                                <label><strong>to Athletics</strong></label>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
+                                    <strong>to Athletics</strong>
+                                </label>
                                 <!--Dropdown if selected-->
                                     <div id="ifAthleticsAreSelected">
                                         <label><em>Please select the XXXXXXXXXXX below</em></label> <br />
@@ -236,26 +290,32 @@ $formKey = new formKey();
                                             <p class="indented"><input type="checkbox" name="list-items[]" value="Tennis_Racquet_Club" />Tennis Racquet Club</p>
                                     </div>
                                     <!--End Dropdown-->
+
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="list-items[]" value="unrestricted" />
+                                        <strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
+                                    </label>
                                     <br />
-                                    <input type="checkbox" name="list-items[]" value="unrestricted" />
-                                    <label><strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.</label><br />
-                                    <br />
-                                    <label><strong>Special Instructions</strong></label><br />
+
+                                    <label><strong>Special Instructions</strong></label>
                                     <textarea name="specinstr" placeholder="Enter Special Instructions Here"></textarea>
-                                    <br />
+
 
                         </fieldset>
                     <!--End Form Section 2-->
                         <div class="clearfix"></div>
                         <br />
-                <input class="submit floatLeft" type="submit" name="return_first" id="return_first" value="Previous" />
-                <input class="submit floatRight" type="submit" name="submit_second" id="submit_second" value="Next" onclick="replaceDonationAmount()" />
-                <div class="clear"></div>
-                <br />
+                        <button type="button" class="paginationBTN floatRight nextStep" onclick="replaceDonationAmount()">Next &rarr;</button>
+                        <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+                        
+                        <div class="progress">
+                            <div class="bar" style="width: 40%;"></div>
+                        </div>
+                        <p class="centerText">Step 3/5</p>
                 </div>
-                <!--End Second Step-->
+                <!--End Step 3-->
 
-                <div class="formStep break-word" id="step3">
+                <div id="step4">
 
                         <fieldset>
                             <legend>
@@ -288,13 +348,17 @@ $formKey = new formKey();
                         </fieldset>
                         <div class="clearfix"></div>
                         <br />
-                <input class="submit floatLeft" type="submit" name="return_second" id="return_second" value="Previous" />
-                <input class="submit floatRight" type="submit" name="submit_third" id="submit_third" value="Next" />
-                <div class="clear"></div>
-                <br />
-                </div>
-                <div class="formStep" id="step4">
-                    <div id="ajaxReplacement">
+                        <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
+                        <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+
+                        <div class="progress">
+                            <div class="bar" style="width: 60%;"></div>
+                        </div>
+                        <p class="centerText">Step 4/5</p>
+                </div><!--end step 4-->
+
+                <div id="step5">
+                    
                         <fieldset>
                             <legend>
                                 <strong>
@@ -323,38 +387,46 @@ $formKey = new formKey();
                                 <br />
                         </fieldset>
                         <div class="clearfix"></div>
-                <input class="submit floatRight" type="submit" name="submit_form" id="submit_form" value="Submit" />
-                <input class="submit floatLeft" type="submit" name="return_third" id="return_third" value="Previous" />
+                        <input class="submit floatRight" type="submit" name="submit_form" id="submit_form" value="Submit" />
+                        <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+                        <div class="progress">
+                            <div class="bar" style="width: 80%;"></div>
+                        </div>
+                        <p class="centerText">Step 5/5</p>
+                <div id="ajaxReplacement">
+                    <!--when form processed using AJAX, output the response here-->
                 </div>
-                <div class="clear"></div>
-                <br />
+
                 </div>
         </form>
-    <br />
 
-
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-        <div id="addPush"></div>
-        <div class="footer-container">
-            <footer class="wrapper">
-                <div class="floatLeft">
+        <hr />
+        <footer class="wrapper">
+                <div class="leftText footerText floatLeft">
                     <p>
-                        &copy; 2012&ndash;2013<br />
+                        <strong>Other Giving Methods:</strong><br />
+                    If you would like to call us with your credit card information, you can contact us toll-free at <a href="tel:18008651776" title="Call us to donate">1&ndash;800&ndash;865&ndash;1776</a>. We are available Monday&ndash;Friday, 8:30 AM to 5:00 PM <abbr title="Eastern Standard Time">EST</abbr>.<br />
+                        <hr />
+                        &copy; Hampden-Sydney College | 2012&ndash;2013<br />
                         <a href="http://www.hsc.edu/Computing-Center/Policies/Digital-Copyright-Infringements.html" title="Copyright" target="_blank"><em>Copyright</em></a> | <a href="http://www.hsc.edu/Emergencies.html" title="Emergencies" target="_blank"><em>Emergencies</em></a> | <a href="http://www.hsc.edu/Search/A-Z-Index.html" title="Site Index" target="_blank"><em>Site Index</em></a>
                     </p>
                 </div>
-                <div class="floatRight">
-                    <p>
-                        Hampden-Sydney, VA 23943
-                        <br />
-                        <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="#" title="Contact the College" target="_blank">Contact the College</a>
-                    </p>
+                <div class="rightText footerText floatRight">
+                        <strong>Address for Mailing Gifts:</strong><br />
+                        <address>
+                            Office of Institutional Advancement<br />
+                            Box 637 Graham Hall<br />
+                            Hampden-Sydney, <abbr title="Virginia">VA</abbr> 23943&ndash;0857
+                            <br />
+                            <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="#" title="Contact the College" target="_blank">Contact the College</a>
+                        </address>
                 </div>
                 <div class="clear"></div>
             </footer>
-        </div>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>

@@ -91,13 +91,12 @@ body {
     border-bottom: 20px solid #d6d6d6;
 }
 
-.footer-container,
 .main aside {
     border-top: 20px solid #d6d6d6;
 }
 
 .header-container,
-.footer-container,
+/*.footer-container,*/
 .main aside {
     background: #660000;
 }
@@ -175,6 +174,27 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+footer {
+    max-width: 100%;
+    width: 100%;
+   }
+footer {
+    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+    font-size: .7em;
+    line-height: 150%;
+}
+.footerText {
+    width: 25%;
+}
+.footerText address, {
+    color: #000;
+}
+.footerText a {
+    color: #660000;
+}
+.footerText a:hover {
+    color: #c69500
+}
 .floatRight {
   float: right;
 }
@@ -240,6 +260,59 @@ footer .wrapper {
     -webkit-border-radius:50px;
     border-radius:50px;
     cursor:pointer;
+}
+.leftText {
+    text-align: left;
+}
+.centerText {
+    text-align: center;
+}
+.rightText {
+    text-align: right;
+}
+.paginationBTN {
+    border:0;
+    padding:0 30px;
+    height:3em;
+    line-height:30px;
+    text-align:center;
+    font-size:.75em;
+    color:#fff;
+    text-shadow:#4f0000 0 1px 0;
+    background:#7f0000;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    margin-top: 1em;
+    cursor:pointer;
+    -moz-box-shadow: 0 1px 2px #999;
+    -webkit-box-shadow: 0 1px 2px #999;
+}
+.progress {
+    clear: both;
+    margin: 0 auto;
+    width: 50%;
+}
+.paginationBTN:hover {
+    border:0;
+    padding:0 30px;
+    height: 3em;
+    line-height:30px;
+    text-align:center;
+    font-size:.75em;
+    color:#fff;
+    text-shadow:#4f0000 0 1px 0;
+    background:#c69500;
+    -moz-border-radius:50px;
+    -webkit-border-radius:50px;
+    border-radius:50px;
+    cursor:pointer;
+}
+.jsDisabled {
+    display: none;
+}
+.requiredValue {
+    color:red;
 }
 .formStep {
     background: #ececec;
