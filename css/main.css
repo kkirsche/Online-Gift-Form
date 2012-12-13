@@ -331,6 +331,7 @@ footer .wrapper {
   transition: all 0.2s;
   background-image: url("http://i.imgur.com/m3DYM.png");
   background-position: 0 0;
+  list-style: none;
   float: left;
   height: 32px;
   margin-right: 8px;
