@@ -114,7 +114,6 @@ $formKey = new formKey();
                                         <input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" />
                                         <span class="add-on">.00</span>
                                     </div>
-                                    <span id="recurringDonationAmountValidateError" class="help-inline"></span>
                                     
                                     I would like to make this gift 
                                         <select name="numberOfPayments" id="numberOfPayments">
@@ -188,13 +187,17 @@ $formKey = new formKey();
                                         <option value="Annually">Annually.</option>
                                     </select>
                             <br />
-                            Total Gift Amount of
-                            <div class="input-prepend input-append">
-                                <span class="add-on">$</span>
-                                <input type="number" placeholder="0" min="0" id="totalRecurringDonationValue">0</span>
-                                <span class="add-on">.00</span>
+                            <div class="centerText">
+                                Total Gift Amount of
+                                <div class="input-prepend input-append">
+                                    <span class="add-on">$</span>
+                                    <input type="number" placeholder="0" min="0" id="totalRecurringDonationValue">0</span>
+                                    <span class="add-on">.00</span>
+                                </div>
+                                <span id="lengthOfTime"></span>
+
+                                <span id="recurringDonationAmountValidateError" class="help-inline"></span>
                             </div>
-                            <span id="lengthOfTime"></span>
                         </div><!--end Controls-->
                         </div><!--end Recurring Gift-->
                         
@@ -365,7 +368,6 @@ $formKey = new formKey();
                                     Payment Method&mdash;Credit Card Information
                                 </strong>
                             </legend>
-                            <br />
                             <!--Show the card types-->
                             <ul class="cards">
                                 <li class="visa">Visa</li>
