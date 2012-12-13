@@ -15,13 +15,11 @@ $formKey = new formKey();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Online Gift &mdash; Gift Information</title>
-        <meta name="description" content="">
+        <meta name="description" content="Hampden-Sydney College's Online Gift Form">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/master.css">
         
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
