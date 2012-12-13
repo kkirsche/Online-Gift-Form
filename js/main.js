@@ -260,6 +260,21 @@ $("document").ready(function(){
     $("#recurringGift").click(function() {
         $("[name=donationType]").val("recurringDonation");
     });
+    $("#replaceDonationAmountNow").click(function() {
+        replaceDonationAmount();
+        var chosenDonationType = $("[name=donationType]").val();
+            switch(chosenDonationType) {
+                case "oneTimeGift":
+                    $("#typeOfGift").text("one-time");
+                break;
+                case "recurringDonation":
+                    $("#typeOfGift").text("recurring");
+                break;
+                default:
+                    $("#typeOfGift").text("");
+                break;
+            }
+    });
 
     //change steps
     $(".nextStep").click(function() {
