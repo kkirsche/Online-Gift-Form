@@ -3,24 +3,65 @@ $("document").ready(function(){
     //Hide additional steps and the differences between the two steps if they have Javascript
     function hideSteps() {
         //hide the divs
-        $("#step1").hide();
         $("#step2").hide();
         $("#step3").hide();
         $("#step4").hide();
+        $("#step5").hide();
         $("#makingAOneTimeGift").hide();
         $("#makingARecurringGift").hide();
         $("#dialog-modal").hide();
     }
-    //Show the submit buttons since we're going to take them through the steps
-    function showSubmitSteps() {
-        $("#submit_first").show();
-        $("#submit_second").show();
-        $("#submit_third").show();
-        $("#return_question").show();
-        $("#return_first").show();
-        $("#return_second").show();
-        $("#return_third").show();
+    function showNextStep(currentStep) {
+        $("#step"+currentStep).slideToggle("slow", function(){
+            if(currentStep == 1) {
+                //figure out what kind of donation they are making
+                var chosenDonationType = $("[name=donationType]").val();
+                //show the apppropriate slide
+                switch(chosenDonationType) {
+                    case "oneTimeGift":
+                        currentStep += 1;
+                        $("#makingAOneTimeGift").show();
+                        $("#step"+currentStep).slideToggle("slow");
+                    break;
+                    case "recurringDonation":
+                        currentStep += 1;
+                        $("#makingARecurringGift").show();
+                        $("#step"+currentStep).slideToggle("slow");
+                    break;
+                    //if somehow they changed it to something else, ignore them and return false.
+                    default:
+                        return false;
+                    break;
+                }//end switch
+            } else {
+                currentStep += 1;
+                $("#step"+currentStep).slideToggle("slow");
+            }
+        });
     }
+    function showPreviousStep(currentStep) {
+        if(currentStep == 2) {
+            var chosenDonationType = $("[name=donationType]").val();
+            switch(chosenDonationType) {
+                case "oneTimeGift":
+                    $("#makingAOneTimeGift").slideToggle();
+                break;
+                case "recurringDonation":
+                    $("#makingARecurringGift").slideToggle();
+                break;
+                default:
+                    $("#makingARecurringGift").hide();
+                    $("#makingAOneTimeGift").hide();
+                break;
+            }
+        }
+
+        $("#step"+currentStep).slideToggle("slow", function(){
+            currentStep -= 1;
+            $("#step"+currentStep).slideToggle("slow");
+        });
+    }
+
     //Replace the Recurring donation amount so they know how much their total gift amount.
     function replaceRecurringDonationValue() {
         //Let's get the values and store them in our variables
@@ -46,14 +87,14 @@ $("document").ready(function(){
                 if(numberOfPayments == 0) {
                    howLong = "";
                 } else if(numberOfPayments == 1) {
-                    howLong += numberOfPayments + " month";
+                    howLong += numberOfPayments + " month.";
                 } else if(numberOfPayments <= 12) {
-                howLong += numberOfPayments + " months";
+                howLong += numberOfPayments + " months.";
                 } else {
                    var howManyYears = Math.floor(numberOfPayments / 12);
                    var howManyMonths = numberOfPayments % 12;
 
-                   howLong += howManyYears + " years, and " + howManyMonths + " months";
+                   howLong += howManyYears + " years, and " + howManyMonths + " months.";
                 }
                 $("#lengthOfTime").text(howLong);
             break;
@@ -64,11 +105,11 @@ $("document").ready(function(){
                     howLong = "";
                 } else if(numberOfPayments <= 4) {
                     numberOfMonths = numberOfPayments * 3;
-                    howLong += numberOfMonths + " months"
+                    howLong += numberOfMonths + " months."
                 } else {
                     var howManyYears = Math.floor((numberOfPayments*3) / 12);
                     var howManyMonths = (numberOfPayments*3) % 12;
-                    howLong += howManyYears + " years, and " + howManyMonths + " months";
+                    howLong += howManyYears + " years, and " + howManyMonths + " months.";
                 }
                 $("#lengthOfTime").text(howLong);
             break;
@@ -78,9 +119,9 @@ $("document").ready(function(){
                 if (numberOfPayments == 0) {
                     howLong = "";
                 } else if(numberOfPayments == 1) {
-                    howLong += " year";
+                    howLong += " year.";
                 } else {
-                    howLong += " years";
+                    howLong += " years.";
                 }
                 $("#lengthOfTime").text(howLong);
             break;
@@ -139,130 +180,107 @@ $("document").ready(function(){
         });
     }
 
-    function validateOneTimeGiftandRecurringGift() {
-    //check if we have to validate a recurring gift or a one-time gift
-    var typeOfDonation = $("#typeOfGift").text();
-        if(typeOfDonation == "one-time") {
-            var validateOneTimeGiftAmount = $("[name=oneTimeDonationValue]").val();
-            if (validateOneTimeGiftAmount == 0) {
-                alert("Sorry, but the donation amount has been left at 0. Please change this to an amount above $5")
-            } else if(validateOneTimeGiftAmount < 5) {
-                alert("Sorry, but we have a $5 minimum donation.")
-            } else {
-                $("#step1").slideToggle("slow");
-                $("#addPush").removeClass("push");
-                $("#step2").slideToggle("slow");
-            }
-        }  else if(typeOfDonation == "total recurring") {
-            var validateRecurringGiftAmount = parseInt($("#totalRecurringDonationValue").text());
-            if(validateRecurringGiftAmount != 0) {
-                if(validateRecurringGiftAmount < 5) {
-                    alert("Sorry, but we have a $5 minimum donation.")
-            } else {
-                    $("#step1").slideToggle("slow");
-                    $("#addPush").removeClass("push");
-                    $("#step2").slideToggle("slow");
-                }
-            } else {
-                var validateNumberofTimes = $("#numberOfPayments").val();
-                var validateAmount = $("#recurringDonationValue").val();
-                var validateFrequency = $("#paymentFrequency").val()
+    function validateCurrentStep(currentStep) {
+        var chosenDonationType = $("[name=donationType]").val();
+        switch(currentStep) {
+            //if submitting first step
+            case 1:
+                return true;
+            break;
+            case 2:
+                switch(chosenDonationType) {
+                    case "oneTimeGift":
+                        var validateOneTimeDonationAmount = $("[name=oneTimeDonationValue]").val();
+                        if(validateOneTimeDonationAmount < 5) {
+                            $("#makingAOneTimeGift").addClass("error");
+                            $("#oneTimeDonationValidateError").text("Sorry, we have a $5 donation minimum.");
+                            return false;
+                        } else {
+                            if($("#makingAOneTimeGift").hasClass("error")) {
+                                $("#oneTimeDonationValidateError").text("");
+                                $("#makingAOneTimeGift").removeClass("error");
+                            }
+                           return true; 
+                        }
+                    break;
 
-                //check if they didn't enter either
-                if(validateAmount == 0) {
-                    $("[name=giftModal]").attr('title', 'Sorry!');
-                    $("#giftModal").text("Please enter a donation amount.");
-                    $(function() {
-                        $( "#dialog-modal" ).dialog({
-                            modal: true
-                        });
-                    });
-                } else if(validateNumberofTimes == 0) {
-                    alert("Please select how for how many times you would like to make your donation.");
-                } else if(validateFrequency == 0) {
-                    alert("Please choose how often you would like to make this gift.")
-                }
-            }
-        } else {
-            alert("How'd you get here?")
-        }
+                    case "recurringDonation":
+                        var validateRecurringDonationAmount = $("[name=recurringDonationValue]").val();
+                        var validateNumberOfPayments = $("[name=numberOfPayments]").val();
+                        var validatePaymentFrequency = $("[name=paymentFrequency]").val();
+                        var validateTotalRecurringDonationAmount = validateRecurringDonationAmount * validateNumberOfPayments;
+                        //first check the total amount, it should be at least $5.00
+                        if(validateTotalRecurringDonationAmount < 5) {
+                            $("#makingARecurringGift").addClass("error");
+                            $("#recurringDonationAmountValidateError").text("Sorry, your total donation was less than $5. We have a $5 donation minimum.");
+                            return false;
+                        } else if(validateNumberOfPayments == 0) {
+                            $("#makingARecurringGift").addClass("error");
+                            $("#recurringDonationAmountValidateError").text("Sorry, you must choose how many months you would like to make this donation for.");
+                            return false;
+                        } else {
+                            if($("#makingARecurringGift").hasClass("error")) {
+                                $("#oneTimeDonationValidateError").text("");
+                                $("#makingARecurringGift").removeClass("error");
+                            }
+                           return true; 
+                        }
+                    break;
+                }//end chosenDonationType switch
+            break;
+
+            case 3:
+                return true;
+            break;
+                return true;
+            case 4:
+                return true;
+            break;
+                return true;
+            case 5:
+                return true;
+            break;
+
+            default:
+                return false;
+            break;
+        } //end currentStep switch
     }
 
+    currentStep = 1;
     hideSteps();
-    showSubmitSteps();
     addInteractiveFields();
     $("#recurringDonationValue, #numberOfPayments, #paymentFrequency").change(function() {
         replaceRecurringDonationValue();
     });
 
-    //they chose a one-time gift
     $("#oneTimeGift").click(function() {
-        $("#makingAOneTimeGift").show();
-        $("#typeOfGift").text("one-time");
-        $("#step0").slideToggle("slow");
-        $("#addPush").addClass("push");
-        $("#step1").slideToggle("slow");
-        return false; // prevent the link from submitting
+        $("[name=donationType]").val("oneTimeGift");
     });
-     $("#recurringGift").click(function() {
-        $("#makingARecurringGift").show();
-        $("#typeOfGift").text("total recurring");
-        $("#step0").slideToggle("slow");
-        $("#addPush").addClass("push");
-        $("#step1").slideToggle("slow");
-        return false; // prevent the link from submitting
+    $("#recurringGift").click(function() {
+        $("[name=donationType]").val("recurringDonation");
     });
-    //let's add the "Next" buttons to make this move forward
-    $("#submit_first").click(function() {
-        validateOneTimeGiftandRecurringGift()
-        replaceDonationAmount();
-        return false; // prevent the link from submitting
+
+    //change steps
+    $(".nextStep").click(function() {
+        if(validateCurrentStep(currentStep)) {
+            showNextStep(currentStep);
+            currentStep += 1;
+        } else {
+            return false;
+        }
     });
-    $("#submit_second").click(function() {
-        $("#step2").slideToggle("slow");
-        $("#step3").slideToggle("slow");
-        replaceDonationAmount();
-        return false;
-    });
-    //let's add the "Previous" button
-    $("#return_question").click(function() {
-        $("#step1").slideToggle("slow");
-        $("#addPush").removeClass("push");
-        $("#step0").slideToggle("slow");
-        $("#makingARecurringGift").hide();
-        $("#makingAOneTimeGift").hide();
-        return false;
-    });
-    $("#return_first").click(function() {
-        $("#step2").slideToggle("slow");
-        $("#addPush").addClass("push");
-        $("#step1").slideToggle("slow");
-        return false;
-    });
-    $("#submit_third").click(function() {
-        $("#step3").slideToggle("slow");
-        $("#step4").slideToggle("slow");
-        return false;
-    });
-    $("#return_second").click(function() {
-        $("#step3").slideToggle("slow");
-        $("#step2").slideToggle("slow");
-        return false;
-    });
-    $("#return_third").click(function() {
-        $("#step4").slideToggle("slow");
-        $("#step3").slideToggle("slow");
-        return false;
+    $(".previousStep").click(function() {
+        showPreviousStep(currentStep);
+        currentStep -= 1;
     });
     
-    //Prep ajax
-    var options = {
-        target: "#ajaxReplacement"
-        //beforeSubmit: 
-    };
 
+    $("[name=submit_form]").click(function() {
+            var options = {
+                target: "#ajaxReplacement"
+        //beforeSubmit: 
+        };
     $("#DonationForm").ajaxForm(options);
-    //$("#submit_form").click(function() {
-        //return true; //allow the form to be submitted.
-    //});
+    });
 });
