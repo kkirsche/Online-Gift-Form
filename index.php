@@ -81,7 +81,7 @@ $formKey = new formKey();
                         </div>
 
                         <div class="progress">
-                            <div class="bar" style="width: 1%;"></div>
+                            <div class="bar bar-success" style="width: 1%;"></div>
                         </div>
                         <p class="centerText">Step 1/5</p>
                     </div><!--end step 1-->
@@ -207,7 +207,7 @@ $formKey = new formKey();
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
 
                         <div class="progress">
-                            <div class="bar" style="width: 20%;"></div>
+                            <div class="bar bar-success" style="width: 20%;"></div>
                         </div>
                         <p class="centerText">Step 2/5</p>
                     </div><!--End Step 2-->
@@ -310,7 +310,7 @@ $formKey = new formKey();
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                         
                         <div class="progress">
-                            <div class="bar" style="width: 40%;"></div>
+                            <div class="bar bar-success" style="width: 40%;"></div>
                         </div>
                         <p class="centerText">Step 3/5</p>
                 </div>
@@ -353,7 +353,7 @@ $formKey = new formKey();
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
 
                         <div class="progress">
-                            <div class="bar" style="width: 60%;"></div>
+                            <div class="bar bar-success" style="width: 60%;"></div>
                         </div>
                         <p class="centerText">Step 4/5</p>
                 </div><!--end step 4-->
@@ -390,7 +390,7 @@ $formKey = new formKey();
                         <input class="submit floatRight" type="submit" name="submit_form" id="submit_form" value="Submit" />
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                         <div class="progress">
-                            <div class="bar" style="width: 80%;"></div>
+                            <div class="bar bar-success" style="width: 80%;"></div>
                         </div>
                         <p class="centerText">Step 5/5</p>
                 <div id="ajaxReplacement">
