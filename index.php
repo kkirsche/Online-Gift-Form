@@ -1,6 +1,8 @@
 <?php
 //Start the session
-session_start();
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 require("functions.php");
 //Start the form key class
 $formKey = new formKey();
@@ -74,7 +76,7 @@ $formKey = new formKey();
                         <div class="progress">
                             <div class="bar bar-success" style="width: 1%;"></div>
                         </div>
-                        <p class="centerText">Step 1/5</p>
+                        <p class="centerText">Step 1/6</p>
                     </div><!--end step 1-->
 
                 
@@ -83,7 +85,7 @@ $formKey = new formKey();
                     <div id="step2">
                         <!--One Time Gift-->
                         <div id="makingAOneTimeGift" class="centerText control-group">
-                            <label class="control-label">Enter Donation Amount Here:</label>
+                            <label class="control-label">Enter Donation Amount Here:<sup class="requiredValue">*</sup></label>
                             <div class="controls">
                                 <div class="input-prepend input-append">
                                     <span class="add-on">$</span>
@@ -167,9 +169,9 @@ $formKey = new formKey();
                                             <option value="58">58</option>
                                             <option value="59">59</option>
                                             <option value="60">60</option>
-                                        </select> times.<br />
+                                        </select> times.<sup class="requiredValue">*</sup><br />
 
-                                    I would like to make my gift:
+                                    I would like to make my gift<sup class="requiredValue">*</sup>:
                                     <select name="paymentFrequency" id="paymentFrequency">
                                         <option value="Monthly">Monthly</option>
                                         <option value="Quarterly">Quarterly</option>
@@ -180,7 +182,7 @@ $formKey = new formKey();
                                 Total Gift Amount of
                                 <div class="input-prepend input-append">
                                     <span class="add-on">$</span>
-                                    <input type="number" placeholder="0" min="0" id="totalRecurringDonationValue">0</span>
+                                    <input type="number" placeholder="0" min="0" id="totalRecurringDonationValue" disabled="disabled"/>
                                     <span class="add-on">.00</span>
                                 </div>
                                 <span id="lengthOfTime"></span>
@@ -189,110 +191,212 @@ $formKey = new formKey();
                             </div>
                         </div><!--end Controls-->
                         </div><!--end Recurring Gift-->
-                        
-                        <div id="dialog-modal" name="giftModal" title="Basic modal dialog">
-                            <p id="giftModal">Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
-                        </div>
                     
                         <button type="button" id="replaceDonationAmountNow" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
 
                         <div class="progress">
-                            <div class="bar bar-success" style="width: 20%;"></div>
+                            <div class="bar bar-success" style="width: 16.6%;"></div>
                         </div>
-                        <p class="centerText">Step 2/5</p>
+                        <p class="centerText">Step 2/6</p>
                     </div><!--End Step 2-->
 
 
                     <!--Step 3-->
-                    <div id="step3">
+                    <div id="step3" class="control-group">
                         <p><strong><span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span> &mdash; Your <span id="typeOfGift">GIFT_TYPE</span> gift amount from the previous page.</span>
                             <!--If more than one fund is chosen, display the following-->
                             Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.</strong>
                         </p>
-                        <fieldset>
-                            <legend>I would like to allocate my gift</legend>
-
-                            <label class="checkbox">
-                                <input type="checkbox" name="list-items[]" value="unrestricted" />
-                                <strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
-                            </label>
-
-                            <label class="checkbox">
-                                <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
-                                <strong>to a Specific Scholarship</strong>
-                            </label>
-                                <!--Dropdown if selected-->
-                                <div id="ifScholarshipsSelected">
-                                    <label><em>Please select the Scholarship(s) below</em></label> <br />
-                                    <!--ADD ARARY FOR EACH SECTION HERE-->
-                                        <label class="checkbox">
-                                            <input type = "checkbox" name="list-items[]" value="Good_Men_Good_Citizens" />
-                                            Good Men, Good Citizens Scholarship
-                                        </label>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2012" />Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2011" />Class of 2011 Scholarship IHO Ms. Anita Garland</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2010" />Class of 2010 Scholarship IHO Mrs. Dottie Fahrner</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2009" />Class of 2009 Scholarship</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2008" />Class of 2008 Scholarship IHO Ms. Gerry Pettus</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2007" />Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2006" />Class of 2006 Scholarship IMO Peter C. Bance Jr.</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2005" />Class of 2005 Scholarship IMO Prof. Lee Cohen</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2004" />Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_2003" />Class of 2003 Scholarship IHO Ralph A. Crawley</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1980" />Class of 1980 Endowed Scholarship</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1961" />Class of 1961 Good Men Good Citizens Scholarship</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1960" />Class of 1960 Good Men Good Citizens Scholarship</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1958" />Class of 1958 Summer College Endowment Fund</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1954" />Class of 1954 Wilson Center Lecture Series</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1953" />Class of 1953 Scholarship Endowment</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="Class_Of_1951" />Class of 1951 Memorial Scholarship</p>
-                                        <p class="indented"><input type = "checkbox" name="list-items[]" value="OtherScholarship" />Other <em>(please specify in special instructions)</em></p>
-                                </div>
-                                <!--End Dropdown-->
- 
+                            <label class="centerText control-label">I would like to allocate my gift<sup class="requiredValue">*</sup>:</label>
+                            <div class="controls">
+                                <fieldset>
                                 <label class="checkbox">
-                                    <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
-                                    <strong>to Academics</strong>
+                                    <input type="checkbox" name="list-items[]" value="unrestricted" />
+                                    <strong>to the Unrestricted Fund</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
                                 </label>
-                                <!--Dropdown if selected-->
-                                    <div id="ifAcademicsSelected">
-                                        <label><em>Please select the department(s) below</em></label> <br />
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Atkinson_Museum" />Atkinson Museum</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Bortz_Library" />Bortz Library</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Culture_and_Community" />Culture and Community</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Wilson_Center" />the Wilson Center</p>
-                                            <p class="indented"><input type = "checkbox" name="list-items[]" value="Other_Academic_Area" />Other <em>(please specify in special instructions)</em></p>
-                                    </div>
-                                    <!--End Dropdown-->
 
                                 <label class="checkbox">
-                                    <input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
-                                    <strong>to Athletics</strong>
+                                    <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
+                                    <strong>to a Specific Scholarship</strong>
                                 </label>
-                                <!--Dropdown if selected-->
-                                    <div id="ifAthleticsAreSelected">
-                                        <label><em>Please select the XXXXXXXXXXX below</em></label> <br />
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />Baseball Big Hitters Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Basketball_Roundball_Club" />Basketball Roundball Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Cross_Country_Harriers" />Cross Country Harriers</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Everett_Stadium" />Everett Stadium</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Football_Gridiron_Club" />Football Gridiron Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Golf_Hole_In_One_Club" />Golf Hole In One Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Kirk_Athletic_Center" />Kirk Athletic Center</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Lacrosse_Face_Off_Club" />Lacrosse Face Off Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Rugby_Club" />Rugby Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Soccer_Goal_Club" />Soccer Goal Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Swimming_Club" />Swimming Club</p>
-                                            <p class="indented"><input type="checkbox" name="list-items[]" value="Tennis_Racquet_Club" />Tennis Racquet Club</p>
+                                    <!--Dropdown if selected-->
+                                    <div id="ifScholarshipsSelected" class="indented">
+                                        <em>Please select the Scholarship(s) below</em>
+                                        <!--ADD ARARY FOR EACH SECTION HERE-->
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Good_Men_Good_Citizens" />
+                                                Good Men, Good Citizens Scholarship
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2012" />
+                                                Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2011" />
+                                                Class of 2011 Scholarship IHO Ms. Anita Garland
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2010" />
+                                                Class of 2010 Scholarship IHO Mrs. Dottie Fahrner
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2009" />
+                                                Class of 2009 Scholarship
+                                            </label>
+                                            <label class-"checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2008" />
+                                                Class of 2008 Scholarship IHO Ms. Gerry Pettus
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2007" />
+                                                Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2006" />
+                                                Class of 2006 Scholarship IMO Peter C. Bance Jr.
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2005" />
+                                                Class of 2005 Scholarship IMO Prof. Lee Cohen
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2004" />
+                                                Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2003" />
+                                                Class of 2003 Scholarship IHO Ralph A. Crawley
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1980" />
+                                                Class of 1980 Endowed Scholarship
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1961" />
+                                                Class of 1961 Good Men Good Citizens Scholarship
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1960" />
+                                                Class of 1960 Good Men Good Citizens Scholarship
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1958" />
+                                                Class of 1958 Summer College Endowment Fund
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1954" />
+                                                Class of 1954 Wilson Center Lecture Series
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1953" />
+                                                Class of 1953 Scholarship Endowment
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1951" />
+                                                Class of 1951 Memorial Scholarship
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type = "checkbox" name="list-items[]" value="OtherScholarship" />
+                                                Other <em>(please specify in special instructions)</em>
+                                            </label>
                                     </div>
                                     <!--End Dropdown-->
+     
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
+                                        <strong>to Academics</strong>
+                                    </label>
+                                    <!--Dropdown if selected-->
+                                        <div id="ifAcademicsSelected" class="indented">
+                                            <em>Please select the department(s) below</em>
+                                                <label class="checkbox">
+                                                    <input type = "checkbox" name="list-items[]" value="Atkinson_Museum" />
+                                                    Atkinson Museum
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type = "checkbox" name="list-items[]" value="Bortz_Library" />
+                                                    Bortz Library
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type = "checkbox" name="list-items[]" value="Culture_and_Community" />
+                                                    Culture and Community
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type = "checkbox" name="list-items[]" value="Wilson_Center" />
+                                                    the Wilson Center
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type = "checkbox" name="list-items[]" value="Other_Academic_Area" />
+                                                    Other <em>(please specify in special instructions)</em>
+                                                </label>
+                                        </div>
+                                        <!--End Dropdown-->
 
-                                    <label><strong>Special Instructions</strong></label>
-                                    <textarea name="specinstr" placeholder="Enter Special Instructions Here"></textarea>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
+                                        <strong>to Athletics</strong>
+                                    </label>
+                                    <!--Dropdown if selected-->
+                                        <div id="ifAthleticsAreSelected" class="indented">
+                                           <em>Please select the XXXXXXXXXXX below</em>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />
+                                                    Baseball Big Hitters Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Basketball_Roundball_Club" />
+                                                    Basketball Roundball Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Cross_Country_Harriers" />
+                                                    Cross Country Harriers
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Everett_Stadium" />
+                                                    Everett Stadium
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Football_Gridiron_Club" />
+                                                    Football Gridiron Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Golf_Hole_In_One_Club" />
+                                                    Golf Hole In One Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Kirk_Athletic_Center" />
+                                                    Kirk Athletic Center
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Lacrosse_Face_Off_Club" />
+                                                    Lacrosse Face Off Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Rugby_Club" />
+                                                    Rugby Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Soccer_Goal_Club" />
+                                                    Soccer Goal Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Swimming_Club" />
+                                                    Swimming Club
+                                                </label>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" name="list-items[]" value="Tennis_Racquet_Club" />
+                                                    Tennis Racquet Club
+                                                </label>
+                                        </div>
+                                        <!--End Dropdown-->
 
+                                        <label><strong>Special Instructions</strong></label>
+                                        <textarea name="specinstr" placeholder="Enter Special Instructions Here"></textarea>
 
-                        </fieldset>
+                                <span id="checkboxError" class="centerText"></span>
+                            </fieldset>
+                        </div><!--end controls-->
                     <!--End Form Section 2-->
                         <div class="clearfix"></div>
                         <br />
@@ -300,48 +404,74 @@ $formKey = new formKey();
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                         
                         <div class="progress">
-                            <div class="bar bar-success" style="width: 40%;"></div>
+                            <div class="bar bar-success" style="width: 33.3%;"></div>
                         </div>
-                        <p class="centerText">Step 3/5</p>
+                        <p class="centerText">Step 3/6</p>
                 </div>
                 <!--End Step 3-->
 
+                <!--Step 4 | Allocations-->
                 <div id="step4">
+                    How would you like to allocate your donation?
+                    <div id="showAllocations">
+                        <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
+                        <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+                        
+                        <div class="progress">
+                            <div class="bar bar-success" style="width: 50%;"></div>
+                        </div>
+                        <p class="centerText">Step 4/6</p>
+                    </div>
+                </div>
+
+                <div id="step5">
 
                         <fieldset>
                             <legend>
                                 Donor Information
                             </legend>
                             <label class="inline">
-                                First Name:
+                                First Name<sup class="requiredValue">*</sup>:
                                 <input type="text" name="usersFirstName" size="20" placeholder="John" required />
-                            
-                                Last Name:
-                                <input type="text" name="usersLastName" size="30" placeholder="Doe" required />
                             </label>
                             <label class="inline">
-                                Street Address:
-                                <input type="text" name="usersStreetAddress" size="30" placeholder="123 ABC Avenue" required />
+                                Last Name<sup class="requiredValue">*</sup>:
+                                <input type="text" name="usersLastName" size="20" placeholder="Doe" required />
+                            </label>
+                            <label class="inline">
+                                Class Year (if applicable):
+                                <input type="number" name="usersClassYear" size="4" placeholder="2000" />
+                            </label>
+                            <label class="inline">
+                                Street Address<sup class="requiredValue">*</sup>:
+                                <input type="text" name="usersStreetAddress" size="30" placeholder="1 College Road" required />
                             </label>
                             <label class="inline">
                                 Apt, Suite, Bldg. (Optional):&nbsp;
-                                <input type="text" name="usersSecondaryAddress" size="30" placeholder="Apt. 123" required />
+                                <input type="text" name="usersSecondaryAddress" size="30" placeholder="Apt. 1" />
                             </label>    
                             <label class="inline">
-                                City:&nbsp;
-                                <input type="text" name="usersCity" size="30" placeholder="Richmond" required />
-                            
-                                State:&nbsp;
-                                <input type="text" name="usersState" size="30" placeholder="VA" required />
+                                City<sup class="requiredValue">*</sup>:&nbsp;
+                                <input type="text" name="usersCity" size="30" placeholder="Hampden-Sydney" required />
                             </label>
-                            <!--<label>Country:</label>
-                                <input type="text" name="usersCountry" size="30" placeholder="United States" />
-                                <br />-->
                             <label class="inline">
-                                Phone:
+                                State<sup class="requiredValue">*</sup>:&nbsp;
+                                <input type="text" name="usersState" size="30" placeholder="VA" />
+                            </label>
+                            <label class="inline">
+                                Zip Code<sup class="requiredValue">*</sup>:&nbsp;
+                                <input type="number" name="usersZip" min="00000" max="999999999" placeholder="23943" />
+                            </label>
+                            <label class="inline">
+                                Country:
+                                <input type="text" name="usersCountry" size="30" placeholder="United States" />
+                            </label>
+                            <label class="inline">
+                                Phone<sup class="requiredValue">*</sup>:
                                 <input type="text" name="usersPhoneNumber" size="30" placeholder="(434) 123&ndash;4567" required />
-                            
-                                Email:
+                            </label>
+                            <label class="inline">
+                                Email<sup class="requiredValue">*</sup>:
                                 <input type="email" name="usersEmail" size="45" placeholder="John.Doe@hsc.edu" required />
                             </label>
                         </fieldset>
@@ -353,10 +483,10 @@ $formKey = new formKey();
                         <div class="progress">
                             <div class="bar bar-success" style="width: 60%;"></div>
                         </div>
-                        <p class="centerText">Step 4/5</p>
-                </div><!--end step 4-->
+                        <p class="centerText">Step 5/6</p>
+                </div><!--end step 5-->
 
-                <div id="step5">
+                <div id="step6">
                     
                         <fieldset>
                             <legend>
@@ -365,22 +495,23 @@ $formKey = new formKey();
                                 </strong>
                             </legend>
                             <!--Show the card types-->
+
                             <ul class="cards">
                                 <li class="visa">Visa</li>
                                 <li class="mastercard">MasterCard</li>
                                 <li class="amex">American Express</li>
                             </ul>
 
-                            <label>Name as it appears on Credit Card:</label>
+                            <label>Name as it appears on Credit Card<sup class="requiredValue">*</sup>:</label>
                                 <input type="text" name="nameOnCard" size="40" placeholder="John R. Doe" />
                                 <br />
-                            <label>Credit Card Number:</label>
+                            <label>Credit Card Number<sup class="requiredValue">*</sup>:</label>
                                 <input type="number" name="numberOnCard" id="creditCardNumber" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                 <br />
-                            <label>Credit Card Verification Code <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"><i class="icon-question-sign"></i></abbr>:</label>
+                            <label>Credit Card Verification Code <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"><i class="icon-question-sign"></i></abbr><sup class="requiredValue">*</sup>:</label>
                                 <input type="number" name="securityCodeOnCard" size="30" placeholder="813" min="0" max="9999" />
                                 <br />
-                            <label>Expiration Date:</label>
+                            <label>Expiration Date<sup class="requiredValue">*</sup>:</label>
                                 <input type="number" name="expirationMonthOnCard" size="2" min="01" max="12" placeholder="11" />&nbsp;/&nbsp;<input type="number" name="expirationYearOnCard" size="2" min="0" max="99" placeholder="14" />
                                 <br />
                         </fieldset>
@@ -390,11 +521,11 @@ $formKey = new formKey();
                         <div class="progress">
                             <div class="bar bar-success" style="width: 80%;"></div>
                         </div>
-                        <p class="centerText">Step 5/5</p>
-                <div id="ajaxReplacement">
-                    <!--when form processed using AJAX, output the response here-->
-                </div>
+                        <p class="centerText">Step 5/6</p>
 
+                </div>
+                <div id="showResults">
+                    <!--when form processed using AJAX, output the response here-->
                 </div>
         </form>
 
