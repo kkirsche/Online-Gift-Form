@@ -189,11 +189,12 @@ $("document").ready(function(){
     }
 
     function getFundsForAllocation() {
+        //get all checkboxes that are checked and show their allocation
         $("#step3 input:checkbox:checked").each(function() {
             switch($(this).val()) {
-                case "unrestricted" {
-                    
-                }
+                case "unrestricted":
+                    $("#showUnrestricted").show();
+                break;
 
             }
         });
