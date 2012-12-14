@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 require("functions.php");
 // ====================================================================================================// 
 // ! Connect to MySQLi to allow escaping of inputs, and form processing.                               //
@@ -10,10 +12,13 @@ $dbPassword = "Nev3rUseTh1sP4ssw0rdEverAgain!";
 $dbDatabaseName = "OnlineGiftForm";
 $mysqli = new mysqli($dbHostname, $dbUsername, $dbPassword, $dbDatabaseName);
 
-if(mysqli_connect_errno()) {
-    printf("Connection failed: %s\n", mysqli_connect_error());
+if($mysqli->connect_errno) {
+    printf("Connection failed: %s\n", $mysqli->connect_error());
     exit();
 }
+
+$isValid = true;
+$errorMessage = "<h3>There was an error</h3><hr />";
 // ====================================================================================================// 
 // ! Do formKey() check to ensure that our form came form the right place                              //
 // ====================================================================================================//
@@ -22,6 +27,7 @@ if(mysqli_connect_errno()) {
     //let's check that it is correct
     if(!isset($_POST['form_key']) || !$formKey->validate()) {
         //Form key is invalid, show an error
+        $isValid = false;
         $error = 'Form key error!';
     } else {
         //Do the rest of your validation here
@@ -29,23 +35,32 @@ if(mysqli_connect_errno()) {
     }
 
     if($error == "Form key error!") {
-        die("There was an error with the form key. For your safety, the form was not processed. Please return to the donation form, and try again.");
+        die("There was an error with the form key. For your safety, the form was not processed. Please return to the donation form, and try again. ");
     } else {
+
 // ====================================================================================================// 
 // ! Our formKey is correct, now let's get the form data                                               //
 // ====================================================================================================//
-        //Get the Gift Amount pieces
-        //one time donations
-        $oneTimeGiftAmount = $_POST['oneTimeDonationValue'];
-
-        //recurring donations
-        $recurringGift = array(
-            "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
-            "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
-            "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
-        );
-  //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
-  $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
+        //get the donation type and then process the respective fields accordingly.
+        $donationType = $_POST['donationType'];
+        if($donationType == "oneTimeGift") {
+            //Get the Gift Amount pieces
+            //one time donations
+            $oneTimeGiftAmount = $mysqli->real_escape_string($_POST['oneTimeDonationValue']);
+        } else if ($donationType == "recurringDonation") {
+            //recurring donations
+            $recurringGift = array(
+                "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
+                "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
+                "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
+            );
+            //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
+            $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
+        } else {
+            $isValid = false;
+            $errorMessage .= "Sorry, there was an error. Please select one of the two types of donations. Please return to the first step and try again.<br />";
+        }
+        
 
   //create the array to store our checkbox values.
   $selected_items = array();
@@ -212,7 +227,12 @@ if(mysqli_connect_errno()) {
           }
           //we also want to have the special instructions, just in case.
           $selected_items['SpecialInstructions'] = $mysqli->real_escape_string($_POST['specinstr']);
+    } else {
+        //it's empty :(
+        $isValid = false;
+        $errorMessage .= "You did not choose a fund to donate to! Please choose where you would like to donate to on Step 3.<br />";
     }
+        $strippedPhoneNumber = preg_replace("/[^0-9]/", "", $_POST['usersPhoneNumber']);
 
         //make an array of the user information
         $userInfo = array(
@@ -221,8 +241,9 @@ if(mysqli_connect_errno()) {
             "address1" => $mysqli->real_escape_string($_POST['usersLastName']),
             "address2" => $mysqli->real_escape_string($_POST['usersSecondaryAddress']),
             "city" => $mysqli->real_escape_string($_POST['usersCity']),
-            "country" => $mysqli->real_escape_string($_POST['usersCountry']),
-            "phoneNumber" => $mysqli->real_escape_string($_POST['usersPhoneNumber']),
+            "state" => $mysqli->real_escape_string($_POST['usersState']),
+            //"country" => $mysqli->real_escape_string($_POST['usersCountry']),
+            "phoneNumber" => $mysqli->real_escape_string($strippedPhoneNumber),
             "email" => $mysqli->real_escape_string($_POST['usersEmail'])
         );
         
@@ -239,7 +260,8 @@ if(mysqli_connect_errno()) {
         if(check_Credit_Card($userCreditCardInfo['creditCardNumber'])) {
             $userCreditCardInfo['creditCardType'] = check_Credit_Card($userCreditCardInfo['creditCardNumber']);
         } else {
-            echo "Invalid Credit Card Number";
+            $isValid = false;
+            $errorMessage .= "We're sorry, but the credit card number that you entered was invalid.<br />";
         }
 
 
@@ -257,12 +279,18 @@ if(mysqli_connect_errno()) {
             //echo "<p>Message delivery failed :( </p>";
         //}
         } else {
-            echo "The e-mail was invalid";
+            $isValid = false;
+            $errorMessage .= "The e-mail was invalid.<br />";
         }
 
 // ====================================================================================================// 
 // ! Display the message of success or error                                                           //
 // ====================================================================================================//
-
+        if($isValid) {
+            echo "Success! The form has been submitted, and all of your information was correct!";
+        } else {
+            print_r($userInfo);
+            echo "<p class=\"centerText\">".$errorMessage."</p>";
+        }
     }
 ?>
