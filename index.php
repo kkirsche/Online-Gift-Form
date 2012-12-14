@@ -50,15 +50,6 @@ $formKey = new formKey();
         <div class="main-container">
             <div class="main wrapper clearfix">
                 <article>
-                    <h1 class="floatLeft">The Hampden-Sydney Fund</h1>
-                    <p class="floatRight"><?php echo getTodaysDate(); ?></p>
-                    <br /><br /><br />
-
-                    <span class="headerTagline">
-                        <strong>Making an atmosphere of sound learning a reality, year after year.</strong>
-                    </span>
-                    <div class="clearfix"></div>
-
                     <!--Inform the user that the form IS secure!-->
                     <p>To make a credit card gift to Hampden-Sydney College, simply fill out the form below and continue to the payment information page. Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. If you have any questions, please <a href="mailto:lreinson@hsc.edu" title="Contact Us">Contact Us</a> with any questions or updates. For Stock Gift Donors, please view the instructions <a href="https://secure.hsc.edu/gifts/StockGiftInstructions.pdf" title="Stock Gift Donor Instructions">here</a>. Thank you for your donation, without your support we wouldn't be where we are.</p>
                 </article>
@@ -203,7 +194,7 @@ $formKey = new formKey();
                             <p id="giftModal">Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.</p>
                         </div>
                     
-                        <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
+                        <button type="button" id="replaceDonationAmountNow" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
 
                         <div class="progress">
@@ -223,8 +214,13 @@ $formKey = new formKey();
                             <legend>I would like to allocate my gift</legend>
 
                             <label class="checkbox">
+                                <input type="checkbox" name="list-items[]" value="unrestricted" />
+                                <strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
+                            </label>
+
+                            <label class="checkbox">
                                 <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
-                                <strong>to a Scholarship</strong>
+                                <strong>to a Specific Scholarship</strong>
                             </label>
                                 <!--Dropdown if selected-->
                                 <div id="ifScholarshipsSelected">
@@ -292,12 +288,6 @@ $formKey = new formKey();
                                     </div>
                                     <!--End Dropdown-->
 
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="list-items[]" value="unrestricted" />
-                                        <strong>Unrestricted</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
-                                    </label>
-                                    <br />
-
                                     <label><strong>Special Instructions</strong></label>
                                     <textarea name="specinstr" placeholder="Enter Special Instructions Here"></textarea>
 
@@ -306,7 +296,7 @@ $formKey = new formKey();
                     <!--End Form Section 2-->
                         <div class="clearfix"></div>
                         <br />
-                        <button type="button" class="paginationBTN floatRight nextStep" onclick="replaceDonationAmount()">Next &rarr;</button>
+                        <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                         
                         <div class="progress">
@@ -322,30 +312,38 @@ $formKey = new formKey();
                             <legend>
                                 Donor Information
                             </legend>
-                            <label>First Name:</label>
-                                <input type="text" name="usersFirstName" size="20" placeholder="John" />
-                                &nbsp;
-                            <label>Last Name:</label>
-                                <input type="text" name="usersLastName" size="30" placeholder="Doe" />
-                                <br />
-                            <label>Street Address:</label>
-                                <input type="text" name="usersStreetAddress" size="30" placeholder="123 ABC Avenue" />
-                                <br />
-                            <label>Apt, Suite, Bldg. (Optional):</label>
-                                <input type="text" name="usersSecondaryAddress" size="30" placeholder="Apt. 123" />
-                                <br />
-                            <label>City:</label>
-                                <input type="text" name="usersCity" size="30" placeholder="Richmond" />
-                                <br />
-                            <label>Country:</label>
+                            <label class="inline">
+                                First Name:
+                                <input type="text" name="usersFirstName" size="20" placeholder="John" required />
+                            
+                                Last Name:
+                                <input type="text" name="usersLastName" size="30" placeholder="Doe" required />
+                            </label>
+                            <label class="inline">
+                                Street Address:
+                                <input type="text" name="usersStreetAddress" size="30" placeholder="123 ABC Avenue" required />
+                            </label>
+                            <label class="inline">
+                                Apt, Suite, Bldg. (Optional):&nbsp;
+                                <input type="text" name="usersSecondaryAddress" size="30" placeholder="Apt. 123" required />
+                            </label>    
+                            <label class="inline">
+                                City:&nbsp;
+                                <input type="text" name="usersCity" size="30" placeholder="Richmond" required />
+                            
+                                State:&nbsp;
+                                <input type="text" name="usersState" size="30" placeholder="VA" required />
+                            </label>
+                            <!--<label>Country:</label>
                                 <input type="text" name="usersCountry" size="30" placeholder="United States" />
-                                <br />
-                            <label>Phone:</label>
-                                <input type="text" name="usersPhoneNumber" size="30" placeholder="(434) 123&ndash;4567" />
-                                <br />
-                            <label>Email:</label>
-                                <input type="email" name="usersEmail" size="45" placeholder='John.Doe@hsc.edu' />
-                                <br />
+                                <br />-->
+                            <label class="inline">
+                                Phone:
+                                <input type="text" name="usersPhoneNumber" size="30" placeholder="(434) 123&ndash;4567" required />
+                            
+                                Email:
+                                <input type="email" name="usersEmail" size="45" placeholder="John.Doe@hsc.edu" required />
+                            </label>
                         </fieldset>
                         <div class="clearfix"></div>
                         <br />
@@ -379,7 +377,7 @@ $formKey = new formKey();
                             <label>Credit Card Number:</label>
                                 <input type="number" name="numberOnCard" id="creditCardNumber" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                 <br />
-                            <label>Credit Card Verification Code (CVC2 for MasterCard, CVV2 for Visa, CID for American Express):</label>
+                            <label>Credit Card Verification Code <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"><i class="icon-question-sign"></i></abbr>:</label>
                                 <input type="number" name="securityCodeOnCard" size="30" placeholder="813" min="0" max="9999" />
                                 <br />
                             <label>Expiration Date:</label>

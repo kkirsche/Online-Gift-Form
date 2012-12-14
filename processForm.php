@@ -4,7 +4,11 @@ require("functions.php");
 // ====================================================================================================// 
 // ! Connect to MySQLi to allow escaping of inputs, and form processing.                               //
 // ====================================================================================================//
-$mysqli = new mysqli("localhost", "UserGiftForm", "Nev3rUseTh1sP4ssw0rdEverAgain!", "OnlineGiftForm");
+$dbHostname = "localhost";
+$dbUsername = "UserGiftForm";
+$dbPassword = "Nev3rUseTh1sP4ssw0rdEverAgain!";
+$dbDatabaseName = "OnlineGiftForm";
+$mysqli = new mysqli($dbHostname, $dbUsername, $dbPassword, $dbDatabaseName);
 
 if(mysqli_connect_errno()) {
     printf("Connection failed: %s\n", mysqli_connect_error());
