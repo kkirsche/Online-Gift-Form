@@ -67,7 +67,8 @@ $("document").ready(function(){
 
     }
     function validateBeforeSubmitContent() {
-        showResults(currentStep);
+        //if true submit form / if false do NOT submit the form
+        return true;
     }
 
     //Replace the Recurring donation amount so they know how much their total gift amount.
@@ -240,38 +241,77 @@ $("document").ready(function(){
 
             //This verifies that they chose a fund to donate to.
             case 3:
+
                 var fields = $("#step3 input:checkbox:checked");
+                //check that they chose any fund at all
                 if(fields.length == 0) {
                     $("#step3").addClass("error");
                     $("#checkboxError").text("Please choose a fund to donate to.");
                     return false;
-                    break;
-                } else if($("[name=toAthletics]").is(":checked")) {
-                    var checkAthleticsFields = $("#ifAthleticsAreSelected input:checkbox:checked");
-                    if(checkAthleticsFields.length == 0) {
+                    break; 
+                }
+
+                //Check Scholarships
+                if ($("[name=ScholashipSelection]").is(":checked")) {
+                    var checkScholarshipFields = $("#ifScholarshipsSelected input:checkbox:checked");
+                    if(checkScholarshipFields.length == 0) {
                         $("#step3").addClass("error");
-                        $("#checkboxError").text("Please choose which athletic fund you would like to donate to.");
+                        $("#checkboxError").text("Please choose which scholarship you would like to donate to.");
+                        return false;
+                        break;
                     } else {
                         if($("#step3").hasClass("error")) {
                             $("#step3").removeClass("error");
                             $("#checkboxError").text("");
                         }
-                        return true;
+                    }
+                } 
+
+                //Check Acadmics
+                if ($("[name=toAcademics]").is(":checked")) {
+                    var checkAcademicsFields = $("#ifAcademicsSelected input:checkbox:checked");
+                    if(checkAcademicsFields.length == 0) {
+                        $("#step3").addClass("error");
+                        $("#checkboxError").text("Please choose which academic fund you would like to donate to.");
+                        return false;
                         break;
+                    } else {
+                        if($("#step3").hasClass("error")) {
+                            $("#step3").removeClass("error");
+                            $("#checkboxError").text("");
+                        }
                     }
-                } else {
-                    if($("#step2ValidateError").hasClass("error")) {
-                        $("#step2ValidateError").removeClass("error");
-                        $("#oneTimeDonationCheckboxError").text("");
-                    }
-                    return true;
                 }
-            break;
+
+                //check Athletics
+                if($("[name=toAthletics]").is(":checked")) {
+                    var checkAthleticsFields = $("#ifAthleticsAreSelected input:checkbox:checked");
+                    if(checkAthleticsFields.length == 0) {
+                        $("#step3").addClass("error");
+                        $("#checkboxError").text("Please choose which athletic fund you would like to donate to.");
+                        return false;
+                        break;
+                    } else {
+                        if($("#step3").hasClass("error")) {
+                            $("#step3").removeClass("error");
+                            $("#checkboxError").text("");
+                        }
+                    }
+                }
+
+                //if we didn't have to stop anywhere above this, let the step continue
+                if($("#step2ValidateError").hasClass("error")) {
+                    $("#step2ValidateError").removeClass("error");
+                    $("#oneTimeDonationCheckboxError").text("");
+                }
                 return true;
+            break;
+
+
             case 4:
                 return true;
             break;
-                return true;
+
             case 5:
                 return true;
             break;
@@ -326,11 +366,16 @@ $("document").ready(function(){
     });
     
 
-    $("[name=submit_form]").click(function() {
+    $("[name=submit_form]").click(function(e) {
             var options = {
-                beforeSubmit: validateBeforeSubmitContent(),
-                target: "#step6"         
+                target: "#step6",
+                clearForm: true
         };
-    $("#DonationForm").ajaxForm(options);
+        if(validateBeforeSubmitContent(e)){
+            $("#DonationForm").ajaxForm(options);
+        } else {
+            e.preventDefault();
+            return false;
+        }
     });
 });

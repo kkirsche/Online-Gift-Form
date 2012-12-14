@@ -53,7 +53,7 @@ $formKey = new formKey();
             <div class="main wrapper clearfix">
                 <article>
                     <!--Inform the user that the form IS secure!-->
-                    <p>To make a credit card gift to Hampden-Sydney College, simply fill out the form below and continue to the payment information page. Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. If you have any questions, please <a href="mailto:lreinson@hsc.edu" title="Contact Us">Contact Us</a> with any questions or updates. For Stock Gift Donors, please view the instructions <a href="https://secure.hsc.edu/gifts/StockGiftInstructions.pdf" title="Stock Gift Donor Instructions">here</a>. Thank you for your donation, without your support we wouldn't be where we are.</p>
+                    <p>Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign"></i></a></p>
                 </article>
 
                 <!--One Time or Recurring Step-->
