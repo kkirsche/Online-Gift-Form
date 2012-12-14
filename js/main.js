@@ -7,9 +7,10 @@ $("document").ready(function(){
         $("#step3").hide();
         $("#step4").hide();
         $("#step5").hide();
+        $("#step6").hide();
+        $("#showResults").hide();
         $("#makingAOneTimeGift").hide();
         $("#makingARecurringGift").hide();
-        $("#dialog-modal").hide();
     }
     function showNextStep(currentStep) {
         $("#step"+currentStep).slideToggle("slow", function(){
@@ -60,6 +61,13 @@ $("document").ready(function(){
             currentStep -= 1;
             $("#step"+currentStep).slideToggle("slow");
         });
+    }
+    function showResults(currentStep) {
+        $("#showResults").slideToggle("slow");
+
+    }
+    function validateBeforeSubmitContent() {
+        showResults(currentStep);
     }
 
     //Replace the Recurring donation amount so they know how much their total gift amount.
@@ -129,8 +137,7 @@ $("document").ready(function(){
             default:
                 $("#lengthOfTime").text("");
         }
-
-        $("#totalRecurringDonationValue").text(TotalRecurringDonationValue);
+        $("#totalRecurringDonationValue").val(TotalRecurringDonationValue);
         replaceDonationAmount();
 
     }
@@ -183,10 +190,12 @@ $("document").ready(function(){
     function validateCurrentStep(currentStep) {
         var chosenDonationType = $("[name=donationType]").val();
         switch(currentStep) {
-            //if submitting first step
+            //This checks to make sure that they selected a donation type.
             case 1:
                 return true;
             break;
+
+            //This verifies donation type and checks to make sure they entered a donation amount 
             case 2:
                 switch(chosenDonationType) {
                     case "oneTimeGift":
@@ -229,8 +238,34 @@ $("document").ready(function(){
                 }//end chosenDonationType switch
             break;
 
+            //This verifies that they chose a fund to donate to.
             case 3:
-                return true;
+                var fields = $("#step3 input:checkbox:checked");
+                if(fields.length == 0) {
+                    $("#step3").addClass("error");
+                    $("#checkboxError").text("Please choose a fund to donate to.");
+                    return false;
+                    break;
+                } else if($("[name=toAthletics]").is(":checked")) {
+                    var checkAthleticsFields = $("#ifAthleticsAreSelected input:checkbox:checked");
+                    if(checkAthleticsFields.length == 0) {
+                        $("#step3").addClass("error");
+                        $("#checkboxError").text("Please choose which athletic fund you would like to donate to.");
+                    } else {
+                        if($("#step3").hasClass("error")) {
+                            $("#step3").removeClass("error");
+                            $("#checkboxError").text("");
+                        }
+                        return true;
+                        break;
+                    }
+                } else {
+                    if($("#step2ValidateError").hasClass("error")) {
+                        $("#step2ValidateError").removeClass("error");
+                        $("#oneTimeDonationCheckboxError").text("");
+                    }
+                    return true;
+                }
             break;
                 return true;
             case 4:
@@ -293,8 +328,8 @@ $("document").ready(function(){
 
     $("[name=submit_form]").click(function() {
             var options = {
-                target: "#ajaxReplacement"
-        //beforeSubmit: 
+                beforeSubmit: validateBeforeSubmitContent(),
+                target: "#step6"         
         };
     $("#DonationForm").ajaxForm(options);
     });
