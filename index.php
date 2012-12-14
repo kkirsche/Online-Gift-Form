@@ -339,7 +339,7 @@ $formKey = new formKey();
                                     </label>
                                     <!--Dropdown if selected-->
                                         <div id="ifAthleticsAreSelected" class="indented">
-                                           <em>Please select the XXXXXXXXXXX below</em>
+                                           <em>Please select which athletic area(s) below</em>
                                                 <label class="checkbox">
                                                     <input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />
                                                     Baseball Big Hitters Club
@@ -413,7 +413,12 @@ $formKey = new formKey();
                 <!--Step 4 | Allocations-->
                 <div id="step4">
                     How would you like to allocate your donation?
-                    <div id="showAllocations">
+
+                        <div class="input-append" id="showUnrestricted">
+                            <input type="number" min="0" max="100" placeholder="0" />
+                            <span class="add-on">&#37; to the Unrestricted Fund</span>
+                        </div>
+
                         <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                         
@@ -421,7 +426,6 @@ $formKey = new formKey();
                             <div class="bar bar-success" style="width: 50%;"></div>
                         </div>
                         <p class="centerText">Step 4/6</p>
-                    </div>
                 </div>
 
                 <div id="step5">

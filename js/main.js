@@ -188,6 +188,16 @@ $("document").ready(function(){
         });
     }
 
+    function getFundsForAllocation() {
+        $("#step3 input:checkbox:checked").each(function() {
+            switch($(this).val()) {
+                case "unrestricted" {
+                    
+                }
+
+            }
+        });
+    }
     function validateCurrentStep(currentStep) {
         var chosenDonationType = $("[name=donationType]").val();
         switch(currentStep) {
