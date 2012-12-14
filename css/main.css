@@ -9,7 +9,9 @@ select,
 textarea {
     color: #222;
 }
-
+a, img {
+    border:none;
+}
 html,
 body {
     height: 100%;
@@ -311,6 +313,9 @@ footer .wrapper {
 }
 .jsDisabled {
     display: none;
+}
+.indented {
+    margin-left: 3%;
 }
 .requiredValue {
     color:red;
