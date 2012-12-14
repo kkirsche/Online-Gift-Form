@@ -293,4 +293,6 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             echo "<p class=\"centerText\">".$errorMessage."</p>";
         }
     }
+    //close the database connection.
+    $mysqli->close();
 ?>
