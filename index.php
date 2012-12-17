@@ -513,6 +513,57 @@ $formKey = new formKey();
                             </div>
                         </div>
 
+                        <div class="ifAthleticsAreSelected">
+                            <div class="input-append">
+                                <input type="number" name="Baseball_Big_Hitters_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Baseball Big Hitters Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Basketball_Roundball_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Basketball Roundball Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Cross_Country_Harriers-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Cross Country Harriers</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Everett_Stadium-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to Everett Stadium</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Football_Gridiron_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Football Gridiron Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Golf_Hole_In_One_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Golf Hole In One Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Kirk_Athletic_Center-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to Kirk Athletic Center</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Lacrosse_Face_Off_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Lacrosse Face Off Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Rugby_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Rugby Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Soccer_Goal_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Soccer Goal Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Swimming_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Swimming Club</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Tennis_Racquet_Club-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Tennis Racquet Club</span>
+                            </div>
+                        </div>
+
                         <div class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected">
                                 <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
