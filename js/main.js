@@ -161,7 +161,7 @@ $("document").ready(function () {
     }
 
     //Let's add the ability to show and hide fields via the checkboxes
-    function addInteractiveFields() {
+    function addInteractivity() {
         //to unrestricted fund
         $(".showUnrestricted").css("display", "none");
         $("#unrestrictedFund").click(function () {
@@ -324,7 +324,7 @@ $("document").ready(function () {
 
     currentStep = 1;
     hideSteps();
-    addInteractiveFields();
+    addInteractivity();
     $("#recurringDonationValue, #numberOfPayments, #paymentFrequency").change(function () {
         replaceRecurringDonationValue();
     });
