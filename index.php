@@ -30,6 +30,9 @@ $formKey = new formKey();
                 .jsEnabled {
                     display: none;
                 }
+                .hiddenByDefault {
+                    display: inherit;
+                }
             </style>
         </noscript>
     </head>
@@ -229,75 +232,75 @@ $formKey = new formKey();
                                                 Good Men, Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2012" />
+                                                <input type = "checkbox" id="showClassof2012Allocation" name="list-items[]" value="Class_Of_2012" />
                                                 Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2011" />
+                                                <input type = "checkbox" id="showClassof2011Allocation" name="list-items[]" value="Class_Of_2011" />
                                                 Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2010" />
+                                                <input type = "checkbox" id="showClassof2010Allocation" name="list-items[]" value="Class_Of_2010" />
                                                 Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2009" />
+                                                <input type = "checkbox" id="showClassof2009Allocation" name="list-items[]" value="Class_Of_2009" />
                                                 Class of 2009 Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2008" />
+                                                <input type = "checkbox" id="showClassof2008Allocation" name="list-items[]" value="Class_Of_2008" />
                                                 Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2007" />
+                                                <input type = "checkbox" id="showClassof2007Allocation" name="list-items[]" value="Class_Of_2007" />
                                                 Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2006" />
+                                                <input type = "checkbox" id="showClassof2006Allocation" name="list-items[]" value="Class_Of_2006" />
                                                 Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2005" />
+                                                <input type = "checkbox" id="showClassof2005Allocation" name="list-items[]" value="Class_Of_2005" />
                                                 Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2004" />
+                                                <input type = "checkbox" id="showClassof2004Allocation" name="list-items[]" value="Class_Of_2004" />
                                                 Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_2003" />
+                                                <input type = "checkbox" id="showClassof2003Allocation" name="list-items[]" value="Class_Of_2003" />
                                                 Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1980" />
+                                                <input type = "checkbox" id="showClassof1980Allocation" name="list-items[]" value="Class_Of_1980" />
                                                 Class of 1980 Endowed Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1961" />
+                                                <input type = "checkbox" id="showClassof1961Allocation" name="list-items[]" value="Class_Of_1961" />
                                                 Class of 1961 Good Men Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1960" />
+                                                <input type = "checkbox" id="showClassof1960Allocation" name="list-items[]" value="Class_Of_1960" />
                                                 Class of 1960 Good Men Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1958" />
+                                                <input type = "checkbox" id="showClassof1958Allocation" name="list-items[]" value="Class_Of_1958" />
                                                 Class of 1958 Summer College Endowment Fund
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1954" />
+                                                <input type = "checkbox" id="showClassof1954Allocation" name="list-items[]" value="Class_Of_1954" />
                                                 Class of 1954 Wilson Center Lecture Series
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1953" />
+                                                <input type = "checkbox" id="showClassof1953Allocation" name="list-items[]" value="Class_Of_1953" />
                                                 Class of 1953 Scholarship Endowment
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="Class_Of_1951" />
+                                                <input type = "checkbox" id="showClassof1951Allocation" name="list-items[]" value="Class_Of_1951" />
                                                 Class of 1951 Memorial Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" name="list-items[]" value="OtherScholarship" />
+                                                <input type = "checkbox" id="showOtherAllocation" name="list-items[]" value="OtherScholarship" />
                                                 Other <em>(please specify in special instructions)</em>
                                             </label>
                                     </div>
@@ -424,147 +427,147 @@ $formKey = new formKey();
                                 <input type="number" name="Good_Men_Good_Citizens-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Good Men, Good Citizens Scholarship</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2012Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2012-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2011Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2011-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2010Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2010-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2009Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2009-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2009 Scholarship</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2008Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2008-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2007Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2007-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2006Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2006-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2005Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2005-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2004Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2004-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf2003Allocation" class="input-append">
                                 <input type="number" name="Class_Of_2003-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1980Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1980-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1980 Endowed Scholarship</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1961Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1961-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1961 Good Men Good Citizens Scholarship</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1960Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1960-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1960 Good Men Good Citizens Scholarship</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1958Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1958-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1958 Summer College Endowment Fund</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1954Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1954-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1954 Wilson Center Lecture Series</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1953Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1953 Scholarship Endowment</span>
                             </div>
-                            <div class="input-append">
+                            <div id="classOf1951Allocation" class="input-append">
                                 <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 1951 Memorial Scholarship</span>
                             </div>
                         </div>
 
                         <div class="ifAcademicsSelected">
-                            <div class="input-append">
+                            <div id="atkinsonMuseumAllocation" class="input-append">
                                 <input type="number" name="Atkinson_Museum-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Atkinson Museum</span>
                             </div>
-                            <div class="input-append">
+                            <div id="bortzLibraryAllocation" class="input-append">
                                 <input type="number" name="Bortz_Library-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Bortz Library</span>
                             </div>
-                            <div class="input-append">
+                            <div id="cultureAndCommunityAllocation" class="input-append">
                                 <input type="number" name="Culture_and_Community-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Culture and Community</span>
                             </div>
-                            <div class="input-append">
+                            <div id="wilsonCenterAllocation" class="input-append">
                                 <input type="number" name="Wilson_Center-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Wilson Center</span>
                             </div>
                         </div>
 
                         <div class="ifAthleticsAreSelected">
-                            <div class="input-append">
+                            <div id="baseballBigHittersClubAllocation" class="input-append">
                                 <input type="number" name="Baseball_Big_Hitters_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Baseball Big Hitters Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="basketballRoundballClubAllocation" class="input-append">
                                 <input type="number" name="Basketball_Roundball_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Basketball Roundball Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="crossCountryHarriersAllocation" class="input-append">
                                 <input type="number" name="Cross_Country_Harriers-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Cross Country Harriers</span>
                             </div>
-                            <div class="input-append">
+                            <div id="everettStadiumAllocation" class="input-append">
                                 <input type="number" name="Everett_Stadium-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Everett Stadium</span>
                             </div>
-                            <div class="input-append">
+                            <div id="footballGridironClubAllocation" class="input-append">
                                 <input type="number" name="Football_Gridiron_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Football Gridiron Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="golfHoleInOneClubAllocation" class="input-append">
                                 <input type="number" name="Golf_Hole_In_One_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Golf Hole In One Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="kirkAthleticCenterAllocation" class="input-append">
                                 <input type="number" name="Kirk_Athletic_Center-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Kirk Athletic Center</span>
                             </div>
-                            <div class="input-append">
+                            <div id="lacrosseFaceOffClubAllocation" class="input-append">
                                 <input type="number" name="Lacrosse_Face_Off_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Lacrosse Face Off Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="rugbyClubAllocation" class="input-append">
                                 <input type="number" name="Rugby_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Rugby Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="soccerGoalClubAllocation" class="input-append">
                                 <input type="number" name="Soccer_Goal_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Soccer Goal Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="swimmingClubAllocation" class="input-append">
                                 <input type="number" name="Swimming_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Swimming Club</span>
                             </div>
-                            <div class="input-append">
+                            <div id="tennisRacquetClubAllocation" class="input-append">
                                 <input type="number" name="Tennis_Racquet_Club-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Tennis Racquet Club</span>
                             </div>
                         </div>
 
-                        <div class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected">
+                        <div id="specialInstructionsAllocation" class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected">
                                 <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
                             </div>
