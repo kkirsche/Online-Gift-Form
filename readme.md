@@ -1,4 +1,4 @@
-# [Hampden-Sydney College Online Gift Form](https://secure.hsc.edu/gifts/)
+# Online Gift Form
 
 This gift form utilizes the HTML5 Boilerplate project to create a more successful payment option for users. This project focuses on the ease of use and adaptability among devices and orientations.
 
