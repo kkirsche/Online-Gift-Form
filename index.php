@@ -63,8 +63,8 @@ $formKey = new formKey();
                         <?php $formKey->outputKey(); ?>
                         <!--Ask whether it's a one-time gift or a recurring gift-->
                         <div class="centerButtons">
-                            <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" class="OTG" alt="I would like to make a one-time gift" /></a>
-                            <a href="#" class="nextStep" id="recurringGift"><img src="img/RecurringGift.png" alt="I would like to make a recurring gift" /></a>
+                            <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" width="250" height="250" class="OTG" alt="I would like to make a one-time gift" /></a>
+                            <a href="#" class="nextStep" id="recurringGift"><img src="img/RecurringGift.png" width="250" height="250" alt="I would like to make a recurring gift" /></a>
                         </div>
                         <div class="jsDisabled">
                             <select name="donationType">
@@ -411,7 +411,7 @@ $formKey = new formKey();
                 <!--End Step 3-->
 
                 <!--Step 4 | Allocations-->
-                <div id="step4">
+                <div id="step4" class="textCenter">
                     How would you like to allocate your donation?
 
                         <div class="showUnrestricted input-append">
@@ -456,7 +456,48 @@ $formKey = new formKey();
                                 <input type="number" name="Class_Of_2005-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to the Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</span>
                             </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2004-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2003-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1980-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1980 Endowed Scholarship</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1961-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1961 Good Men Good Citizens Scholarship</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1960-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1960 Good Men Good Citizens Scholarship</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1958-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1958 Summer College Endowment Fund</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1954-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1954 Wilson Center Lecture Series</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1953 Scholarship Endowment</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 1951 Memorial Scholarship</span>
+                            </div>
                         </div>
+
+                        <div class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected">
+                                <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
+                            </div>
 
                         <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
