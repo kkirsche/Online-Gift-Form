@@ -212,7 +212,7 @@ $formKey = new formKey();
                             <div class="controls">
                                 <fieldset>
                                 <label class="checkbox">
-                                    <input type="checkbox" name="list-items[]" value="unrestricted" />
+                                    <input type="checkbox" id="unrestrictedFund" name="list-items[]" value="unrestricted" />
                                     <strong>to the Unrestricted Fund</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
                                 </label>
 
@@ -221,7 +221,7 @@ $formKey = new formKey();
                                     <strong>to a Specific Scholarship</strong>
                                 </label>
                                     <!--Dropdown if selected-->
-                                    <div id="ifScholarshipsSelected" class="indented">
+                                    <div class="ifScholarshipsSelected indented">
                                         <em>Please select the Scholarship(s) below</em>
                                         <!--ADD ARARY FOR EACH SECTION HERE-->
                                             <label class="checkbox">
@@ -308,7 +308,7 @@ $formKey = new formKey();
                                         <strong>to Academics</strong>
                                     </label>
                                     <!--Dropdown if selected-->
-                                        <div id="ifAcademicsSelected" class="indented">
+                                        <div class="ifAcademicsSelected indented">
                                             <em>Please select the department(s) below</em>
                                                 <label class="checkbox">
                                                     <input type = "checkbox" name="list-items[]" value="Atkinson_Museum" />
@@ -338,7 +338,7 @@ $formKey = new formKey();
                                         <strong>to Athletics</strong>
                                     </label>
                                     <!--Dropdown if selected-->
-                                        <div id="ifAthleticsAreSelected" class="indented">
+                                        <div class="ifAthleticsAreSelected indented">
                                            <em>Please select which athletic area(s) below</em>
                                                 <label class="checkbox">
                                                     <input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />
@@ -414,7 +414,7 @@ $formKey = new formKey();
                 <div id="step4">
                     How would you like to allocate your donation?
 
-                        <div class="input-append" id="showUnrestricted">
+                        <div class="showUnrestricted input-append">
                             <input type="number" min="0" max="100" placeholder="0" />
                             <span class="add-on">&#37; to the Unrestricted Fund</span>
                         </div>

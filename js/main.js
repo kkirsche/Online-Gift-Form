@@ -162,46 +162,44 @@ $("document").ready(function () {
 
     //Let's add the ability to show and hide fields via the checkboxes
     function addInteractiveFields() {
+        //to unrestricted fund
+        $(".showUnrestricted").css("display", "none");
+        $("#unrestrictedFund").click(function () {
+            if ($("#unrestrictedFund:checked").val() === "unrestricted") {
+                $(".showUnrestricted").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".showUnrestricted").slideToggle("fast");  //Slide Up Effect
+            }
+        });
         //to a specific scholarship
-        $("#ifScholarshipsSelected").css("display", "none");
+        $(".ifScholarshipsSelected").css("display", "none");
         $(".ScholashipSelection").click(function () {
             if ($("input[name=ScholashipSelection]:checked").val() === "to_Scholarships") {
-                $("#ifScholarshipsSelected").slideToggle("fast"); //Slide Down Effect
+                $(".ifScholarshipsSelected").slideToggle("fast"); //Slide Down Effect
             } else {
-                $("#ifScholarshipsSelected").slideToggle("fast");  //Slide Up Effect
+                $(".ifScholarshipsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
     //to a academics
-        $("#ifAcademicsSelected").css("display", "none");
+        $(".ifAcademicsSelected").css("display", "none");
         $(".AcademicSelection").click(function () {
             if ($("input[name=toAcademics]:checked").val() === "to_Academics") {
-                $("#ifAcademicsSelected").slideToggle("fast"); //Slide Down Effect
+                $(".ifAcademicsSelected").slideToggle("fast"); //Slide Down Effect
             } else {
-                $("#ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
+                $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
      //Would you like to donate other funds?
-        $("#ifAthleticsAreSelected").css("display", "none");
+        $(".ifAthleticsAreSelected").css("display", "none");
         $(".enableAthletics").click(function () {
             if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
-                $("#ifAthleticsAreSelected").slideDown("fast"); //Slide Down Effect
+                $(".ifAthleticsAreSelected").slideDown("fast"); //Slide Down Effect
             } else {
-                $("#ifAthleticsAreSelected").slideUp("fast");  //Slide Up Effect
+                $(".ifAthleticsAreSelected").slideUp("fast");  //Slide Up Effect
             }
         });
     }
 
-    function getFundsForAllocation() {
-        //get all checkboxes that are checked and show their allocation
-        $("#step3 input:checkbox:checked").each(function () {
-            switch ($(this).val()) {
-            case "unrestricted":
-                $("#showUnrestricted").show();
-                break;
-
-            }
-        });
-    }
     function validateCurrentStep(currentStep) {
         var chosenDonationType, validateOneTimeDonationAmount, fields, checkAcademicsFields, checkAthleticsFields, checkScholarshipFields, validateRecurringDonationAmount, validateNumberOfPayments, validatePaymentFrequency, validateTotalRecurringDonationAmount;
         chosenDonationType = $("[name=donationType]").val();
@@ -265,7 +263,7 @@ $("document").ready(function () {
 
             //Check Scholarships
             if ($("[name=ScholashipSelection]").is(":checked")) {
-                checkScholarshipFields = $("#ifScholarshipsSelected input:checkbox:checked");
+                checkScholarshipFields = $(".ifScholarshipsSelected input:checkbox:checked");
                 if (checkScholarshipFields.length === 0) {
                     $("#step3").addClass("error");
                     $("#checkboxError").text("Please choose which scholarship you would like to donate to.");
@@ -279,7 +277,7 @@ $("document").ready(function () {
 
             //Check Acadmics
             if ($("[name=toAcademics]").is(":checked")) {
-                checkAcademicsFields = $("#ifAcademicsSelected input:checkbox:checked");
+                checkAcademicsFields = $(".ifAcademicsSelected input:checkbox:checked");
                 if (checkAcademicsFields.length === 0) {
                     $("#step3").addClass("error");
                     $("#checkboxError").text("Please choose which academic fund you would like to donate to.");
@@ -293,7 +291,7 @@ $("document").ready(function () {
 
             //check Athletics
             if ($("[name=toAthletics]").is(":checked")) {
-                checkAthleticsFields = $("#ifAthleticsAreSelected input:checkbox:checked");
+                checkAthleticsFields = $(".ifAthleticsAreSelected input:checkbox:checked");
                 if (checkAthleticsFields.length === 0) {
                     $("#step3").addClass("error");
                     $("#checkboxError").text("Please choose which athletic fund you would like to donate to.");
