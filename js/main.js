@@ -159,7 +159,30 @@ $("document").ready(function () {
         replaceDonationAmount();
 
     }
-
+    function showResepectiveAllocation() {
+        //scholarship functions
+        $("#showGoodMenGoodCitizensAllocation").click(function () {
+            if($("#showGoodMenGoodCitizensAllocation:checked").val() === "Good_Men_Good_Citizens") {
+                $("#goodMenGoodCitizensAllocation").slideToggle("fast");
+            } else {
+                $("#goodMenGoodCitizensAllocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2012Allocation").click(function () {
+            if($("#showClassof2012Allocation:checked").val() === "Class_Of_2012") {
+                $("#classOf2012Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2012Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2011Allocation").click(function () {
+            if($("#showClassof2011Allocation:checked").val() === "Class_Of_2011") {
+                $("#classOf2011Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2011Allocation").slideToggle("fast");
+            }
+        });
+    }
     //Let's add the ability to show and hide fields via the checkboxes
     function addInteractivity() {
         //to unrestricted fund
@@ -325,6 +348,7 @@ $("document").ready(function () {
     currentStep = 1;
     hideSteps();
     addInteractivity();
+    showResepectiveAllocation();
     $("#recurringDonationValue, #numberOfPayments, #paymentFrequency").change(function () {
         replaceRecurringDonationValue();
     });
