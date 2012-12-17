@@ -187,7 +187,7 @@ footer {
     line-height: 150%;
 }
 .footerText {
-    width: 25%;
+    max-width: 50%;
 }
 .footerText address, {
     color: #000;
@@ -290,6 +290,7 @@ footer .wrapper {
     cursor:pointer;
     -moz-box-shadow: 0 1px 2px #999;
     -webkit-box-shadow: 0 1px 2px #999;
+    max-width: 50%;
 }
 .progress {
     clear: both;
@@ -310,6 +311,7 @@ footer .wrapper {
     -webkit-border-radius:50px;
     border-radius:50px;
     cursor:pointer;
+    max-width: 50%
 }
 .jsDisabled {
     display: none;
@@ -391,7 +393,6 @@ form input {
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
-
     nav a {
         float: left;
         width: 27%;
@@ -422,6 +423,9 @@ form input {
 }
 
 @media only screen and (min-width: 768px) {
+    .footerText {
+    max-width: 25%;
+    }
 
 /* ====================
     WIDE: CSS3 Effects
