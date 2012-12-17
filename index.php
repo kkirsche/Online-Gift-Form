@@ -58,8 +58,8 @@ $formKey = new formKey();
 
                 <!--One Time or Recurring Step-->
                 <div class="formStep">
-                    <div id="step1">
-                        <form id="DonationForm" action="processForm.php" method="post">
+                    <form id="DonationForm" action="processForm.php" method="post">
+                        <div id="step1">
                         <?php $formKey->outputKey(); ?>
                         <!--Ask whether it's a one-time gift or a recurring gift-->
                         <div class="centerButtons">
@@ -89,7 +89,7 @@ $formKey = new formKey();
                             <div class="controls">
                                 <div class="input-prepend input-append">
                                     <span class="add-on">$</span>
-                                    <input type="number" min="0" name="oneTimeDonationValue" id="oneTimeDonationValue" size="15" value="0" />
+                                    <input type="number" min="0" name="oneTimeDonationValue" id="oneTimeDonationValue" value="0" />
                                     <span class="add-on">.00</span>
                                 </div>
                                 <span id="oneTimeDonationValidateError" class="help-inline"></span>
@@ -98,11 +98,11 @@ $formKey = new formKey();
 
                         <!--Recurring Gift-->
                         <div id="makingARecurringGift" class="control-group">
-                            <label class="control-label">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</labl>
+                            <label class="control-label">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
                                 <div class="controls">
                                     <div class="input-prepend input-append">
                                         <span class="add-on">$</span>
-                                        <input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" size="15" value="0" />
+                                        <input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" value="0" />
                                         <span class="add-on">.00</span>
                                     </div>
                                     
@@ -244,7 +244,7 @@ $formKey = new formKey();
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2009" />
                                                 Class of 2009 Scholarship
                                             </label>
-                                            <label class-"checkbox">
+                                            <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2008" />
                                                 Class of 2008 Scholarship IHO Ms. Gerry Pettus
                                             </label>
@@ -444,7 +444,7 @@ $formKey = new formKey();
                             </label>
                             <label class="inline">
                                 Class Year (if applicable):
-                                <input type="number" name="usersClassYear" size="4" placeholder="2000" />
+                                <input type="number" name="usersClassYear" placeholder="2000" />
                             </label>
                             <label class="inline">
                                 Street Address<sup class="requiredValue">*</sup>:
@@ -510,13 +510,13 @@ $formKey = new formKey();
                                 <input type="text" name="nameOnCard" size="40" placeholder="John R. Doe" />
                                 <br />
                             <label>Credit Card Number<sup class="requiredValue">*</sup>:</label>
-                                <input type="number" name="numberOnCard" id="creditCardNumber" size="30" placeholder="4012888888881881" min="0" max="9999999999999999999" />
+                                <input type="number" name="numberOnCard" id="creditCardNumber" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                 <br />
                             <label>Credit Card Verification Code <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"><i class="icon-question-sign"></i></abbr><sup class="requiredValue">*</sup>:</label>
-                                <input type="number" name="securityCodeOnCard" size="30" placeholder="813" min="0" max="9999" />
+                                <input type="number" name="securityCodeOnCard" placeholder="813" min="0" max="9999" />
                                 <br />
                             <label>Expiration Date<sup class="requiredValue">*</sup>:</label>
-                                <input type="number" name="expirationMonthOnCard" size="2" min="01" max="12" placeholder="11" />&nbsp;/&nbsp;<input type="number" name="expirationYearOnCard" size="2" min="0" max="99" placeholder="14" />
+                                <input type="number" name="expirationMonthOnCard" min="01" max="12" placeholder="11" />&nbsp;/&nbsp;<input type="number" name="expirationYearOnCard" min="0" max="99" placeholder="14" />
                                 <br />
                         </fieldset>
                         <div class="clearfix"></div>
@@ -557,7 +557,8 @@ $formKey = new formKey();
                 <div class="clear"></div>
             </footer>
             </div> <!-- #main -->
-        </div> <!-- #main-container -->
+        </div>
+    </div> <!-- #main-container -->
 
 
 
