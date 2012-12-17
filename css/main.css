@@ -176,6 +176,9 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.hiddenByDefault {
+    display: none;
+}
 .header-container,
 footer {
     max-width: 100%;
