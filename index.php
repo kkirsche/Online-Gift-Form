@@ -230,15 +230,15 @@ $formKey = new formKey();
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2012" />
-                                                Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96
+                                                Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2011" />
-                                                Class of 2011 Scholarship IHO Ms. Anita Garland
+                                                Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2010" />
-                                                Class of 2010 Scholarship IHO Mrs. Dottie Fahrner
+                                                Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2009" />
@@ -246,27 +246,27 @@ $formKey = new formKey();
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2008" />
-                                                Class of 2008 Scholarship IHO Ms. Gerry Pettus
+                                                Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2007" />
-                                                Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson
+                                                Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2006" />
-                                                Class of 2006 Scholarship IMO Peter C. Bance Jr.
+                                                Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2005" />
-                                                Class of 2005 Scholarship IMO Prof. Lee Cohen
+                                                Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2004" />
-                                                Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms
+                                                Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_2003" />
-                                                Class of 2003 Scholarship IHO Ralph A. Crawley
+                                                Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley
                                             </label>
                                             <label class="checkbox">
                                                 <input type = "checkbox" name="list-items[]" value="Class_Of_1980" />
@@ -415,8 +415,47 @@ $formKey = new formKey();
                     How would you like to allocate your donation?
 
                         <div class="showUnrestricted input-append">
-                            <input type="number" min="0" max="100" placeholder="0" />
+                            <input type="number" name="unrestricted-Allocation" min="0" max="100" placeholder="0" />
                             <span class="add-on">&#37; to the Unrestricted Fund</span>
+                        </div>
+
+                        <div class="ifScholarshipsSelected">
+                            <div class="input-append">
+                                <input type="number" name="Good_Men_Good_Citizens-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Good Men, Good Citizens Scholarship</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2012-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2011-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2010-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2009-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2009 Scholarship</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2008-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2007-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2006-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Class_Of_2005-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</span>
+                            </div>
                         </div>
 
                         <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
