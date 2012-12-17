@@ -494,6 +494,25 @@ $formKey = new formKey();
                             </div>
                         </div>
 
+                        <div class="ifAcademicsSelected">
+                            <div class="input-append">
+                                <input type="number" name="Atkinson_Museum-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Atkinson Museum</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Bortz_Library-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to Bortz Library</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Culture_and_Community-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to Culture and Community</span>
+                            </div>
+                            <div class="input-append">
+                                <input type="number" name="Wilson_Center-Allocation" min="0" max="100" placeholder="0" />
+                                <span class="add-on">&#37; to the Wilson Center</span>
+                            </div>
+                        </div>
+
                         <div class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected">
                                 <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" placeholder="0" />
                                 <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
