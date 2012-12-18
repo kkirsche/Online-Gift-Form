@@ -24,7 +24,10 @@ $formKey = new formKey();
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" /><!--iPad-->
         <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" /> <!--iPhone Retina Display-->
-        <linnk rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+        <link rel="apple-touch-startup-image" href="img/startup.png" />
+        <link rel="apple-touch-startup-image" sizes="640x920" href="img/startup-640x920.png" />
+        <link
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="css/master.css">
         
