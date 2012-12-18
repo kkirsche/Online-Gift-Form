@@ -176,6 +176,11 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.centerButtons {
+    margin: 0 auto;
+    width: 550px;
+    max-width: 100%;
+}
 .hiddenByDefault {
     display: none;
 }
