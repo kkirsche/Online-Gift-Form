@@ -568,7 +568,7 @@ $formKey = new formKey();
                         </div>
 
                         <div id="specialInstructionsAllocation" class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected hiddenByDefault">
-                                <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" value="0" />
+                                <input type="number" name="Other-Allocation" min="0" max="100" value="0" />
                                 <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
                             </div>
 
