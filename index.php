@@ -20,6 +20,11 @@ $formKey = new formKey();
         <meta name="description" content="Hampden-Sydney College's Online Gift Form">
         <meta name="viewport" content="width=device-width">
 
+        <link rel="icon" type="image/ico" href="favicon.ico" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" /><!--iPad-->
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" /> <!--iPhone Retina Display-->
+        <linnk rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="css/master.css">
         
