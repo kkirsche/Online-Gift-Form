@@ -503,6 +503,10 @@ $formKey = new formKey();
                                 <input type="number" name="Class_Of_1951-Allocation" min="0" max="100" value="0" />
                                 <span class="add-on">&#37; to the Class of 1951 Memorial Scholarship</span>
                             </div>
+                            <div id="scholarshipSpecialInstructionsAllocation" class="input-append hiddenByDefault">
+                                <input type="number" name="Other_Scholarship-Allocation" min="0" max="100" value="0" />
+                                <span class="add-on">&#37; to the Other Scholarship &mdash; <em>as specified in your special instructions</em></span>
+                            </div>
                         </div>
 
                         <div class="ifAcademicsSelected">
@@ -521,6 +525,10 @@ $formKey = new formKey();
                             <div id="wilsonCenterAllocation" class="input-append hiddenByDefault">
                                 <input type="number" name="Wilson_Center-Allocation" min="0" max="100" value="0" />
                                 <span class="add-on">&#37; to the Wilson Center</span>
+                            </div>
+                            <div id="academicSpecialInstructionsAllocation" class="input-append hiddenByDefault">
+                                <input type="number" name="Other_Academic-Allocation" min="0" max="100" value="0" />
+                                <span class="add-on">&#37; to the Other Academic Area &mdash; <em>as specified in your special instructions</em></span>
                             </div>
                         </div>
 
@@ -574,11 +582,6 @@ $formKey = new formKey();
                                 <span class="add-on">&#37; to the Tennis Racquet Club</span>
                             </div>
                         </div>
-
-                        <div id="specialInstructionsAllocation" class="input-append ifScholarshipsSelected ifAcademicsSelected ifAthleticsAreSelected hiddenByDefault">
-                                <input type="number" name="Other-Allocation" min="0" max="100" value="0" />
-                                <span class="add-on">&#37; to Other &mdash; <em>as specified in your special instructions</em></span>
-                            </div>
 
                         <button type="button" class="paginationBTN floatRight nextStep">Next &rarr;</button>
                         <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>

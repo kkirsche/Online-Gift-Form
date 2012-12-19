@@ -399,6 +399,20 @@ $("document").ready(function () {
                 $("#tennisRacquetClubAllocation").slideToggle("fast");
             }
         });
+        $("#showOtherScholarshipAllocation").click(function () {
+            if($("#showOtherScholarshipAllocation:checked").val() === "OtherScholarship") {
+                $("#scholarshipSpecialInstructionsAllocation").slideToggle("fast");
+            } else {
+                $("#scholarshipSpecialInstructionsAllocation").slideToggle("fast");
+            }
+        });
+        $("#showOtherAcademicAllocation").click(function () {
+            if($("#showOtherAcademicAllocation:checked").val() === "Other_Academic_Area") {
+                $("#academicSpecialInstructionsAllocation").slideToggle("fast");
+            } else {
+                $("#academicSpecialInstructionsAllocation").slideToggle("fast");
+            }
+        });
     }
     //Let's add the ability to show and hide fields via the checkboxes
     function addInteractivity() {
@@ -429,7 +443,7 @@ $("document").ready(function () {
                 $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
-     //Would you like to donate other funds?
+     //Would you like to donate to athletic funds?
         $(".ifAthleticsAreSelected").css("display", "none");
         $(".enableAthletics").click(function () {
             if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
@@ -441,7 +455,7 @@ $("document").ready(function () {
     }
 
     function validateCurrentStep(currentStep) {
-        var chosenDonationType, validateOneTimeDonationAmount, fields, checkAcademicsFields, checkAthleticsFields, checkScholarshipFields, validateRecurringDonationAmount, validateNumberOfPayments, validatePaymentFrequency, validateTotalRecurringDonationAmount;
+        var chosenDonationType, validateTotalAllocationAmount = 0, validateOneTimeDonationAmount, fields, checkAcademicsFields, checkAthleticsFields, checkScholarshipFields, validateRecurringDonationAmount, validateNumberOfPayments, validatePaymentFrequency, validateTotalRecurringDonationAmount;
         chosenDonationType = $("[name=donationType]").val();
         switch (currentStep) {
             //This checks to make sure that they selected a donation type.
@@ -552,6 +566,20 @@ $("document").ready(function () {
 
 
         case 4:
+            $("#step4 :input[type=\"number\"]").each(function () {
+                validateTotalAllocationAmount += parseInt($(this).val(), 10);
+            });
+
+            if (validateTotalAllocationAmount < 100) {
+                alert("Sorry, your allocation amount adds up to under 100%. Please try again.");
+                return false;
+            }
+
+            if (validateTotalAllocationAmount > 100) {
+                alert("Sorry, your allocation amount adds up to over 100%. Please try again.");
+                return false;
+            }
+
             return true;
 
         case 5:
