@@ -38,6 +38,8 @@ To use this effectively you must have:
 * Cross-domain Ajax and Flash.
 * "Delete-key friendly." Easy to strip out parts you don't need.
 * Extensive inline and accompanying documentation.
+* Apple Icons for use of the page on the user's homescreen.
+* HiDPI Graphics.
 
 
 ## Contributing
@@ -49,4 +51,5 @@ Anyone and everyone is welcome to [contribute](https://github.com/kkirsche/Onlin
 * jQuery: MIT/GPL license
 * Modernizr: MIT/BSD license
 * Normalize.css: Public Domain
+* Twitter Bootstrap: Apache License, Version 2.0
 
