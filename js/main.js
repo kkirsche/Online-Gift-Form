@@ -162,252 +162,252 @@ $("document").ready(function () {
     function showResepectiveAllocation() {
         //scholarship functions
         $("#showGoodMenGoodCitizensAllocation").click(function () {
-            if($("#showGoodMenGoodCitizensAllocation:checked").val() === "Good_Men_Good_Citizens") {
+            if ($("#showGoodMenGoodCitizensAllocation:checked").val() === "Good_Men_Good_Citizens") {
                 $("#goodMenGoodCitizensAllocation").slideToggle("fast");
             } else {
                 $("#goodMenGoodCitizensAllocation").slideToggle("fast");
             }
         });
         $("#showClassof2012Allocation").click(function () {
-            if($("#showClassof2012Allocation:checked").val() === "Class_Of_2012") {
+            if ($("#showClassof2012Allocation:checked").val() === "Class_Of_2012") {
                 $("#classOf2012Allocation").slideToggle("fast");
             } else {
                 $("#classOf2012Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2011Allocation").click(function () {
-            if($("#showClassof2011Allocation:checked").val() === "Class_Of_2011") {
+            if ($("#showClassof2011Allocation:checked").val() === "Class_Of_2011") {
                 $("#classOf2011Allocation").slideToggle("fast");
             } else {
                 $("#classOf2011Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2010Allocation").click(function () {
-            if($("#showClassof2010Allocation:checked").val() === "Class_Of_2010") {
+            if ($("#showClassof2010Allocation:checked").val() === "Class_Of_2010") {
                 $("#classOf2010Allocation").slideToggle("fast");
             } else {
                 $("#classOf2010Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2009Allocation").click(function () {
-            if($("#showClassof2009Allocation:checked").val() === "Class_Of_2009") {
+            if ($("#showClassof2009Allocation:checked").val() === "Class_Of_2009") {
                 $("#classOf2009Allocation").slideToggle("fast");
             } else {
                 $("#classOf2009Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2008Allocation").click(function () {
-            if($("#showClassof2008Allocation:checked").val() === "Class_Of_2008") {
+            if ($("#showClassof2008Allocation:checked").val() === "Class_Of_2008") {
                 $("#classOf2008Allocation").slideToggle("fast");
             } else {
                 $("#classOf2008Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2007Allocation").click(function () {
-            if($("#showClassof2007Allocation:checked").val() === "Class_Of_2007") {
+            if ($("#showClassof2007Allocation:checked").val() === "Class_Of_2007") {
                 $("#classOf2007Allocation").slideToggle("fast");
             } else {
                 $("#classOf2007Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2006Allocation").click(function () {
-            if($("#showClassof2006Allocation:checked").val() === "Class_Of_2006") {
+            if ($("#showClassof2006Allocation:checked").val() === "Class_Of_2006") {
                 $("#classOf2006Allocation").slideToggle("fast");
             } else {
                 $("#classOf2006Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2005Allocation").click(function () {
-            if($("#showClassof2005Allocation:checked").val() === "Class_Of_2005") {
+            if ($("#showClassof2005Allocation:checked").val() === "Class_Of_2005") {
                 $("#classOf2005Allocation").slideToggle("fast");
             } else {
                 $("#classOf2005Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2004Allocation").click(function () {
-            if($("#showClassof2004Allocation:checked").val() === "Class_Of_2004") {
+            if ($("#showClassof2004Allocation:checked").val() === "Class_Of_2004") {
                 $("#classOf2004Allocation").slideToggle("fast");
             } else {
                 $("#classOf2004Allocation").slideToggle("fast");
             }
         });
         $("#showClassof2003Allocation").click(function () {
-            if($("#showClassof2003Allocation:checked").val() === "Class_Of_2003") {
+            if ($("#showClassof2003Allocation:checked").val() === "Class_Of_2003") {
                 $("#classOf2003Allocation").slideToggle("fast");
             } else {
                 $("#classOf2003Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1980Allocation").click(function () {
-            if($("#showClassof1980Allocation:checked").val() === "Class_Of_1980") {
+            if ($("#showClassof1980Allocation:checked").val() === "Class_Of_1980") {
                 $("#classOf1980Allocation").slideToggle("fast");
             } else {
                 $("#classOf1980Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1961Allocation").click(function () {
-            if($("#showClassof1961Allocation:checked").val() === "Class_Of_1961") {
+            if ($("#showClassof1961Allocation:checked").val() === "Class_Of_1961") {
                 $("#classOf1961Allocation").slideToggle("fast");
             } else {
                 $("#classOf1961Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1960Allocation").click(function () {
-            if($("#showClassof1960Allocation:checked").val() === "Class_Of_1960") {
+            if ($("#showClassof1960Allocation:checked").val() === "Class_Of_1960") {
                 $("#classOf1960Allocation").slideToggle("fast");
             } else {
                 $("#classOf1960Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1958Allocation").click(function () {
-            if($("#showClassof1958Allocation:checked").val() === "Class_Of_1958") {
+            if ($("#showClassof1958Allocation:checked").val() === "Class_Of_1958") {
                 $("#classOf1958Allocation").slideToggle("fast");
             } else {
                 $("#classOf1958Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1954Allocation").click(function () {
-            if($("#showClassof1954Allocation:checked").val() === "Class_Of_1954") {
+            if ($("#showClassof1954Allocation:checked").val() === "Class_Of_1954") {
                 $("#classOf1954Allocation").slideToggle("fast");
             } else {
                 $("#classOf1954Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1953Allocation").click(function () {
-            if($("#showClassof1953Allocation:checked").val() === "Class_Of_1953") {
+            if ($("#showClassof1953Allocation:checked").val() === "Class_Of_1953") {
                 $("#classOf1953Allocation").slideToggle("fast");
             } else {
                 $("#classOf1953Allocation").slideToggle("fast");
             }
         });
         $("#showClassof1951Allocation").click(function () {
-            if($("#showClassof1951Allocation:checked").val() === "Class_Of_1951") {
+            if ($("#showClassof1951Allocation:checked").val() === "Class_Of_1951") {
                 $("#classOf1951Allocation").slideToggle("fast");
             } else {
                 $("#classOf1951Allocation").slideToggle("fast");
             }
         });
         $("#showAtkinsonMuseumAllocation").click(function () {
-            if($("#showAtkinsonMuseumAllocation:checked").val() === "Atkinson_Museum") {
+            if ($("#showAtkinsonMuseumAllocation:checked").val() === "Atkinson_Museum") {
                 $("#atkinsonMuseumAllocation").slideToggle("fast");
             } else {
                 $("#atkinsonMuseumAllocation").slideToggle("fast");
             }
         });
         $("#showBortzLibraryAllocation").click(function () {
-            if($("#showBortzLibraryAllocation:checked").val() === "Bortz_Library") {
+            if ($("#showBortzLibraryAllocation:checked").val() === "Bortz_Library") {
                 $("#bortzLibraryAllocation").slideToggle("fast");
             } else {
                 $("#bortzLibraryAllocation").slideToggle("fast");
             }
         });
         $("#showCultureAndCommunityAllocation").click(function () {
-            if($("#showCultureAndCommunityAllocation:checked").val() === "Culture_and_Community") {
+            if ($("#showCultureAndCommunityAllocation:checked").val() === "Culture_and_Community") {
                 $("#cultureAndCommunityAllocation").slideToggle("fast");
             } else {
                 $("#cultureAndCommunityAllocation").slideToggle("fast");
             }
         });
         $("#showTheWilsonCenterAllocation").click(function () {
-            if($("#showTheWilsonCenterAllocation:checked").val() === "Wilson_Center") {
+            if ($("#showTheWilsonCenterAllocation:checked").val() === "Wilson_Center") {
                 $("#wilsonCenterAllocation").slideToggle("fast");
             } else {
                 $("#wilsonCenterAllocation").slideToggle("fast");
             }
         });
         $("#showBaseballBigHittersClubAllocation").click(function () {
-            if($("#showBaseballBigHittersClubAllocation:checked").val() === "Baseball_Big_Hitters_Club") {
+            if ($("#showBaseballBigHittersClubAllocation:checked").val() === "Baseball_Big_Hitters_Club") {
                 $("#baseballBigHittersClubAllocation").slideToggle("fast");
             } else {
                 $("#baseballBigHittersClubAllocation").slideToggle("fast");
             }
         });
         $("#showBasketballRoundballClubAllocation").click(function () {
-            if($("#showBasketballRoundballClubAllocation:checked").val() === "Basketball_Roundball_Club") {
+            if ($("#showBasketballRoundballClubAllocation:checked").val() === "Basketball_Roundball_Club") {
                 $("#basketballRoundballClubAllocation").slideToggle("fast");
             } else {
                 $("#basketballRoundballClubAllocation").slideToggle("fast");
             }
         });
         $("#showCrossCountryHarriersAllocation").click(function () {
-            if($("#showCrossCountryHarriersAllocation:checked").val() === "Cross_Country_Harriers") {
+            if ($("#showCrossCountryHarriersAllocation:checked").val() === "Cross_Country_Harriers") {
                 $("#crossCountryHarriersAllocation").slideToggle("fast");
             } else {
                 $("#crossCountryHarriersAllocation").slideToggle("fast");
             }
         });
         $("#showEverettStadiumAllocation").click(function () {
-            if($("#showEverettStadiumAllocation:checked").val() === "Everett_Stadium") {
+            if ($("#showEverettStadiumAllocation:checked").val() === "Everett_Stadium") {
                 $("#everettStadiumAllocation").slideToggle("fast");
             } else {
                 $("#everettStadiumAllocation").slideToggle("fast");
             }
         });
         $("#showFootballGridironClubAllocation").click(function () {
-            if($("#showFootballGridironClubAllocation:checked").val() === "Football_Gridiron_Club") {
+            if ($("#showFootballGridironClubAllocation:checked").val() === "Football_Gridiron_Club") {
                 $("#footballGridironClubAllocation").slideToggle("fast");
             } else {
                 $("#footballGridironClubAllocation").slideToggle("fast");
             }
         });
         $("#showGolfHoleInOneClubAllocation").click(function () {
-            if($("#showGolfHoleInOneClubAllocation:checked").val() === "Golf_Hole_In_One_Club") {
+            if ($("#showGolfHoleInOneClubAllocation:checked").val() === "Golf_Hole_In_One_Club") {
                 $("#golfHoleInOneClubAllocation").slideToggle("fast");
             } else {
                 $("#golfHoleInOneClubAllocation").slideToggle("fast");
             }
         });
         $("#showKirkAthleticCenterAllocation").click(function () {
-            if($("#showKirkAthleticCenterAllocation:checked").val() === "Kirk_Athletic_Center") {
+            if ($("#showKirkAthleticCenterAllocation:checked").val() === "Kirk_Athletic_Center") {
                 $("#kirkAthleticCenterAllocation").slideToggle("fast");
             } else {
                 $("#kirkAthleticCenterAllocation").slideToggle("fast");
             }
         });
         $("#showLacrosseFaceOffClubAllocation").click(function () {
-            if($("#showLacrosseFaceOffClubAllocation:checked").val() === "Lacrosse_Face_Off_Club") {
+            if ($("#showLacrosseFaceOffClubAllocation:checked").val() === "Lacrosse_Face_Off_Club") {
                 $("#lacrosseFaceOffClubAllocation").slideToggle("fast");
             } else {
                 $("#lacrosseFaceOffClubAllocation").slideToggle("fast");
             }
         });
         $("#showRugbyClubAllocation").click(function () {
-            if($("#showRugbyClubAllocation:checked").val() === "Rugby_Club") {
+            if ($("#showRugbyClubAllocation:checked").val() === "Rugby_Club") {
                 $("#rugbyClubAllocation").slideToggle("fast");
             } else {
                 $("#rugbyClubAllocation").slideToggle("fast");
             }
         });
         $("#showSoccerGoalClubAllocation").click(function () {
-            if($("#showSoccerGoalClubAllocation:checked").val() === "Soccer_Goal_Club") {
+            if ($("#showSoccerGoalClubAllocation:checked").val() === "Soccer_Goal_Club") {
                 $("#soccerGoalClubAllocation").slideToggle("fast");
             } else {
                 $("#soccerGoalClubAllocation").slideToggle("fast");
             }
         });
         $("#showSwimmingClubAllocation").click(function () {
-            if($("#showSwimmingClubAllocation:checked").val() === "Swimming_Club") {
+            if ($("#showSwimmingClubAllocation:checked").val() === "Swimming_Club") {
                 $("#swimmingClubAllocation").slideToggle("fast");
             } else {
                 $("#swimmingClubAllocation").slideToggle("fast");
             }
         });
         $("#showTennisRacquetClubAllocation").click(function () {
-            if($("#showTennisRacquetClubAllocation:checked").val() === "Tennis_Racquet_Club") {
+            if ($("#showTennisRacquetClubAllocation:checked").val() === "Tennis_Racquet_Club") {
                 $("#tennisRacquetClubAllocation").slideToggle("fast");
             } else {
                 $("#tennisRacquetClubAllocation").slideToggle("fast");
             }
         });
         $("#showOtherScholarshipAllocation").click(function () {
-            if($("#showOtherScholarshipAllocation:checked").val() === "OtherScholarship") {
+            if ($("#showOtherScholarshipAllocation:checked").val() === "OtherScholarship") {
                 $("#scholarshipSpecialInstructionsAllocation").slideToggle("fast");
             } else {
                 $("#scholarshipSpecialInstructionsAllocation").slideToggle("fast");
             }
         });
         $("#showOtherAcademicAllocation").click(function () {
-            if($("#showOtherAcademicAllocation:checked").val() === "Other_Academic_Area") {
+            if ($("#showOtherAcademicAllocation:checked").val() === "Other_Academic_Area") {
                 $("#academicSpecialInstructionsAllocation").slideToggle("fast");
             } else {
                 $("#academicSpecialInstructionsAllocation").slideToggle("fast");
