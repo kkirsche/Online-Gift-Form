@@ -236,79 +236,79 @@ $formKey = new formKey();
                                         <em>Please select the Scholarship(s) below</em>
                                         <!--ADD ARARY FOR EACH SECTION HERE-->
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showGoodMenGoodCitizensAllocation" name="list-items[]" value="Good_Men_Good_Citizens" />
+                                                <input type="checkbox" id="showGoodMenGoodCitizensAllocation" name="list-items[]" value="Good_Men_Good_Citizens" />
                                                 Good Men, Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2012Allocation" name="list-items[]" value="Class_Of_2012" />
+                                                <input type="checkbox" id="showClassof2012Allocation" name="list-items[]" value="Class_Of_2012" />
                                                 Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2011Allocation" name="list-items[]" value="Class_Of_2011" />
+                                                <input type="checkbox" id="showClassof2011Allocation" name="list-items[]" value="Class_Of_2011" />
                                                 Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2010Allocation" name="list-items[]" value="Class_Of_2010" />
+                                                <input type="checkbox" id="showClassof2010Allocation" name="list-items[]" value="Class_Of_2010" />
                                                 Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2009Allocation" name="list-items[]" value="Class_Of_2009" />
+                                                <input type="checkbox" id="showClassof2009Allocation" name="list-items[]" value="Class_Of_2009" />
                                                 Class of 2009 Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2008Allocation" name="list-items[]" value="Class_Of_2008" />
+                                                <input type="checkbox" id="showClassof2008Allocation" name="list-items[]" value="Class_Of_2008" />
                                                 Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2007Allocation" name="list-items[]" value="Class_Of_2007" />
+                                                <input type="checkbox" id="showClassof2007Allocation" name="list-items[]" value="Class_Of_2007" />
                                                 Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2006Allocation" name="list-items[]" value="Class_Of_2006" />
+                                                <input type="checkbox" id="showClassof2006Allocation" name="list-items[]" value="Class_Of_2006" />
                                                 Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2005Allocation" name="list-items[]" value="Class_Of_2005" />
+                                                <input type="checkbox" id="showClassof2005Allocation" name="list-items[]" value="Class_Of_2005" />
                                                 Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2004Allocation" name="list-items[]" value="Class_Of_2004" />
+                                                <input type="checkbox" id="showClassof2004Allocation" name="list-items[]" value="Class_Of_2004" />
                                                 Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof2003Allocation" name="list-items[]" value="Class_Of_2003" />
+                                                <input type="checkbox" id="showClassof2003Allocation" name="list-items[]" value="Class_Of_2003" />
                                                 Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1980Allocation" name="list-items[]" value="Class_Of_1980" />
+                                                <input type="checkbox" id="showClassof1980Allocation" name="list-items[]" value="Class_Of_1980" />
                                                 Class of 1980 Endowed Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1961Allocation" name="list-items[]" value="Class_Of_1961" />
+                                                <input type="checkbox" id="showClassof1961Allocation" name="list-items[]" value="Class_Of_1961" />
                                                 Class of 1961 Good Men Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1960Allocation" name="list-items[]" value="Class_Of_1960" />
+                                                <input type="checkbox" id="showClassof1960Allocation" name="list-items[]" value="Class_Of_1960" />
                                                 Class of 1960 Good Men Good Citizens Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1958Allocation" name="list-items[]" value="Class_Of_1958" />
+                                                <input type="checkbox" id="showClassof1958Allocation" name="list-items[]" value="Class_Of_1958" />
                                                 Class of 1958 Summer College Endowment Fund
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1954Allocation" name="list-items[]" value="Class_Of_1954" />
+                                                <input type="checkbox" id="showClassof1954Allocation" name="list-items[]" value="Class_Of_1954" />
                                                 Class of 1954 Wilson Center Lecture Series
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1953Allocation" name="list-items[]" value="Class_Of_1953" />
+                                                <input type="checkbox" id="showClassof1953Allocation" name="list-items[]" value="Class_Of_1953" />
                                                 Class of 1953 Scholarship Endowment
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showClassof1951Allocation" name="list-items[]" value="Class_Of_1951" />
+                                                <input type="checkbox" id="showClassof1951Allocation" name="list-items[]" value="Class_Of_1951" />
                                                 Class of 1951 Memorial Scholarship
                                             </label>
                                             <label class="checkbox">
-                                                <input type = "checkbox" id="showOtherAllocation" name="list-items[]" value="OtherScholarship" />
+                                                <input type="checkbox" id="showOtherScholarshipAllocation" name="list-items[]" value="OtherScholarship" />
                                                 Other <em>(please specify in special instructions)</em>
                                             </label>
                                     </div>
@@ -322,23 +322,23 @@ $formKey = new formKey();
                                         <div class="ifAcademicsSelected indented">
                                             <em>Please select the department(s) below</em>
                                                 <label class="checkbox">
-                                                    <input type = "checkbox" name="list-items[]" value="Atkinson_Museum" />
+                                                    <input type="checkbox" id="showAtkinsonMuseumAllocation" name="list-items[]" value="Atkinson_Museum" />
                                                     Atkinson Museum
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type = "checkbox" name="list-items[]" value="Bortz_Library" />
+                                                    <input type="checkbox" id="showBortzLibraryAllocation" name="list-items[]" value="Bortz_Library" />
                                                     Bortz Library
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type = "checkbox" name="list-items[]" value="Culture_and_Community" />
+                                                    <input type="checkbox" id="showCultureAndCommunityAllocation" name="list-items[]" value="Culture_and_Community" />
                                                     Culture and Community
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type = "checkbox" name="list-items[]" value="Wilson_Center" />
+                                                    <input type="checkbox" id="showTheWilsonCenterAllocation" name="list-items[]" value="Wilson_Center" />
                                                     the Wilson Center
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type = "checkbox" name="list-items[]" value="Other_Academic_Area" />
+                                                    <input type="checkbox" id="showOtherAcademicAllocation" name="list-items[]" value="Other_Academic_Area" />
                                                     Other <em>(please specify in special instructions)</em>
                                                 </label>
                                         </div>
@@ -403,7 +403,7 @@ $formKey = new formKey();
                                         <!--End Dropdown-->
 
                                         <label><strong>Special Instructions</strong></label>
-                                        <textarea name="specinstr" placeholder="Enter Special Instructions Here"></textarea>
+                                        <textarea name="specinstr" id="specinstr" value="N/A" placeholder="Enter Special Instructions Here (255 character maximum)"></textarea>
 
                                 <span id="checkboxError" class="centerText"></span>
                             </fieldset>

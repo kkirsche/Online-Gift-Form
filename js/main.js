@@ -182,6 +182,139 @@ $("document").ready(function () {
                 $("#classOf2011Allocation").slideToggle("fast");
             }
         });
+        $("#showClassof2010Allocation").click(function () {
+            if($("#showClassof2010Allocation:checked").val() === "Class_Of_2010") {
+                $("#classOf2010Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2010Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2009Allocation").click(function () {
+            if($("#showClassof2009Allocation:checked").val() === "Class_Of_2009") {
+                $("#classOf2009Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2009Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2008Allocation").click(function () {
+            if($("#showClassof2008Allocation:checked").val() === "Class_Of_2008") {
+                $("#classOf2008Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2008Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2007Allocation").click(function () {
+            if($("#showClassof2007Allocation:checked").val() === "Class_Of_2007") {
+                $("#classOf2007Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2007Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2006Allocation").click(function () {
+            if($("#showClassof2006Allocation:checked").val() === "Class_Of_2006") {
+                $("#classOf2006Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2006Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2005Allocation").click(function () {
+            if($("#showClassof2005Allocation:checked").val() === "Class_Of_2005") {
+                $("#classOf2005Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2005Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2004Allocation").click(function () {
+            if($("#showClassof2004Allocation:checked").val() === "Class_Of_2004") {
+                $("#classOf2004Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2004Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof2003Allocation").click(function () {
+            if($("#showClassof2003Allocation:checked").val() === "Class_Of_2003") {
+                $("#classOf2003Allocation").slideToggle("fast");
+            } else {
+                $("#classOf2003Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1980Allocation").click(function () {
+            if($("#showClassof1980Allocation:checked").val() === "Class_Of_1980") {
+                $("#classOf1980Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1980Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1961Allocation").click(function () {
+            if($("#showClassof1961Allocation:checked").val() === "Class_Of_1961") {
+                $("#classOf1961Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1961Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1960Allocation").click(function () {
+            if($("#showClassof1960Allocation:checked").val() === "Class_Of_1960") {
+                $("#classOf1960Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1960Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1958Allocation").click(function () {
+            if($("#showClassof1958Allocation:checked").val() === "Class_Of_1958") {
+                $("#classOf1958Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1958Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1954Allocation").click(function () {
+            if($("#showClassof1954Allocation:checked").val() === "Class_Of_1954") {
+                $("#classOf1954Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1954Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1953Allocation").click(function () {
+            if($("#showClassof1953Allocation:checked").val() === "Class_Of_1953") {
+                $("#classOf1953Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1953Allocation").slideToggle("fast");
+            }
+        });
+        $("#showClassof1951Allocation").click(function () {
+            if($("#showClassof1951Allocation:checked").val() === "Class_Of_1951") {
+                $("#classOf1951Allocation").slideToggle("fast");
+            } else {
+                $("#classOf1951Allocation").slideToggle("fast");
+            }
+        });
+        $("#showAtkinsonMuseumAllocation").click(function () {
+            if($("#showAtkinsonMuseumAllocation:checked").val() === "Atkinson_Museum") {
+                $("#atkinsonMuseumAllocation").slideToggle("fast");
+            } else {
+                $("#atkinsonMuseumAllocation").slideToggle("fast");
+            }
+        });
+        $("#showBortzLibraryAllocation").click(function () {
+            if($("#showBortzLibraryAllocation:checked").val() === "Bortz_Library") {
+                $("#bortzLibraryAllocation").slideToggle("fast");
+            } else {
+                $("#bortzLibraryAllocation").slideToggle("fast");
+            }
+        });
+        $("#showCultureAndCommunityAllocation").click(function () {
+            if($("#showCultureAndCommunityAllocation:checked").val() === "Culture_and_Community") {
+                $("#cultureAndCommunityAllocation").slideToggle("fast");
+            } else {
+                $("#cultureAndCommunityAllocation").slideToggle("fast");
+            }
+        });
+        $("#showTheWilsonCenterAllocation").click(function () {
+            if($("#showTheWilsonCenterAllocation:checked").val() === "Wilson_Center") {
+                $("#wilsonCenterAllocation").slideToggle("fast");
+            } else {
+                $("#wilsonCenterAllocation").slideToggle("fast");
+            }
+        });
     }
     //Let's add the ability to show and hide fields via the checkboxes
     function addInteractivity() {
