@@ -14,11 +14,11 @@ $formKey = new formKey();
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Online Gift &mdash; Gift Information</title>
-        <meta name="description" content="Hampden-Sydney College's Online Gift Form">
-        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Hampden-Sydney College | Online Donation Form</title>
+        <meta name="description" content="Hampden-Sydney College's Online Donation Form" />
+        <meta name="viewport" content="width=device-width" />
 
         <link rel="icon" type="image/ico" href="favicon.ico" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -27,7 +27,6 @@ $formKey = new formKey();
         <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
         <link rel="apple-touch-startup-image" href="img/startup.png" />
         <link rel="apple-touch-startup-image" sizes="640x920" href="img/startup-640x920.png" />
-        <link
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="css/master.css">
         
