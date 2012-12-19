@@ -352,51 +352,51 @@ $formKey = new formKey();
                                         <div class="ifAthleticsAreSelected indented">
                                            <em>Please select which athletic area(s) below</em>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Baseball_Big_Hitters_Club"  />
+                                                    <input type="checkbox" id="showBaseballBigHittersClubAllocation" name="list-items[]" value="Baseball_Big_Hitters_Club"  />
                                                     Baseball Big Hitters Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Basketball_Roundball_Club" />
+                                                    <input type="checkbox" id="showBasketballRoundballClubAllocation" name="list-items[]" value="Basketball_Roundball_Club" />
                                                     Basketball Roundball Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Cross_Country_Harriers" />
+                                                    <input type="checkbox" id="showCrossCountryHarriersAllocation" name="list-items[]" value="Cross_Country_Harriers" />
                                                     Cross Country Harriers
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Everett_Stadium" />
+                                                    <input type="checkbox" id="showEverettStadiumAllocation" name="list-items[]" value="Everett_Stadium" />
                                                     Everett Stadium
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Football_Gridiron_Club" />
+                                                    <input type="checkbox" id="showFootballGridironClubAllocation" name="list-items[]" value="Football_Gridiron_Club" />
                                                     Football Gridiron Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Golf_Hole_In_One_Club" />
+                                                    <input type="checkbox" id="showGolfHoleInOneClubAllocation" name="list-items[]" value="Golf_Hole_In_One_Club" />
                                                     Golf Hole In One Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Kirk_Athletic_Center" />
+                                                    <input type="checkbox" id="showKirkAthleticCenterAllocation" name="list-items[]" value="Kirk_Athletic_Center" />
                                                     Kirk Athletic Center
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Lacrosse_Face_Off_Club" />
+                                                    <input type="checkbox" id="showLacrosseFaceOffClubAllocation" name="list-items[]" value="Lacrosse_Face_Off_Club" />
                                                     Lacrosse Face Off Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Rugby_Club" />
+                                                    <input type="checkbox" id="showRugbyClubAllocation" name="list-items[]" value="Rugby_Club" />
                                                     Rugby Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Soccer_Goal_Club" />
+                                                    <input type="checkbox" id="showSoccerGoalClubAllocation" name="list-items[]" value="Soccer_Goal_Club" />
                                                     Soccer Goal Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Swimming_Club" />
+                                                    <input type="checkbox" id="showSwimmingClubAllocation" name="list-items[]" value="Swimming_Club" />
                                                     Swimming Club
                                                 </label>
                                                 <label class="checkbox">
-                                                    <input type="checkbox" name="list-items[]" value="Tennis_Racquet_Club" />
+                                                    <input type="checkbox" id="showTennisRacquetClubAllocation" name="list-items[]" value="Tennis_Racquet_Club" />
                                                     Tennis Racquet Club
                                                 </label>
                                         </div>

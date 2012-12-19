@@ -315,6 +315,90 @@ $("document").ready(function () {
                 $("#wilsonCenterAllocation").slideToggle("fast");
             }
         });
+        $("#showBaseballBigHittersClubAllocation").click(function () {
+            if($("#showBaseballBigHittersClubAllocation:checked").val() === "Baseball_Big_Hitters_Club") {
+                $("#baseballBigHittersClubAllocation").slideToggle("fast");
+            } else {
+                $("#baseballBigHittersClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showBasketballRoundballClubAllocation").click(function () {
+            if($("#showBasketballRoundballClubAllocation:checked").val() === "Basketball_Roundball_Club") {
+                $("#basketballRoundballClubAllocation").slideToggle("fast");
+            } else {
+                $("#basketballRoundballClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showCrossCountryHarriersAllocation").click(function () {
+            if($("#showCrossCountryHarriersAllocation:checked").val() === "Cross_Country_Harriers") {
+                $("#crossCountryHarriersAllocation").slideToggle("fast");
+            } else {
+                $("#crossCountryHarriersAllocation").slideToggle("fast");
+            }
+        });
+        $("#showEverettStadiumAllocation").click(function () {
+            if($("#showEverettStadiumAllocation:checked").val() === "Everett_Stadium") {
+                $("#everettStadiumAllocation").slideToggle("fast");
+            } else {
+                $("#everettStadiumAllocation").slideToggle("fast");
+            }
+        });
+        $("#showFootballGridironClubAllocation").click(function () {
+            if($("#showFootballGridironClubAllocation:checked").val() === "Football_Gridiron_Club") {
+                $("#footballGridironClubAllocation").slideToggle("fast");
+            } else {
+                $("#footballGridironClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showGolfHoleInOneClubAllocation").click(function () {
+            if($("#showGolfHoleInOneClubAllocation:checked").val() === "Golf_Hole_In_One_Club") {
+                $("#golfHoleInOneClubAllocation").slideToggle("fast");
+            } else {
+                $("#golfHoleInOneClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showKirkAthleticCenterAllocation").click(function () {
+            if($("#showKirkAthleticCenterAllocation:checked").val() === "Kirk_Athletic_Center") {
+                $("#kirkAthleticCenterAllocation").slideToggle("fast");
+            } else {
+                $("#kirkAthleticCenterAllocation").slideToggle("fast");
+            }
+        });
+        $("#showLacrosseFaceOffClubAllocation").click(function () {
+            if($("#showLacrosseFaceOffClubAllocation:checked").val() === "Lacrosse_Face_Off_Club") {
+                $("#lacrosseFaceOffClubAllocation").slideToggle("fast");
+            } else {
+                $("#lacrosseFaceOffClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showRugbyClubAllocation").click(function () {
+            if($("#showRugbyClubAllocation:checked").val() === "Rugby_Club") {
+                $("#rugbyClubAllocation").slideToggle("fast");
+            } else {
+                $("#rugbyClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showSoccerGoalClubAllocation").click(function () {
+            if($("#showSoccerGoalClubAllocation:checked").val() === "Soccer_Goal_Club") {
+                $("#soccerGoalClubAllocation").slideToggle("fast");
+            } else {
+                $("#soccerGoalClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showSwimmingClubAllocation").click(function () {
+            if($("#showSwimmingClubAllocation:checked").val() === "Swimming_Club") {
+                $("#swimmingClubAllocation").slideToggle("fast");
+            } else {
+                $("#swimmingClubAllocation").slideToggle("fast");
+            }
+        });
+        $("#showTennisRacquetClubAllocation").click(function () {
+            if($("#showTennisRacquetClubAllocation:checked").val() === "Tennis_Racquet_Club") {
+                $("#tennisRacquetClubAllocation").slideToggle("fast");
+            } else {
+                $("#tennisRacquetClubAllocation").slideToggle("fast");
+            }
+        });
     }
     //Let's add the ability to show and hide fields via the checkboxes
     function addInteractivity() {
