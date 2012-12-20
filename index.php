@@ -214,9 +214,7 @@ $formKey = new formKey();
 
                     <!--Step 3-->
                     <div id="step3" class="control-group">
-                        <p><strong><span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span> &mdash; Your <span id="typeOfGift">GIFT_TYPE</span> gift amount from the previous page.</span>
-                            <!--If more than one fund is chosen, display the following-->
-                            Enter amounts for each fund below. If you would like to change the total amount, please press the previous button.</strong>
+                        <p><strong>Thank you for your one time gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</strong>
                         </p>
                             <label class="centerText control-label">I would like to allocate my gift<sup class="requiredValue">*</sup>:</label>
                             <div class="controls">
@@ -315,7 +313,7 @@ $formKey = new formKey();
      
                                     <label class="checkbox">
                                         <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
-                                        <strong>to Academics</strong>
+                                        <strong>to College Programs</strong>
                                     </label>
                                     <!--Dropdown if selected-->
                                         <div class="ifAcademicsSelected indented">
@@ -422,7 +420,7 @@ $formKey = new formKey();
 
                 <!--Step 4 | Allocations-->
                 <div id="step4" class="textCenter">
-                    How would you like to allocate your donation?
+                    How would you like to designate your gift?
 
                         <div class="showUnrestricted input-append">
                             <input type="number" name="unrestricted-Allocation" min="0" max="100" value="0" />
