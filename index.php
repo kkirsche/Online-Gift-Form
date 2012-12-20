@@ -743,22 +743,22 @@ $formKey = new formKey();
                     opacity: 0
                 });
                 return $('#creditCardNumber').validateCreditCard(function(result) {
-                if (!(result.card_type != null)) {
-                    $('.cards li').removeClass('off');
-                    $('#creditCardNumber').removeClass('valid');
-                    return;
-                }
-                $('.cards li').addClass('off');
-                $('.cards .' + result.card_type.name).removeClass('off');
+                    if (!(result.card_type != null)) {
+                        $('.cards li').removeClass('off');
+                        $('#creditCardNumber').removeClass('valid');
+                        return;
+                    }
+                    $('.cards li').addClass('off');
+                    $('.cards .' + result.card_type.name).removeClass('off');
 
-                if (result.length_valid && result.luhn_valid) {
-                    return $('#card_number').addClass('valid');
-                } else {
-                    return $('#card_number').removeClass('valid');
-                }
-            });
-        });
-    }).call(this);
-</script>
+                    if (result.length_valid && result.luhn_valid) {
+                        return $('#card_number').addClass('valid');
+                    } else {
+                        return $('#card_number').removeClass('valid');
+                    }
+                });
+                });
+            }).call(this);
+        </script>
     </body>
 </html>
