@@ -340,6 +340,7 @@ $("document").ready(function () {
             return true;
 
         case 5:
+            //Check user information i.e. Name / State / Etc.
             return true;
 
         default:
