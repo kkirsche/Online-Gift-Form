@@ -52,4 +52,4 @@ Anyone and everyone is welcome to [contribute](https://github.com/kkirsche/Onlin
 * Modernizr: MIT/BSD license
 * Normalize.css: Public Domain
 * Twitter Bootstrap: Apache License, Version 2.0
-
+* Credit Card Icons: [License can be viewed here](http://www.smashingmagazine.com/2010/10/21/free-png-credit-card-debit-card-and-payment-icons-set-18-icons/)
