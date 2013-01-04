@@ -48,9 +48,9 @@ Anyone and everyone is welcome to [contribute](https://github.com/kkirsche/Onlin
 
 ### Major components:
 
-* jQuery: MIT/GPL license
-* Modernizr: MIT/BSD license
-* Normalize.css: Public Domain
-* Twitter Bootstrap: Apache License, Version 2.0
+* jQuery 1.8.3: [MIT/GPL license](http://jquery.org/license/)
+* Modernizr 2.6.2 (Custom Build): [MIT/BSD license](http://modernizr.com/license/)
+* Normalize.css: [Public Domain](https://github.com/necolas/normalize.css/)
+* Twitter Bootstrap: [Apache License, Version 2.0](https://github.com/twitter/bootstrap/wiki/License)
 * jQuery Credit Card Validator by Pawel Decowski: [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)
-* Credit Card Icons: [License can be viewed here](http://www.smashingmagazine.com/2010/10/21/free-png-credit-card-debit-card-and-payment-icons-set-18-icons/)
+* Credit Card Icons by Phil Mathews: [License can be viewed here](http://www.smashingmagazine.com/2010/10/21/free-png-credit-card-debit-card-and-payment-icons-set-18-icons/)
