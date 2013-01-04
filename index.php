@@ -73,8 +73,8 @@ $formKey = new formKey();
                         <?php $formKey->outputKey(); ?>
                         <!--Ask whether it's a one-time gift or a recurring gift-->
                         <div class="centerButtons">
-                            <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" width="250" height="250" class="OTG" alt="I would like to make a one-time gift" /></a>
-                            <a href="#" class="nextStep" id="recurringGift"><img src="img/RecurringGift.png" width="250" height="250" alt="I would like to make a recurring gift" /></a>
+                            <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" width="250" height="250" onMouseOver="this.src='img/One-TimeGift_hover.png';" onmouseout="this.src='img/One-TimeGift.png';"  class="OTG" alt="I would like to make a one-time gift" /></a>
+                            <a href="#" class="nextStep" id="recurringGift"><img src="img/RecurringGift.png" width="250" height="250" onMouseOver="this.src='img/RecurringGift_hover.png';" onmouseout="this.src='img/RecurringGift.png';" alt="I would like to make a recurring gift" /></a>
                         </div>
                         <div class="jsDisabled">
                             <select name="donationType">
