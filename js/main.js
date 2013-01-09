@@ -64,9 +64,11 @@ $("document").ready(function () {
             switch (chosenDonationType) {
             case "oneTimeGift":
                 $("#makingAOneTimeGift").slideToggle();
+                $("#oneTimeDonationValue").val(0);
                 break;
             case "recurringDonation":
                 $("#makingARecurringGift").slideToggle();
+                $("#totalRecurringDonationValue").val(0)
                 break;
             default:
                 $("#makingARecurringGift").hide();
@@ -107,7 +109,7 @@ $("document").ready(function () {
             currencyOneTimeDonation = OneTimeDonation.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
             donationAmount = currencyOneTimeDonation;
         } else {
-            currencyRecurringDonation = OneTimeDonation.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            currencyRecurringDonation = RecurringDonation.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
             donationAmount = currencyRecurringDonation;
 
         }
