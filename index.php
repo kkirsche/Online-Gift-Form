@@ -63,7 +63,7 @@ $formKey = new formKey();
             <div class="main wrapper clearfix">
                 <article>
                     <!--Inform the user that the form IS secure!-->
-                    <p>Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="More Info"></i></a></p>
+                    <p>Credit card information is handled using a secure web server. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="Other Ways to Give"></i></a></p>
                 </article>
 
                 <!--One Time or Recurring Step-->
