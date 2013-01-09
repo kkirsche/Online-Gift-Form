@@ -63,6 +63,7 @@ $formKey = new formKey();
             <div class="main wrapper clearfix">
                 <article>
                     <!--Inform the user that the form IS secure!-->
+                    <h1>Thank you for your gift to Hampden-Sydney College!</h1>
                     <p>Credit card information is handled using a secure web server. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="Other Ways to Give"></i></a></p>
                 </article>
                 <div class="row">
@@ -217,7 +218,7 @@ $formKey = new formKey();
                                     Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                 </strong>
                             </p>
-                            <label class="centerText control-label">I would like to allocate my gift<sup class="requiredValue">*</sup>:</label>
+                            <label class="centerText control-label">I would like to designate my gift<sup class="requiredValue">*</sup>:</label>
                             <div class="controls">
                                 <fieldset>
                                     <label class="checkbox">
