@@ -98,15 +98,18 @@ $("document").ready(function () {
 
     function replaceDonationAmount() {
         //check which they used
-        var donationAmount, OneTimeDonation, RecurringDonation;
+        var donationAmount, OneTimeDonation, RecurringDonation, currencyOneTimeDonation, currencyRecurringDonation;
         donationAmount = 0;
         OneTimeDonation = $("[name=oneTimeDonationValue]").val();
-        RecurringDonation = parseInt($("#totalRecurringDonationValue").text(), 10);
+        RecurringDonation = $("#totalRecurringDonationValue").val();
 
-        if (OneTimeDonation !== 0) {
-            donationAmount = OneTimeDonation;
+        if (OneTimeDonation != 0) {
+            currencyOneTimeDonation = OneTimeDonation.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            donationAmount = currencyOneTimeDonation;
         } else {
-            donationAmount = RecurringDonation;
+            currencyRecurringDonation = OneTimeDonation.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            donationAmount = currencyRecurringDonation;
+
         }
         $("#showTotalDonationAmount").text(donationAmount);
     }

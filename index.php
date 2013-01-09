@@ -214,7 +214,7 @@ $formKey = new formKey();
                         <div id="step3" class="control-group">
                             <p>
                                 <strong>
-                                    Thank you for your one time gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
+                                    Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                 </strong>
                             </p>
                             <label class="centerText control-label">I would like to allocate my gift<sup class="requiredValue">*</sup>:</label>
