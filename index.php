@@ -12,11 +12,7 @@ $formKey = new formKey();
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<<<<<<< HEAD
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-=======
-<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
->>>>>>> 6b958c56a169548e9cf3bd1adc669a01f0af6f4d
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
