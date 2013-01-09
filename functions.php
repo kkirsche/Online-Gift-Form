@@ -148,6 +148,9 @@ function convert_state_to_abbreviation($state_name) {
 			case "Arkansas":
 				return "AR";
 				break;
+			case "American Samoa":
+				return "AS";
+				break;
 			case "California":
 				return "CA";
 				break;
@@ -156,6 +159,12 @@ function convert_state_to_abbreviation($state_name) {
 				break;
 			case "Connecticut":
 				return "CT";
+				break;
+			case "District of Columbia":
+				return "DC";
+				break;
+			case "Guam":
+				return "GU";
 				break;
 			case "Delaware":
 				return "DE";
@@ -199,8 +208,14 @@ function convert_state_to_abbreviation($state_name) {
 			case "Massachusetts":
 				return "MA";
 				break;
+			case "Marshall Islands":
+				return "MH";
+				break;
 			case "Michigan":
 				return "MI";
+				break;
+			case "Micronesia":
+				return "FM";
 				break;
 			case "Minnesota":
 				return "MN";
@@ -238,6 +253,9 @@ function convert_state_to_abbreviation($state_name) {
 			case "North Dakota":
 				return "ND";
 				break;
+			case "Northern Marianas":
+				return "MP";
+				break;
 			case "Ohio":
 				return "OH";
 				break;
@@ -246,6 +264,12 @@ function convert_state_to_abbreviation($state_name) {
 				break;
 			case "Oregon":
 				return "OR";
+				break;
+			case "Palau":
+				return "PW";
+				break;
+			case "Puerto Rico":
+				return "PR";
 				break;
 			case "Pennsylvania":
 				return "PA";
@@ -273,6 +297,9 @@ function convert_state_to_abbreviation($state_name) {
 				break;
 			case "Virginia":
 				return "VA";
+				break;
+			case "Virgin Islands":
+				return "VI";
 				break;
 			case "Washington":
 				return "WA";
