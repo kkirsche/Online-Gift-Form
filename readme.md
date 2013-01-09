@@ -17,7 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 To use this effectively you must have:
 * PHP 5
-* Javascript enabled
+* Javascript enabled browser
 * An internet connection
 
 
@@ -31,13 +31,10 @@ To use this effectively you must have:
 * A default print stylesheet, performance optimized.
 * Mobile browser optimizations.
 * Protection against any stray `console.log` causing JavaScript errors in IE6/7.
-* The latest jQuery via CDN, with a local fallback.
+* The jQuery via Google's CDN, with a local fallback.
 * A custom Modernizr build for feature detection.
 * An optimized Google Analytics snippet.
 * Apache server caching, compression, and other configuration defaults for Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
 * Apple Icons for use of the page on the user's homescreen.
 * HiDPI Graphics.
 
