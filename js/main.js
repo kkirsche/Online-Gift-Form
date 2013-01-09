@@ -1,6 +1,6 @@
 $("document").ready(function () {
     "use strict";
-    var currentStep;
+    var currentStep, stepsMovedForward, stepsMovedBackward;
     //Hide additional steps and the differences between the two steps if they have Javascript
     function hideSteps() {
         //hide the divs
@@ -14,10 +14,12 @@ $("document").ready(function () {
         $("#makingARecurringGift").hide();
     }
     function showNextStep(currentStep) {
-        $("#step" + currentStep).slideToggle("slow", function () {
-            if (currentStep === 1) {
-                //figure out what kind of donation they are making
-                var chosenDonationType = $("[name=donationType]").val();
+        var chosenDonationType, checkedAllocations, selectedAllocationValue, stepsMoved = 1;
+        $("#step" + currentStep).slideToggle("slow")
+
+        if (currentStep === 1) {
+            //figure out what kind of donation they are making
+            chosenDonationType = $("[name=donationType]").val();
                 //show the apppropriate slide
                 switch (chosenDonationType) {
                 case "oneTimeGift":
@@ -32,16 +34,31 @@ $("document").ready(function () {
                     break;
                     //if somehow they changed it to something else, ignore them and return false.
                 default:
+                    stepsMoved = 0;
                     return false;
                     //break; not needed due to return
                 }//end switch
+        } else if (currentStep === 3) {
+            checkedAllocations = $("#step3 :checkbox:checked");
+            if (checkedAllocations.length === 1) {
+                selectedAllocationValue = checkedAllocations.val();//do whatever you want with that
+                $("[name=" + selectedAllocationValue + "-Allocation]").val(100);
+                currentStep += 2;
+                stepsMoved = 2;
             } else {
                 currentStep += 1;
-                $("#step" + currentStep).slideToggle("slow");
             }
-        });
+            $("#step" + currentStep).slideToggle("slow");
+        } else {
+            currentStep += 1;
+            $("#step" + currentStep).slideToggle("slow");
+        }
+        return stepsMoved;
     }
     function showPreviousStep(currentStep) {
+        var checkedAllocations, selectedAllocationValue, stepsMoved = 1;
+        
+        $("#step" + currentStep).slideToggle("slow");
         if (currentStep === 2) {
             var chosenDonationType = $("[name=donationType]").val();
             switch (chosenDonationType) {
@@ -56,16 +73,23 @@ $("document").ready(function () {
                 $("#makingAOneTimeGift").hide();
                 break;
             }
+        } else if (currentStep === 5) {
+            checkedAllocations = $("#step3 :checkbox:checked");
+            if (checkedAllocations.length === 1) {
+                selectedAllocationValue = checkedAllocations.val();//do whatever you want with that
+                $("[name=" + selectedAllocationValue + "-Allocation]").val(0);
+                currentStep -= 1;
+                stepsMoved = 2;
+            }
         }
 
-        $("#step" + currentStep).slideToggle("slow", function () {
             currentStep -= 1;
             $("#step" + currentStep).slideToggle("slow");
-        });
+        return stepsMoved;
     }
+
     function showResults(currentStep) {
         $("#showResults").slideToggle("slow");
-
     }
     function validateBeforeSubmitContent() {
         //if true submit form / if false do NOT submit the form
@@ -381,15 +405,15 @@ $("document").ready(function () {
     //change steps
     $(".nextStep").click(function () {
         if (validateCurrentStep(currentStep)) {
-            showNextStep(currentStep);
-            currentStep += 1;
+            stepsMovedForward = showNextStep(currentStep);
+            currentStep += stepsMovedForward;
         } else {
             return false;
         }
     });
     $(".previousStep").click(function () {
-        showPreviousStep(currentStep);
-        currentStep -= 1;
+        stepsMovedBackward = showPreviousStep(currentStep);
+        currentStep -= stepsMovedBackward;
     });
 
     $("[name=submit_form]").click(function (e) {
