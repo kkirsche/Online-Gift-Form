@@ -63,7 +63,7 @@ $formKey = new formKey();
             <div class="main wrapper clearfix">
                 <article>
                     <!--Inform the user that the form IS secure!-->
-                    <p>Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign"></i></a></p>
+                    <p>Credit card information is handled using a secure web server and all information is encrypted before submission to the Office of Institutional Advancement. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="More Info"></i></a></p>
                 </article>
 
                 <!--One Time or Recurring Step-->
@@ -737,6 +737,8 @@ $formKey = new formKey();
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
         <script>
+            //enable tooltips
+            $("#moreInfo").tooltip();
             //enable typeahead
             var usStates = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'].sort();
             $('[name=usersState]').typeahead({source: usStates, items: 50});
