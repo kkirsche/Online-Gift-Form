@@ -621,7 +621,7 @@ $formKey = new formKey();
                             </label>
                             <label class="inline">
                                 State<sup class="requiredValue">*</sup>:&nbsp;
-                                <input type="text" name="usersState" size="30" placeholder="VA" />
+                                <input type="text" name="usersState" data-provide="typeahead" size="30" placeholder="Virginia" />
                             </label>
                             <label class="inline">
                                 Zip Code<sup class="requiredValue">*</sup>:&nbsp;
@@ -725,7 +725,7 @@ $formKey = new formKey();
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>-->
         <script src="js/jquery.form.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -737,6 +737,10 @@ $formKey = new formKey();
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
         <script>
+            //enable typeahead
+            var usStates = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'].sort();
+            $('[name=usersState]').typeahead({source: usStates, items: 50});
+            //credit card function
             $(function() {
                 $(function() {
                     $('.vertical.maestro').hide().css({
