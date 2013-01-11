@@ -189,6 +189,7 @@ $("document").ready(function () {
 
     }
     function showResepectiveAllocation() {
+        var lastSelected = "";
         //scholarship functions
         $("div.ifScholarshipsSelected input[type=\"checkbox\"]").click(function () {
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
@@ -200,6 +201,18 @@ $("document").ready(function () {
             //Test if one isn't showing up
             //alert("#" + $(this).val().replace(/_/g, "") + "Allocation");
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
+        });
+        $("[name=classYearScholarshipSelection]").change(function() {
+            if ($(this).val() === "N/A") {
+                $("#ClassOf" + lastSelected + "Allocation").slideToggle("fast");
+                lastSelected = $(this).val();
+            } else {
+                $("#ClassOf" + $(this).val() +"Allocation").slideToggle("fast");
+                if (lastSelected != "") {
+                    $("#ClassOf" + lastSelected + "Allocation").slideToggle("fast");
+                }
+                lastSelected = $(this).val();
+            }
         });
     }
     //Let's add the ability to show and hide fields via the checkboxes
@@ -220,6 +233,19 @@ $("document").ready(function () {
                 $(".ifScholarshipsSelected").slideToggle("fast"); //Slide Down Effect
             } else {
                 $(".ifScholarshipsSelected").slideToggle("fast");  //Slide Up Effect
+            }
+        });
+        //to a class scholarship
+        $(".ifClassScholarshipSelected").css("display", "none");
+        $(".showClassScholarshipAllocation").click(function () {
+            if ($("input.showClassScholarshipAllocation:checked").val() === "Class_Scholarship") {
+                $(".ifClassScholarshipSelected").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".ifClassScholarshipSelected").slideToggle("fast");  //Slide Up Effect
+                if( $("[name=classYearScholarshipSelection]").val() != "N/A") {
+                    $("[name=classYearScholarshipSelection]").val("N/A");
+                    $("[name=classYearScholarshipSelection]").trigger("change");
+                }
             }
         });
     //to a academics

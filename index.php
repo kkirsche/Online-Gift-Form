@@ -239,73 +239,32 @@ $formKey = new formKey();
                                             Good Men, Good Citizens Scholarship
                                         </label>
                                         <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2012Allocation" name="list-items[]" value="Class_Of_2012" />
-                                            Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96
+                                            <input type="checkbox" class="showClassScholarshipAllocation" name="toClassScholarship" value="Class_Scholarship" />
+                                            To a Class Scholarship
                                         </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2011Allocation" name="list-items[]" value="Class_Of_2011" />
-                                            Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2010Allocation" name="list-items[]" value="Class_Of_2010" />
-                                            Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2009Allocation" name="list-items[]" value="Class_Of_2009" />
-                                            Class of 2009 Scholarship
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2008Allocation" name="list-items[]" value="Class_Of_2008" />
-                                            Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2007Allocation" name="list-items[]" value="Class_Of_2007" />
-                                            Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2006Allocation" name="list-items[]" value="Class_Of_2006" />
-                                            Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2005Allocation" name="list-items[]" value="Class_Of_2005" />
-                                            Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2004Allocation" name="list-items[]" value="Class_Of_2004" />
-                                            Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof2003Allocation" name="list-items[]" value="Class_Of_2003" />
-                                            Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1980Allocation" name="list-items[]" value="Class_Of_1980" />
-                                            Class of 1980 Endowed Scholarship
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1961Allocation" name="list-items[]" value="Class_Of_1961" />
-                                            Class of 1961 Good Men Good Citizens Scholarship
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1960Allocation" name="list-items[]" value="Class_Of_1960" />
-                                            Class of 1960 Good Men Good Citizens Scholarship
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1958Allocation" name="list-items[]" value="Class_Of_1958" />
-                                            Class of 1958 Summer College Endowment Fund
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1954Allocation" name="list-items[]" value="Class_Of_1954" />
-                                            Class of 1954 Wilson Center Lecture Series
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1953Allocation" name="list-items[]" value="Class_Of_1953" />
-                                            Class of 1953 Scholarship Endowment
-                                        </label>
-                                        <label class="checkbox">
-                                            <input type="checkbox" id="showClassof1951Allocation" name="list-items[]" value="Class_Of_1951" />
-                                            Class of 1951 Memorial Scholarship
-                                        </label>
+                                        <div class="ifClassScholarshipSelected">
+                                            <select class="span5 offset3" name="classYearScholarshipSelection">
+                                                <option value="N/A">Please select a class Scholarship</option>
+                                                <option value="2013">Class of 2013 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Tommy Shomo &rsquo;69</option>
+                                                <option value="2012">Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96</option>
+                                                <option value="2011">Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland</option>
+                                                <option value="2010">Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner</option>
+                                                <option value="2009">Class of 2009 Scholarship</option>
+                                                <option value="2008">Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus</option>
+                                                <option value="2007">Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson</option>
+                                                <option value="2006">Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.</option>
+                                                <option value="2005">Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</option>
+                                                <option value="2004">Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms</option>
+                                                <option value="2003">Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley</option>
+                                                <option value="1980">Class of 1980 Endowed Scholarship</option>
+                                                <option value="1961">Class of 1961 Good Men Good Citizens Scholarship</option>
+                                                <option value="1960">Class of 1960 Good Men Good Citizens Scholarship</option>
+                                                <option value="1958">Class of 1958 Summer College Endowment Fund</option>
+                                                <option value="1954">Class of 1954 Wilson Center Lecture Series</option>
+                                                <option value="1953">Class of 1953 Scholarship Endowment</option>
+                                                <option value="1951">Class of 1951 Memorial Scholarship</option>
+                                            </select>
+                                        </div>
                                         <label class="checkbox">
                                             <input type="checkbox" id="showOtherScholarshipAllocation" name="list-items[]" value="OtherScholarship" />
                                             Other <em>(please specify in special instructions)</em>
