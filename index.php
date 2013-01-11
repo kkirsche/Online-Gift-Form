@@ -239,7 +239,7 @@ $formKey = new formKey();
                                             Good Men, Good Citizens Scholarship
                                         </label>
                                         <label class="checkbox">
-                                            <input type="checkbox" class="showClassScholarshipAllocation" name="toClassScholarship" value="Class_Scholarship" />
+                                            <input type="checkbox" class="showClassScholarshipAllocation" name="list-items[]" value="Class_Scholarship" />
                                             To a Class Scholarship
                                         </label>
                                         <div class="ifClassScholarshipSelected">
@@ -264,6 +264,7 @@ $formKey = new formKey();
                                                 <option value="1953">Class of 1953 Scholarship Endowment</option>
                                                 <option value="1951">Class of 1951 Memorial Scholarship</option>
                                             </select>
+                                            <input name="Class_Of_N/A-Allocation" type="hidden" value="0" />
                                         </div>
                                         <label class="checkbox">
                                             <input type="checkbox" id="showOtherScholarshipAllocation" name="list-items[]" value="OtherScholarship" />
