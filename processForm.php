@@ -63,7 +63,6 @@ $errorMessage = "<h3>There was an error</h3><hr />";
         
 
   //create the array to store our checkbox values.
-  $selected_items = array();
     //now let's get the values of the checkboxes starting with Scholarships
     if(!empty($_POST['list-items'])) {
         foreach($_POST['list-items'] as $listItem) {
@@ -74,72 +73,8 @@ $errorMessage = "<h3>There was an error</h3><hr />";
                     $selected_items['GoodMenGoodCitizens'] = "Good Men, Good Citizens Scholarship";
                 break;
 
-                case 'Class_Of_2012':
-                    $selected_items['ClassOf2012'] = "Class of 2012 Scholarship IHO Mr. Jason M. Ferguson &rsquo;96";
-                break;
-
-                case 'Class_Of_2011':
-                    $selected_items['ClassOf2011'] = "Class of 2011 Scholarship IHO Ms. Anita Garland";
-                break;
-
-                case 'Class_Of_2010':
-                    $selected_items['ClassOf2010'] = "Class of 2010 Scholarship IHO Mrs. Dottie Fahrner";
-                break;
-
-                case 'Class_Of_2009':
-                    $selected_items['ClassOf2009'] = "Class of 2009 Scholarship";
-                break;
-
-                case 'Class_Of_2008':
-                    $selected_items['ClassOf2008'] = "Class of 2008 Scholarship IHO Ms. Gerry Pettus";
-                break;
-
-                case 'Class_Of_2007':
-                    $selected_items['ClassOf2007'] = "Class of 2007 Scholarship IHO Lt. Gen. Sam Wilson";
-                break;
-
-                case 'Class_Of_2006':
-                    $selected_items['ClassOf2006'] = "Class of 2006 Scholarship IMO Peter C. Bance Jr.";
-                break;
-
-                case 'Class_Of_2005':
-                    $selected_items['ClassOf2005'] = "Class of 2005 Scholarship IMO Prof. Lee Cohen";
-                break;
-
-                case 'Class_Of_2004':
-                    $selected_items['ClassOf2004'] = "Class of 2004 Scholarship IMO C. Frazier &rsquo;04 &amp; IHO W. Simms";
-                break;
-
-                case 'Class_Of_2003':
-                    $selected_items['ClassOf2003'] = "Class of 2003 Scholarship IHO Ralph A. Crawley";
-                break;
-
-                case 'Class_Of_1980':
-                    $selected_items['ClassOf1980'] = "Class of 1980 Endowed Scholarship";
-                break;
-
-                case 'Class_Of_1961':
-                    $selected_items['ClassOf1961'] = "Class of 1961 Good Men Good Citizens Scholarship";
-                break;
-
-                case 'Class_Of_1960':
-                    $selected_items['ClassOf1960'] = "Class of 1960 Good Men Good Citizens Scholarship";
-                break;
-
-                case 'Class_Of_1958':
-                    $selected_items['ClassOf1958'] = "Class of 1958 Summer College Endowment Fund";
-                break;
-
-                case 'Class_Of_1954':
-                    $selected_items['ClassOf1954'] = "Class of 1954 Wilson Center Lecture Series";
-                break;
-
-                case 'Class_Of_1953':
-                    $selected_items['ClassOf1953'] = "Class of 1953 Scholarship Endowment";
-                break;
-
-                case 'Class_Of_1951':
-                    $selected_items['ClassOf1951'] = "Class of 1951 Memorial Scholarship";
+                case 'Class_Scholarship':
+                    $selected_items['ClassScholarship'] = "Class Scholarship";
                 break;
 
                 case 'Other_Scholarship':
@@ -240,6 +175,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             "lastName" => $_POST['usersLastName'],
             "fullName" => $_POST['usersFirstName'] . " " . $_POST['usersLastName'],
             "classYear" => $_POST['usersClassYear'],
+            "selectedClassYearScholarship" => $_POST['classYearScholarshipSelection'],
             "address1" => $_POST['usersStreetAddress'],
             "address2" => $_POST['usersSecondaryAddress'],
             "fullAddress" => $_POST['usersStreetAddress'] . "\n" . $_POST['usersSecondaryAddress'],
@@ -260,23 +196,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
         $userAllocations = array(
             "unrestrictedAllocation" => ($_POST['unrestricted-Allocation'] / 100),
             "goodMenGoodCitizensAllocation" => ($_POST['Good_Men_Good_Citizens-Allocation'] / 100),
-            "classOf2012Allocation" => ($_POST['Class_Of_2012-Allocation'] / 100),
-            "classOf2011Allocation" => ($_POST['Class_Of_2011-Allocation'] / 100),
-            "classOf2010Allocation" => ($_POST['Class_Of_2010-Allocation'] / 100),
-            "classOf2009Allocation" => ($_POST['Class_Of_2009-Allocation'] / 100),
-            "classOf2008Allocation" => ($_POST['Class_Of_2008-Allocation'] / 100),
-            "classOf2007Allocation" => ($_POST['Class_Of_2007-Allocation'] / 100),
-            "classOf2006Allocation" => ($_POST['Class_Of_2006-Allocation'] / 100),
-            "classOf2005Allocation" => ($_POST['Class_Of_2005-Allocation'] / 100),
-            "classOf2004Allocation" => ($_POST['Class_Of_2004-Allocation'] / 100),
-            "classOf2003Allocation" => ($_POST['Class_Of_2003-Allocation'] / 100),
-            "classOf1980Allocation" => ($_POST['Class_Of_1980-Allocation'] / 100),
-            "classOf1961Allocation" => ($_POST['Class_Of_1961-Allocation'] / 100),
-            "classOf1960Allocation" => ($_POST['Class_Of_1960-Allocation'] / 100),
-            "classOf1958Allocation" => ($_POST['Class_Of_1958-Allocation'] / 100),
-            "classOf1954Allocation" => ($_POST['Class_Of_1954-Allocation'] / 100),
-            "classOf1953Allocation" => ($_POST['Class_Of_1953-Allocation'] / 100),
-            "classOf1951Allocation" => ($_POST['Class_Of_1951-Allocation'] / 100),
+            "classYearScholarshipAllocation" => ($_POST['Class_Of_' . $userInfo['selectedClassYearScholarship'] . '-Allocation'] / 100),
             "atkinsonMuseumAllocation" => ($_POST['Atkinson_Museum-Allocation'] / 100),
             "bortzLibraryAllocation" => ($_POST['Bortz_Library-Allocation'] / 100),
             "cultureAndCommunityAllocation" => ($_POST['Culture_and_Community-Allocation'] / 100),
@@ -301,23 +221,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
         $userDonationAmountBasedOnAllocations = array(
             "unrestrictedFundDonationAmount" => ($totalGiftAmount * $userAllocations['unrestrictedAllocation']),
             "goodMenGoodCitizensDonationAmount" => ($totalGiftAmount * $userAllocations['goodMenGoodCitizensAllocation']),
-            "classOf2012DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2012Allocation']),
-            "classOf2011DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2011Allocation']),
-            "classOf2010DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2010Allocation']),
-            "classOf2009DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2009Allocation']),
-            "classOf2008DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2008Allocation']),
-            "classOf2007DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2007Allocation']),
-            "classOf2006DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2006Allocation']),
-            "classOf2005DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2005Allocation']),
-            "classOf2004DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2004Allocation']),
-            "classOf2003DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2003Allocation']),
-            "classOf1980DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1980Allocation']),
-            "classOf1961DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1961Allocation']),
-            "classOf1960DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1960Allocation']),
-            "classOf1958DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1958Allocation']),
-            "classOf1954DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1954Allocation']),
-            "classOf1953DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1953Allocation']),
-            "classOf1951DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1951Allocation']),
+            "classYearScholarshipDonationAmount" => ($totalGiftAmount * $userAllocations['classYearScholarshipAllocation']),
             "atkinsonMuseumDonationAmount" => ($totalGiftAmount * $userAllocations['atkinsonMuseumAllocation']),
             "bortzLibraryDonationAmount" => ($totalGiftAmount * $userAllocations['bortzLibraryAllocation']),
             "cultureAndCommunityDonationAmount" => ($totalGiftAmount * $userAllocations['cultureAndCommunityAllocation']),
@@ -334,7 +238,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             "soccerGoalClubDonationAmount" => ($totalGiftAmount * $userAllocations['soccerGoalClubAllocation']),
             "swimmingClubDonationAmount" => ($totalGiftAmount * $userAllocations['swimmingClubAllocation']),
             "tennisRacquetClubDonationAmount" => ($totalGiftAmount * $userAllocations['tennisRacquetClubAllocation']),
-            "otherDonationAmount" => ($totalGiftAmount * $userAllocations['otherAllocation'])
+            "otherDonationAmount" => ($totalGiftAmount * $userAllocations['otherAllocation']),
             );
 
         //Make an array of the credit card information
@@ -359,18 +263,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
 
 
         //check the user's email address
-        if (check_email_address($userInfo['email']) == true) {
-            $to = $userInfo['email'];
-            $headers = 'From: noreply@hsc.edu' . "\r\n" . 'Reply-To:webmaster@hsc.edu' . 'X-Mailer: PHP/' . phpversion();
-            $subject = "Your Donation was Received!";
-            $message = "Your donation was received. On behalf of Hampden-Sydney, we would like to thank you for your donation.";
-            //we have composed our message. Now let's send it on. Commented out for development sake.
-            //if(mail($to, $subject, $message, $headers)) {
-                //echo("<p>Message sent!</p>");
-            //} else {
-            //echo "<p>Message delivery failed :( </p>";
-        //}
-        } else {
+        if (check_email_address($userInfo['email']) != true) {
             $isValid = false;
             $errorMessage .= "The e-mail was invalid.<br />";
         }
