@@ -197,6 +197,8 @@ $("document").ready(function () {
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
         });
         $("div.ifAthleticsAreSelected input[type=\"checkbox\"]").click(function () {
+            //Test if one isn't showing up
+            //alert("#" + $(this).val().replace(/_/g, "") + "Allocation");
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
         });
     }

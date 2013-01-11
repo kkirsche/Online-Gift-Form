@@ -218,7 +218,7 @@ $formKey = new formKey();
                                     Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                 </strong>
                             </p>
-                            <label class="centerText control-label">I would like to designate my gift<sup class="requiredValue">*</sup>:</label>
+                            <label class="centerText control-label"><strong>I would like to designate my gift<sup class="requiredValue">*</sup>:</strong></label>
                             <div class="controls">
                                 <fieldset>
                                     <label class="checkbox">
@@ -420,7 +420,7 @@ $formKey = new formKey();
 
                         <!--Step 4 | Allocations-->
                         <div id="step4" class="textCenter">
-                            How would you like to designate your gift?
+                            How would you like to allocate your gift?
 
                             <div class="showUnrestricted input-append">
                                 <input type="number" name="unrestricted-Allocation" min="0" max="100" value="0" />
@@ -517,7 +517,7 @@ $formKey = new formKey();
                                     <input type="number" name="Bortz_Library-Allocation" min="0" max="100" value="0" />
                                     <span class="add-on">&#37; to Bortz Library</span>
                                 </div>
-                                <div id="CultureAndCommunityAllocation" class="input-append hiddenByDefault">
+                                <div id="CultureandCommunityAllocation" class="input-append hiddenByDefault">
                                     <input type="number" name="Culture_and_Community-Allocation" min="0" max="100" value="0" />
                                     <span class="add-on">&#37; to Culture and Community</span>
                                 </div>
@@ -541,7 +541,7 @@ $formKey = new formKey();
                                     <input type="number" name="Basketball_Roundball_Club-Allocation" min="0" max="100" value="0" />
                                     <span class="add-on">&#37; to the Basketball Roundball Club</span>
                                 </div>
-                                <div id="BrossCountryHarriersAllocation" class="input-append hiddenByDefault">
+                                <div id="CrossCountryHarriersAllocation" class="input-append hiddenByDefault">
                                     <input type="number" name="Cross_Country_Harriers-Allocation" min="0" max="100" value="0" />
                                     <span class="add-on">&#37; to the Cross Country Harriers</span>
                                 </div>
