@@ -46,16 +46,16 @@ $errorMessage = "<h3>There was an error</h3><hr />";
         if($donationType == "oneTimeGift") {
             //Get the Gift Amount pieces
             //one time donations
-            $oneTimeGiftAmount = $mysqli->real_escape_string($_POST['oneTimeDonationValue']);
+            $totalGiftAmount = $_POST['oneTimeDonationValue'];
         } else if ($donationType == "recurringDonation") {
             //recurring donations
             $recurringGift = array(
-                "donationAmount" => $mysqli->real_escape_string($_POST['recurringDonationValue']),
-                "numberOfPayments" => $mysqli->real_escape_string($_POST['numberOfPayments']),
-                "paymentFrequency" => $mysqli->real_escape_string($_POST['paymentFrequency'])
+                "donationAmount" => $_POST['recurringDonationValue'],
+                "numberOfPayments" => $_POST['numberOfPayments'],
+                "paymentFrequency" => $_POST['paymentFrequency']
             );
             //calculate their total gift. We want to do it again to avoid javascript related errors or changes.
-            $recurringGift['totalGiftAmount'] = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
+            $totalGiftAmount = $recurringGift['donationAmount'] * $recurringGift['numberOfPayments'];
         } else {
             $isValid = false;
             $errorMessage .= "Sorry, there was an error. Please select one of the two types of donations. Please return to the first step and try again.<br />";
@@ -143,7 +143,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
                 break;
 
                 case 'Other_Scholarship':
-                    $selected_items['OtherScholarship'] = $mysqli->real_escape_string($_POST['specinstr']);
+                    $selected_items['OtherScholarship'] = $_POST['specinstr'];
                 break;
 
                 //Begins Academics
@@ -164,7 +164,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
                 break;
 
                 case 'Other_Academic_Area':
-                    $selected_items['OtherAcademics'] = $mysqli->real_escape_string($_POST['specinstr']);
+                    $selected_items['OtherAcademics'] = $_POST['specinstr'];
                 break;
 
                 //Begin Athletics
@@ -226,7 +226,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
               }
           }
           //we also want to have the special instructions, just in case.
-          $selected_items['SpecialInstructions'] = $mysqli->real_escape_string($_POST['specinstr']);
+          $selected_items['SpecialInstructions'] = $_POST['specinstr'];
     } else {
         //it's empty :(
         $isValid = false;
@@ -236,23 +236,115 @@ $errorMessage = "<h3>There was an error</h3><hr />";
 
         //make an array of the user information
         $userInfo = array(
-            "firstName" => $mysqli->real_escape_string($_POST['usersFirstName']),
-            "lastName" => $mysqli->real_escape_string($_POST['usersLastName']),
-            "address1" => $mysqli->real_escape_string($_POST['usersLastName']),
-            "address2" => $mysqli->real_escape_string($_POST['usersSecondaryAddress']),
-            "city" => $mysqli->real_escape_string($_POST['usersCity']),
-            "state" => $mysqli->real_escape_string($_POST['usersState']),
-            //"country" => $mysqli->real_escape_string($_POST['usersCountry']),
-            "phoneNumber" => $mysqli->real_escape_string($strippedPhoneNumber),
-            "email" => $mysqli->real_escape_string($_POST['usersEmail'])
+            "firstName" => $_POST['usersFirstName'],
+            "lastName" => $_POST['usersLastName'],
+            "fullName" => $_POST['usersFirstName'] . " " . $_POST['usersLastName'],
+            "classYear" => $_POST['usersClassYear'],
+            "address1" => $_POST['usersStreetAddress'],
+            "address2" => $_POST['usersSecondaryAddress'],
+            "fullAddress" => $_POST['usersStreetAddress'] . "\n" . $_POST['usersSecondaryAddress'],
+            "city" => $_POST['usersCity'],
+            "fullState" => $_POST['usersState'],
+            "state" => convert_state_to_abbreviation($_POST['usersState']),
+            "zipcode" => $_POST['usersZip'],
+            "fullCountry" => $_POST['usersCountry'],
+            "country" => convert_country_to_abbreviation($_POST['usersCountry']),
+            "phoneNumber" => $strippedPhoneNumber,
+            "email" => $_POST['usersEmail'],
+            "specialInstructions" => $_POST['specinstr']
         );
-        
+
+        //these numbers should be percentages. A maximum of 100, minimum of 0.
+        //For class years it's classOfXXXXAllocation with XXXX being the year
+        // ( if is_numric on the posted item returns true ? Divide it by 100 : Else convert string to number and do something)
+        $userAllocations = array(
+            "unrestrictedAllocation" => ($_POST['unrestricted-Allocation'] / 100),
+            "goodMenGoodCitizensAllocation" => ($_POST['Good_Men_Good_Citizens-Allocation'] / 100),
+            "classOf2012Allocation" => ($_POST['Class_Of_2012-Allocation'] / 100),
+            "classOf2011Allocation" => ($_POST['Class_Of_2011-Allocation'] / 100),
+            "classOf2010Allocation" => ($_POST['Class_Of_2010-Allocation'] / 100),
+            "classOf2009Allocation" => ($_POST['Class_Of_2009-Allocation'] / 100),
+            "classOf2008Allocation" => ($_POST['Class_Of_2008-Allocation'] / 100),
+            "classOf2007Allocation" => ($_POST['Class_Of_2007-Allocation'] / 100),
+            "classOf2006Allocation" => ($_POST['Class_Of_2006-Allocation'] / 100),
+            "classOf2005Allocation" => ($_POST['Class_Of_2005-Allocation'] / 100),
+            "classOf2004Allocation" => ($_POST['Class_Of_2004-Allocation'] / 100),
+            "classOf2003Allocation" => ($_POST['Class_Of_2003-Allocation'] / 100),
+            "classOf1980Allocation" => ($_POST['Class_Of_1980-Allocation'] / 100),
+            "classOf1961Allocation" => ($_POST['Class_Of_1961-Allocation'] / 100),
+            "classOf1960Allocation" => ($_POST['Class_Of_1960-Allocation'] / 100),
+            "classOf1958Allocation" => ($_POST['Class_Of_1958-Allocation'] / 100),
+            "classOf1954Allocation" => ($_POST['Class_Of_1954-Allocation'] / 100),
+            "classOf1953Allocation" => ($_POST['Class_Of_1953-Allocation'] / 100),
+            "classOf1951Allocation" => ($_POST['Class_Of_1951-Allocation'] / 100),
+            "atkinsonMuseumAllocation" => ($_POST['Atkinson_Museum-Allocation'] / 100),
+            "bortzLibraryAllocation" => ($_POST['Bortz_Library-Allocation'] / 100),
+            "cultureAndCommunityAllocation" => ($_POST['Culture_and_Community-Allocation'] / 100),
+            "wilsonCenterAllocation" => ($_POST['Wilson_Center-Allocation'] / 100),
+            "baseballBigHittersClubAllocation" => ($_POST['Baseball_Big_Hitters_Club-Allocation'] / 100),
+            "basketballRoundballClubAllocation" => ($_POST['Basketball_Roundball_Club-Allocation'] / 100),
+            "crossCountryHarriersAllocation" => ($_POST['Cross_Country_Harriers-Allocation'] / 100),
+            "everettStadiumAllocation" => ($_POST['Everett_Stadium-Allocation'] / 100),
+            "footballGridironClubAllocation" => ($_POST['Football_Gridiron_Club-Allocation'] / 100),
+            "golfHoleInOneClubAllocation" => ($_POST['Golf_Hole_In_One_Club-Allocation'] / 100),
+            "kirkAthleticCenterAllocation" => ($_POST['Kirk_Athletic_Center-Allocation'] / 100),
+            "lacrosseFaceOffClubAllocation" => ($_POST['Lacrosse_Face_Off_Club-Allocation'] / 100),
+            "rugbyClubAllocation" => ($_POST['Rugby_Club-Allocation'] / 100),
+            "soccerGoalClubAllocation" => ($_POST['Soccer_Goal_Club-Allocation'] / 100),
+            "swimmingClubAllocation" => ($_POST['Swimming_Club-Allocation'] / 100),
+            "tennisRacquetClubAllocation" => ($_POST['Tennis_Racquet_Club-Allocation'] / 100),
+            "otherAllocation" => (($_POST['Other_Scholarship-Allocation'] + $_POST['Other_Academic-Allocation']) / 100)
+            );
+
+        //next we want to get the amount of the total gift that will go to any one place.
+        //To do this:   $finalAmountToAllocation = ($totalGiftAmount * $allocationPercentage) Allocation percentages are in decimal form. 1 = 100% .5 = 50%, etc.
+        $userDonationAmountBasedOnAllocations = array(
+            "unrestrictedFundDonationAmount" => ($totalGiftAmount * $userAllocations['unrestrictedAllocation']),
+            "goodMenGoodCitizensDonationAmount" => ($totalGiftAmount * $userAllocations['goodMenGoodCitizensAllocation']),
+            "classOf2012DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2012Allocation']),
+            "classOf2011DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2011Allocation']),
+            "classOf2010DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2010Allocation']),
+            "classOf2009DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2009Allocation']),
+            "classOf2008DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2008Allocation']),
+            "classOf2007DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2007Allocation']),
+            "classOf2006DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2006Allocation']),
+            "classOf2005DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2005Allocation']),
+            "classOf2004DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2004Allocation']),
+            "classOf2003DonationAmount" => ($totalGiftAmount * $userAllocations['classOf2003Allocation']),
+            "classOf1980DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1980Allocation']),
+            "classOf1961DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1961Allocation']),
+            "classOf1960DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1960Allocation']),
+            "classOf1958DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1958Allocation']),
+            "classOf1954DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1954Allocation']),
+            "classOf1953DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1953Allocation']),
+            "classOf1951DonationAmount" => ($totalGiftAmount * $userAllocations['classOf1951Allocation']),
+            "atkinsonMuseumDonationAmount" => ($totalGiftAmount * $userAllocations['atkinsonMuseumAllocation']),
+            "bortzLibraryDonationAmount" => ($totalGiftAmount * $userAllocations['bortzLibraryAllocation']),
+            "cultureAndCommunityDonationAmount" => ($totalGiftAmount * $userAllocations['cultureAndCommunityAllocation']),
+            "wilsonCenterDonationAmount" => ($totalGiftAmount * $userAllocations['wilsonCenterAllocation']),
+            "baseballBigHittersClubDonationAmount" => ($totalGiftAmount * $userAllocations['baseballBigHittersClubAllocation']),
+            "basketballRoundballClubDonationAmount" => ($totalGiftAmount * $userAllocations['basketballRoundballClubAllocation']),
+            "crossCountryHarriersDonationAmount" => ($totalGiftAmount * $userAllocations['crossCountryHarriersAllocation']),
+            "everettStadiumDonationAmount" => ($totalGiftAmount * $userAllocations['everettStadiumAllocation']),
+            "footballGridironClubDonationAmount" => ($totalGiftAmount * $userAllocations['footballGridironClubAllocation']),
+            "golfHoleInOneClubDonationAmount" => ($totalGiftAmount * $userAllocations['golfHoleInOneClubAllocation']),
+            "kirkAthleticCenterDonationAmount" => ($totalGiftAmount * $userAllocations['kirkAthleticCenterAllocation']),
+            "lacrosseFaceOffClubDonationAmount" => ($totalGiftAmount * $userAllocations['lacrosseFaceOffClubAllocation']),
+            "rugbyClubDonationAmount" => ($totalGiftAmount * $userAllocations['rugbyClubAllocation']),
+            "soccerGoalClubDonationAmount" => ($totalGiftAmount * $userAllocations['soccerGoalClubAllocation']),
+            "swimmingClubDonationAmount" => ($totalGiftAmount * $userAllocations['swimmingClubAllocation']),
+            "tennisRacquetClubDonationAmount" => ($totalGiftAmount * $userAllocations['tennisRacquetClubAllocation']),
+            "otherDonationAmount" => ($totalGiftAmount * $userAllocations['otherAllocation'])
+            );
+
         //Make an array of the credit card information
         $userCreditCardInfo = array(
             "nameOnCreditCard" => $mysqli->real_escape_string($_POST['nameOnCard']),
             "creditCardNumber" => $mysqli->real_escape_string($_POST['numberOnCard']),
+            "creditCardType" => "",
             "creditCardSecurityCode" => $mysqli->real_escape_string($_POST['securityCodeOnCard']),
-            "creditCardExpirationDate" => $mysqli->real_escape_string($_POST['expirationMonthOnCard'] . "/" . $_POST['expirationYearOnCard'])
+            "creditCardExpirationMonth" => $_POST['expirationMonthOnCard'],
+            "creditCardExpirationYear" => $_POST['expirationYearOnCard']
         );
 // ====================================================================================================// 
 // ! Validate the data that we have taken from the form                                                //
