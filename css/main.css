@@ -197,7 +197,7 @@ footer {
 .footerText {
     max-width: 50%;
 }
-.footerText address, {
+.footerText address {
     color: #000;
 }
 .footerText a {
