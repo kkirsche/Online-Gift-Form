@@ -94,7 +94,7 @@ $formKey = new formKey();
                         <div id="step2">
                             <!--One Time Gift-->
                             <div id="makingAOneTimeGift" class="centerText control-group">
-                                <label class="control-label">Enter Donation Amount Here:<sup class="requiredValue">*</sup></label>
+                                <label class="control-label largeText">Enter Donation Amount Here:<sup class="requiredValue">*</sup></label>
                                 <div class="controls">
                                     <div class="input-prepend input-append">
                                         <span class="add-on">$</span>
@@ -107,7 +107,7 @@ $formKey = new formKey();
 
                             <!--Recurring Gift-->
                             <div id="makingARecurringGift" class="control-group">
-                                <label class="control-label">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
+                                <label class="control-label largeText">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
                                 <div class="controls">
                                     <div class="input-prepend input-append">
                                         <span class="add-on">$</span>
@@ -218,7 +218,7 @@ $formKey = new formKey();
                                     Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                 </strong>
                             </p>
-                            <label class="centerText control-label"><strong>I would like to designate my gift<sup class="requiredValue">*</sup>:</strong></label>
+                            <label class="centerText control-label largeText"><strong>I would like to designate my gift<sup class="requiredValue">*</sup>:</strong></label>
                             <div class="controls">
                                 <fieldset>
                                     <label class="checkbox">
@@ -420,7 +420,11 @@ $formKey = new formKey();
 
                         <!--Step 4 | Allocations-->
                         <div id="step4" class="textCenter">
-                            How would you like to allocate your gift?
+                            <legend class="largeText">
+                                <strong>
+                                    How would you like to allocate your gift?
+                                </strong>
+                            </legend>
 
                             <div class="showUnrestricted input-append">
                                 <input type="number" name="unrestricted-Allocation" min="0" max="100" value="0" />
@@ -595,7 +599,7 @@ $formKey = new formKey();
                         <!--Begin Step 5-->
                         <div id="step5">
                             <fieldset>
-                                <legend>
+                                <legend class="largeText">
                                     Donor Information
                                 </legend>
                                 <label class="inline">
@@ -658,7 +662,7 @@ $formKey = new formKey();
                         <!--Begin Step 6-->
                         <div id="step6">
                             <fieldset>
-                                <legend>
+                                <legend class="largeText">
                                     <strong>
                                         Payment Method&mdash;Credit Card Information
                                     </strong>
