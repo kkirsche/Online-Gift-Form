@@ -1,8 +1,24 @@
 <?php
-if(session_status() != PHP_SESSION_ACTIVE) {
+//Start the session
+if (version_compare(PHP_VERSION, "5.4.0") >= 0) {
+    if(session_status() != PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+} else {
     session_start();
 }
-require("functions.php");
+//For compatibility before PHP 5.3.0
+if (!defined('__DIR__')) {
+    class __FILE_CLASS__ {
+        function __toString() {
+            $X = debug_backtrace();
+            return dirname($X[1]['file']);
+        }
+    }
+    define('__DIR__', new __FILE_CLASS__);
+}
+
+require(__DIR__ . "/functions.php");
 // ====================================================================================================// 
 // ! Connect to MySQLi to allow escaping of inputs, and form processing.                               //
 // ====================================================================================================//
