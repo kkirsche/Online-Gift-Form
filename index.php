@@ -712,7 +712,7 @@ $formKey = new formKey();
                                     Box 637 Graham Hall<br />
                                     Hampden-Sydney, <abbr title="Virginia">VA</abbr> 23943&ndash;0857
                                     <br />
-                                    <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="#" title="Contact the College" target="_blank">Contact the College</a>
+                                    <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="http://www.hsc.edu/Contact-the-College.html" title="Contact the College" target="_blank">Contact the College</a>
                                 </address>
                             </div>
                         </div><!--end row-->
