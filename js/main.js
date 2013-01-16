@@ -15,29 +15,29 @@ $("document").ready(function () {
     }
     function showNextStep(currentStep) {
         var chosenDonationType, checkedAllocations, selectedAllocationValue, stepsMoved = 1;
-        $("#step" + currentStep).slideToggle("slow")
+        $("#step" + currentStep).slideToggle("slow");
 
         if (currentStep === 1) {
             //figure out what kind of donation they are making
             chosenDonationType = $("[name=donationType]").val();
-                //show the apppropriate slide
-                switch (chosenDonationType) {
-                case "oneTimeGift":
-                    currentStep += 1;
-                    $("#makingAOneTimeGift").show();
-                    $("#step" + currentStep).slideToggle("slow");
-                    break;
-                case "recurringDonation":
-                    currentStep += 1;
-                    $("#makingARecurringGift").show();
-                    $("#step" + currentStep).slideToggle("slow");
-                    break;
-                    //if somehow they changed it to something else, ignore them and return false.
-                default:
-                    stepsMoved = 0;
-                    return false;
-                    //break; not needed due to return
-                }//end switch
+            //show the apppropriate slide
+            switch (chosenDonationType) {
+            case "oneTimeGift":
+                currentStep += 1;
+                $("#makingAOneTimeGift").show();
+                $("#step" + currentStep).slideToggle("slow");
+                break;
+            case "recurringDonation":
+                currentStep += 1;
+                $("#makingARecurringGift").show();
+                $("#step" + currentStep).slideToggle("slow");
+                break;
+                //if somehow they changed it to something else, ignore them and return false.
+            default:
+                stepsMoved = 0;
+                return false;
+                //break; not needed due to return
+            }//end switch
         } else if (currentStep === 3) {
             checkedAllocations = $("#step3 :checkbox:checked");
             if (checkedAllocations.length === 1) {
@@ -56,11 +56,11 @@ $("document").ready(function () {
         return stepsMoved;
     }
     function showPreviousStep(currentStep) {
-        var checkedAllocations, selectedAllocationValue, stepsMoved = 1;
-        
+        var checkedAllocations, chosenDonationType, selectedAllocationValue, stepsMoved = 1;
+
         $("#step" + currentStep).slideToggle("slow");
         if (currentStep === 2) {
-            var chosenDonationType = $("[name=donationType]").val();
+            chosenDonationType = $("[name=donationType]").val();
             switch (chosenDonationType) {
             case "oneTimeGift":
                 $("#makingAOneTimeGift").slideToggle();
@@ -68,7 +68,7 @@ $("document").ready(function () {
                 break;
             case "recurringDonation":
                 $("#makingARecurringGift").slideToggle();
-                $("#totalRecurringDonationValue").val(0)
+                $("#totalRecurringDonationValue").val(0);
                 break;
             default:
                 $("#makingARecurringGift").hide();
@@ -85,8 +85,8 @@ $("document").ready(function () {
             }
         }
 
-            currentStep -= 1;
-            $("#step" + currentStep).slideToggle("slow");
+        currentStep -= 1;
+        $("#step" + currentStep).slideToggle("slow");
         return stepsMoved;
     }
 
@@ -202,12 +202,12 @@ $("document").ready(function () {
             //alert("#" + $(this).val().replace(/_/g, "") + "Allocation");
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
         });
-        $("[name=classYearScholarshipSelection]").change(function() {
+        $("[name=classYearScholarshipSelection]").change(function () {
             if ($(this).val() === "N/A") {
                 $("#ClassOf" + lastSelected + "Allocation").slideToggle("fast");
                 lastSelected = $(this).val();
             } else {
-                $("#ClassOf" + $(this).val() +"Allocation").slideToggle("fast");
+                $("#ClassOf" + $(this).val() + "Allocation").slideToggle("fast");
                 if (lastSelected != "") {
                     $("#ClassOf" + lastSelected + "Allocation").slideToggle("fast");
                 }
@@ -242,7 +242,7 @@ $("document").ready(function () {
                 $(".ifClassScholarshipSelected").slideToggle("fast"); //Slide Down Effect
             } else {
                 $(".ifClassScholarshipSelected").slideToggle("fast");  //Slide Up Effect
-                if( $("[name=classYearScholarshipSelection]").val() != "N/A") {
+                if ($("[name=classYearScholarshipSelection]").val() != "N/A") {
                     $("[name=classYearScholarshipSelection]").val("N/A");
                     $("[name=classYearScholarshipSelection]").trigger("change");
                 }
@@ -257,7 +257,7 @@ $("document").ready(function () {
                 $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
-     //Would you like to donate to athletic funds?
+    //Would you like to donate to athletic funds?
         $(".ifAthleticsAreSelected").css("display", "none");
         $(".enableAthletics").click(function () {
             if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
