@@ -203,7 +203,9 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             "country" => convert_country_to_abbreviation($_POST['usersCountry']),
             "phoneNumber" => $strippedPhoneNumber,
             "email" => $_POST['usersEmail'],
-            "specialInstructions" => $_POST['specinstr']
+            "specialInstructions" => $_POST['specinstr'],
+            "inMemoryOfSomeone" => $_POST['inMemoryOf'],
+            "inHonorOfSomeone" => $_POST['inHonorOf']
         );
 
         //these numbers should be percentages. A maximum of 100, minimum of 0.
