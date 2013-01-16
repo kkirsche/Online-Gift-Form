@@ -374,6 +374,16 @@ $formKey = new formKey();
                                     </div><!--End Athletic Dropdown-->
 
                                     <label>
+                                        <strong>Is your gift in memory of someone?</strong>
+                                    </label>
+                                        <textarea name="inMemoryOf" id="inMemoryOf" placeholder="Please share who you would like your gift to be in memory of."></textarea>
+
+                                    <label>
+                                        <strong>Is your gift in honor of someone?</strong>
+                                    </label>
+                                        <textarea name="inHonorOf" id="inHonorOf" placeholder="Please share who you would like your gift to be in honor of."></textarea>
+
+                                    <label>
                                         <strong>Special Instructions</strong>
                                     </label>
                                     <textarea name="specinstr" id="specinstr" placeholder="Enter Special Instructions Here (255 character maximum)"></textarea>
