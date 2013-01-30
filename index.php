@@ -78,7 +78,7 @@ $formKey = new formKey();
             <div class="main wrapper clearfix">
                 <article>
                     <!--Inform the user that the form IS secure!-->
-                    <h1>Thank you for your gift to Hampden-Sydney College!</h1>
+                    <h1>Thank you for your gift to Hampden-Sydney College.</h1>
                     <p>Credit card information is handled using a secure web server. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="Other Ways to Give"></i></a></p>
                 </article>
                 <div class="row">
@@ -238,7 +238,7 @@ $formKey = new formKey();
                                 <fieldset>
                                     <label class="checkbox">
                                         <input type="checkbox" id="unrestrictedFund" name="list-items[]" value="unrestricted" />
-                                        <strong>to the Unrestricted Fund</strong> &mdash; Funds the annual need of &ldquo;Forming good men and good citizens.&rdquo;.
+                                        <strong>to the Hampden-Sydney Fund</strong> &mdash; provides unrestricted budget support for the College&rsquo;s greatest needs.
                                     </label>
 
                                     <label class="checkbox">
@@ -700,8 +700,12 @@ $formKey = new formKey();
                         <div id="showResults">
                             <!--when form processed using AJAX, output the response here-->
                         </div><!--End AJAX results section-->
+                        <div class="row">
+                            <div class="offset4 span5">
+                                <input type="reset" name="resetFormAndStartOver" class="paginationBTN" value="Clear Form &amp; Start Over" />
+                            </div>
+                        </div>
                     </form>
-
                     <!--Begin footer section-->
                     <hr />
                     <footer class="wrapper">

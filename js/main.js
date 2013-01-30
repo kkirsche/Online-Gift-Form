@@ -13,6 +13,13 @@ $("document").ready(function () {
         $("#makingAOneTimeGift").hide();
         $("#makingARecurringGift").hide();
     }
+    function resetTheFormAndStartOver(currentStep) {
+        if (currentStep > 1) {
+            $("#step" + currentStep).slideToggle("slow"); //hide the first step
+            currentStep = 1; //Reset their step to step 1
+            $("#step1").slideToggle("slow"); //Show step 1
+        }
+    }
     function showNextStep(currentStep) {
         var chosenDonationType, checkedAllocations, selectedAllocationValue, stepsMoved = 1;
         $("#step" + currentStep).slideToggle("slow");
@@ -448,6 +455,17 @@ $("document").ready(function () {
         stepsMovedBackward = showPreviousStep(currentStep);
         currentStep -= stepsMovedBackward;
     });
+
+    $("[name=resetFormAndStartOver]").click(function (e) {
+        if (confirm("Are you sure you would like to reset this form and start over?")) {
+            resetTheFormAndStartOver(currentStep);
+            currentStep = 1;
+            return true;
+        } else {
+            e.preventDefault();
+            return false;
+        }
+    })
 
     $("[name=submit_form]").click(function (e) {
         var options = {
