@@ -31,8 +31,8 @@ $formKey = new formKey();
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <title>Hampden-Sydney College | Online Donation Form</title>
-        <meta name="description" content="Hampden-Sydney College's Online Donation Form" />
+        <title>Hampden-Sydney College | Online Gift Form</title>
+        <meta name="description" content="Hampden-Sydney College's Online Gift Form" />
         <meta name="viewport" content="width=device-width" />
 
         <link rel="icon" type="image/ico" href="favicon.ico" />
@@ -95,7 +95,7 @@ $formKey = new formKey();
                             <div class="jsDisabled">
                                 <select name="donationType">
                                     <option value="oneTimeGift">One-Time Gift</option>
-                                    <option value="recurringDonation">Recurring Donation</option>
+                                    <option value="recurringDonation">Recurring Gift</option>
                                 </select>
                             </div>
 
@@ -109,7 +109,7 @@ $formKey = new formKey();
                         <div id="step2">
                             <!--One Time Gift-->
                             <div id="makingAOneTimeGift" class="centerText control-group">
-                                <label class="control-label largeText">Enter Donation Amount Here:<sup class="requiredValue">*</sup></label>
+                                <label class="control-label largeText">Enter Gift Amount Here:<sup class="requiredValue">*</sup></label>
                                 <div class="controls">
                                     <div class="input-prepend input-append">
                                         <span class="add-on">$</span>
@@ -230,7 +230,7 @@ $formKey = new formKey();
                         <div id="step3" class="control-group">
                             <p>
                                 <strong>
-                                    Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">DONATION_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
+                                    Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">GIFT_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                 </strong>
                             </p>
                             <label class="centerText control-label largeText"><strong>I would like to designate my gift<sup class="requiredValue">*</sup>:</strong></label>
