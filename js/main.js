@@ -414,8 +414,8 @@ $("document").ready(function () {
             }
 
             //if we didn't have to stop anywhere above this, let the step continue
-            if ($("#step2ValidateError").hasClass("error")) {
-                $("#step2ValidateError").removeClass("error");
+            if ($("#step3").hasClass("error")) {
+                $("#step3").removeClass("error");
                 $("#oneTimeDonationCheckboxError").text("");
             }
             return true;
