@@ -467,7 +467,7 @@ $("document").ready(function () {
             e.preventDefault();
             return false;
         }
-    })
+    });
 
     $("[name=submit_form]").click(function (e) {
         var options = {
