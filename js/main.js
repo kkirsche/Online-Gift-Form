@@ -16,6 +16,8 @@ $("document").ready(function () {
     function resetTheFormAndStartOver(currentStep) {
         if (currentStep > 1) {
             $("#step" + currentStep).slideToggle("slow"); //hide the first step
+            $("#makingAOneTimeGift").hide();
+            $("#makingARecurringGift").hide();
             currentStep = 1; //Reset their step to step 1
             $("#step1").slideToggle("slow"); //Show step 1
         }
