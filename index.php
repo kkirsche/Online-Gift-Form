@@ -597,7 +597,7 @@ $formKey = new formKey();
                                 </label>
                                 <label class="inline">
                                     Class Year <em>(if applicable)</em>:
-                                    <input type="number" name="usersClassYear" placeholder="2000" />
+                                    <input type="number" name="usersClassYear" placeholder="2000" min="1776" />
                                 </label>
                                 <label class="inline">
                                     Street Address<sup class="requiredValue">*</sup>:
@@ -762,8 +762,8 @@ $formKey = new formKey();
             $(function() {
                 $(function() {
                     $('.vertical.maestro').hide().css({
-                    opacity: 0
-                });
+                        opacity: 0
+                    });
                 return $('#creditCardNumber').validateCreditCard(function(result) {
                     if (!(result.card_type != null)) {
                         $('.cards li').removeClass('off');
@@ -774,9 +774,9 @@ $formKey = new formKey();
                     $('.cards .' + result.card_type.name).removeClass('off');
 
                     if (result.length_valid && result.luhn_valid) {
-                        return $('#card_number').addClass('valid');
+                        return $('#creditCardNumber').addClass('valid');
                     } else {
-                        return $('#card_number').removeClass('valid');
+                        return $('#creditCardNumber').removeClass('valid');
                     }
                 });
                 });
