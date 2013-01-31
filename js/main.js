@@ -135,6 +135,7 @@ $("document").ready(function () {
                 e.preventDefault();
                 return false;
             } else {
+                $("[name=resetFormAndStartOver]").hide();
                 return true;
             }
     }
