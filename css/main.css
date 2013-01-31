@@ -77,9 +77,11 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;;
+    font: 14px/24px Helvetica, Verdana, Geneva, Arial, sans-serif;
 }
-
+h1 {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+}
 .wrapper {
     width: 90%;
     margin: 0 5%;
@@ -176,6 +178,10 @@ nav a:hover {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+p {
+    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+    line-height: 150%;
+}
 .centerButtons {
     margin: 0 auto;
     width: 550px;
