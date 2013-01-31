@@ -376,12 +376,12 @@ $formKey = new formKey();
                                     <label>
                                         <strong>Is your gift in memory of someone?</strong>
                                     </label>
-                                        <textarea name="inMemoryOf" id="inMemoryOf" placeholder="Please share who you would like your gift to be in memory of."></textarea>
+                                        <textarea name="inMemoryOf" id="inMemoryOf" placeholder="Is your gift in memory of someone? Enter full name here."></textarea>
 
                                     <label>
                                         <strong>Is your gift in honor of someone?</strong>
                                     </label>
-                                        <textarea name="inHonorOf" id="inHonorOf" placeholder="Please share who you would like your gift to be in honor of."></textarea>
+                                        <textarea name="inHonorOf" id="inHonorOf" placeholder="Is your gift in honor of someone? Enter full name here."></textarea>
 
                                     <label>
                                         <strong>Special Instructions</strong>
