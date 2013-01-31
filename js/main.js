@@ -102,9 +102,41 @@ $("document").ready(function () {
     function showResults(currentStep) {
         $("#showResults").slideToggle("slow");
     }
-    function validateBeforeSubmitContent() {
-        //if true submit form / if false do NOT submit the form
-        return true;
+    function validateBeforeSubmitContent(e) {
+        var error = "";
+            //credit card number was valid, now let's check to ensure that have the other info
+            if ($("[name=nameOnCard]").val() === "") {
+                error += "Please enter the name as it appears on the credit card. ";
+            }
+            if ($("[name=numberOnCard]").val() === "") {
+                error += "Please enter the credit card number. ";
+            }
+            if (!$("[name=numberOnCard]").hasClass("valid")) {
+                error += "Please enter a valid credit card number. "; 
+            }
+            if ($("[name=securityCodeOnCard]").val() === "") {
+                //we don't have a security code
+                error += "Please enter the security code for your credit card. ";
+            }
+            if($("[name=expirationMonthOnCard]").val() === "") {
+                //we don't have a month
+                error += "Please enter the expiration month of your credit card. ";
+            } else if ($("[name=expirationMonthOnCard]").val() > 12) {
+                error += "Please enter a valid expiration month between 1 and 12. ";
+            } else if ($("[name=expirationMonthOnCard]").val() < 1) {
+                error += "Please enter a valid expiration month between 1 and 12. ";
+            }
+            if($("[name=expirationYearOnCard]").val() === "") {
+                //we don't have a year
+                error += "Please enter the expiration year on the card. ";
+            }
+            if (error != "") {
+                alert(error);
+                e.preventDefault();
+                return false;
+            } else {
+                return true;
+            }
     }
 
     function replaceDonationAmount() {
