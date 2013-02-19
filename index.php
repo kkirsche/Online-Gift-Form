@@ -723,9 +723,12 @@ $formKey = new formKey();
                                 <strong>Address for Mailing Gifts:</strong><br />
                                 <address>
                                     Office of Institutional Advancement<br />
-                                    Box 637 Graham Hall<br />
-                                    Hampden-Sydney, <abbr title="Virginia">VA</abbr> 23943&ndash;0637
-                                    <br />
+                                    Hampden-Sydney College<br />
+                                    P.O. Box 637
+                                    Hampden-Sydney, <abbr title="Virginia">VA</abbr> 23943&ndash;0637<br />
+                                    Toll Free: <a href="tel:18008651776">(800) 865-1776</a><br />
+                                    Fax: (434) 223-6349<br />
+                                    <hr />
                                     <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="http://www.hsc.edu/Contact-the-College.html" title="Contact the College" target="_blank">Contact the College</a>
                                 </address>
                             </div>
