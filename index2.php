@@ -77,7 +77,7 @@ $formKey = new formKey();
                 <div class="offset1 span7" id="topMessage">
                     <!--Inform the user that the form IS secure!-->
                     <h1>Thank you for your gift to Hampden-Sydney College.</h1>
-                    <p>Credit card information is handled using a secure web server. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign" id="moreInfo" title="Other Ways to Give"></i></a></p>
+                    <p>Credit card information is handled using a secure web server. <a href="http://www.hsc.edu/Making-A-Gift/How-to-Give.html" target="_blank"><i class="icon-info-sign hidden-phone hidden-tablet" id="moreInfo" title="Other Ways to Give"></i></a></p>
                 </div><!--/div.offset1.span7#topMessage-->
             </div><!--/div.row-->
             <div class="row">
@@ -420,6 +420,260 @@ $formKey = new formKey();
                                     <p class="text-center">Step 3/6</p>
                                 </div><!--/div#step3-->
 
+                                <!--Step 4 | Allocations-->
+                                <div id="step4" class="center-text">
+                                    <fieldset>
+                                        <legend>
+                                            <strong>
+                                                How would you like to allocate your gift?
+                                            </strong>
+                                        </legend>
+
+                                        <div class="showUnrestricted input-append">
+                                            <label for="unrestricted-Allocation">&#37; to the Unrestricted Fund</label>
+                                            <input type="number" name="unrestricted-Allocation" min="0" max="100" value="0" />
+                                        </div>
+
+                                        <!--Scholarship Allocation Section-->
+                                        <div class="ifScholarshipsSelected">
+                                            <div id="GoodMenGoodCitizensAllocation" class="input-append hiddenByDefault">
+                                                <label for="Good_Men_Good_Citizens-Allocation">&#37; to the Good Men, Good Citizens Scholarship</label>
+                                                <input type="number" name="Good_Men_Good_Citizens-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2012Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2012-Allocation">&#37; to the Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96</label>
+                                                <input type="number" name="Class_Of_2012-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2011Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2011-Allocation">&#37; to the Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland</label>
+                                                <input type="number" name="Class_Of_2011-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2010Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2010-Allocation">&#37; to the Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner</label>
+                                                <input type="number" name="Class_Of_2010-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2009Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2009-Allocation">&#37; to the Class of 2009 Scholarship</label>
+                                                <input type="number" name="Class_Of_2009-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2008Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2008-Allocation">&#37; to the Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus</label>
+                                                <input type="number" name="Class_Of_2008-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2007Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2007-Allocation">&#37; to the Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson</label>
+                                                <input type="number" name="Class_Of_2007-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2006Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2006-Allocation">&#37; to the Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.</label>
+                                                <input type="number" name="Class_Of_2006-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2005Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2005-Allocation">&#37; to the Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</label>
+                                                <input type="number" name="Class_Of_2005-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2004Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2004-Allocation">&#37; to the Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms</label>
+                                                <input type="number" name="Class_Of_2004-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf2003Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_2003-Allocation">&#37; to the Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley</label>
+                                                <input type="number" name="Class_Of_2003-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1980Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1980-Allocation">&#37; to the Class of 1980 Endowed Scholarship</label>
+                                                <input type="number" name="Class_Of_1980-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1961Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1961-Allocation">&#37; to the Class of 1961 Good Men Good Citizens Scholarship</label>
+                                                <input type="number" name="Class_Of_1961-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1960Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1960-Allocation">&#37; to the Class of 1960 Good Men Good Citizens Scholarship</label>
+                                                <input type="number" name="Class_Of_1960-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1958Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1958-Allocation">&#37; to the Class of 1958 Summer College Endowment Fund</label>
+                                                <input type="number" name="Class_Of_1958-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1954Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1954-Allocation">&#37; to the Class of 1954 Wilson Center Lecture Series</label>
+                                                <input type="number" name="Class_Of_1954-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1953Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1953-Allocation">&#37; to the Class of 1953 Scholarship Endowment</label>
+                                                <input type="number" name="Class_Of_1953-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="ClassOf1951Allocation" class="hiddenByDefault">
+                                                <label for="Class_Of_1951-Allocation">&#37; to the Class of 1951 Memorial Scholarship</label>
+                                                <input type="number" name="Class_Of_1951-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="OtherScholarshipAllocation" class="hiddenByDefault">
+                                                <label for="Other_Scholarship-Allocation">&#37; to the Other Scholarship &mdash; <em>as specified in your special instructions</em></label>
+                                                <input type="number" name="Other_Scholarship-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                        </div><!--/div.ifScholarshipsSelected-->
+
+                                        <!--Begin College Programs Allocation Section-->
+                                        <div class="ifAcademicsSelected">
+                                            <div id="AtkinsonMuseumAllocation" class="hiddenByDefault">
+                                                <label for="Atkinson_Museum-Allocation">&#37; to the Atkinson Museum</label>
+                                                <input type="number" name="Atkinson_Museum-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="BortzLibraryAllocation" class="hiddenByDefault">
+                                                <label for="Bortz_Library-Allocation">&#37; to Bortz Library</label>
+                                                <input type="number" name="Bortz_Library-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="CultureandCommunityAllocation" class="hiddenByDefault">
+                                                <label for="Culture_and_Community-Allocation">&#37; to Culture and Community</label>
+                                                <input type="number" name="Culture_and_Community-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="WilsonCenterAllocation" class="hiddenByDefault">
+                                                <label for="Wilson_Center-Allocation">&#37; to the Wilson Center</label>
+                                                <input type="number" name="Wilson_Center-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="OtherAcademicAreaAllocation" class="hiddenByDefault">
+                                                <label for="Other_Academic-Allocation">&#37; to the Other Academic Area &mdash; <em>as specified in your special instructions</em></label>
+                                                <input type="number" name="Other_Academic-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                        </div><!--/div.ifAcademicsSelected-->
+
+                                        <!--Begin Athletic Allocation Section-->
+                                        <div class="ifAthleticsAreSelected">
+                                            <div id="BaseballBigHittersClubAllocation" class="hiddenByDefault">
+                                                <label for="Baseball_Big_Hitters_Club-Allocation">&#37; to the Baseball Big Hitters Club:</label>
+                                                <input type="number" name="Baseball_Big_Hitters_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="BasketballRoundballClubAllocation" class="hiddenByDefault">
+                                                <label for="Basketball_Roundball_Club-Allocation">&#37; to the Basketball Roundball Club</label>
+                                                <input type="number" name="Basketball_Roundball_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="CrossCountryHarriersAllocation" class="hiddenByDefault">
+                                                <label for="Cross_Country_Harriers-Allocation">&#37; to the Cross Country Harriers</label>
+                                                <input type="number" name="Cross_Country_Harriers-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="EverettStadiumAllocation" class="hiddenByDefault">
+                                                <label for="Everett_Stadium-Allocation">&#37; to Everett Stadium</label>
+                                                <input type="number" name="Everett_Stadium-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="FootballGridironClubAllocation" class="hiddenByDefault">
+                                                <label for="Football_Gridiron_Club-Allocation">&#37; to the Football Gridiron Club</label>
+                                                <input type="number" name="Football_Gridiron_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="GolfHoleInOneClubAllocation" class="hiddenByDefault">
+                                                <label for="Golf_Hole_In_One_Club-Allocation">&#37; to the Golf Hole In One Club</label>
+                                                <input type="number" name="Golf_Hole_In_One_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="KirkAthleticCenterAllocation" class="hiddenByDefault">
+                                                <label for="Kirk_Athletic_Center-Allocation">&#37; to Kirk Athletic Center</label>
+                                                <input type="number" name="Kirk_Athletic_Center-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="LacrosseFaceOffClubAllocation" class="hiddenByDefault">
+                                                <label for="Lacrosse_Face_Off_Club-Allocation">&#37; to the Lacrosse Face Off Club</label>
+                                                <input type="number" name="Lacrosse_Face_Off_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="RugbyClubAllocation" class="hiddenByDefault">
+                                                <label for="Rugby_Club-Allocation">&#37; to the Rugby Club</label>
+                                                <input type="number" name="Rugby_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="SoccerGoalClubAllocation" class="hiddenByDefault">
+                                                <label for="Soccer_Goal_Club-Allocation">&#37; to the Soccer Goal Club</label>
+                                                <input type="number" name="Soccer_Goal_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="SwimmingClubAllocation" class="hiddenByDefault">
+                                                <label for="Swimming_Club-Allocation">&#37; to the Swimming Club</label>
+                                                <input type="number" name="Swimming_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                            <div id="TennisRacquetClubAllocation" class="hiddenByDefault">
+                                                <label for="add-on">&#37; to the Tennis Racquet Club</label>
+                                                <input type="number" name="Tennis_Racquet_Club-Allocation" min="0" max="100" value="0" />
+                                            </div>
+                                        </div><!--/div.ifAthleticsAreSelected-->
+                                    </fieldset>
+
+                                    <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
+                                    <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
+                                    
+                                    <div class="progress">
+                                        <div class="bar bar-success" style="width: 50%;"></div>
+                                    </div>
+                                    <p class="text-center">Step 4/6</p>
+                                </div><!--/div#step4-->
+
+                                <!--Begin Step 5-->
+                                <div id="step5">
+                                    <fieldset>
+                                        <legend>
+                                            Donor Information
+                                        </legend>
+                                        <div class="controls controls-row">
+                                            <div class="span4">
+                                                <label>First Name<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span4" name="usersFirstName" placeholder="John" required />
+                                            </div>
+                                            <div class="span4">
+                                                <label>Last Name<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span4"  name="usersLastName" placeholder="Doe" required />
+                                            </div>
+                                        </div>
+                                        <div class="controls controls-row">
+                                            <div class="span8">
+                                                <label>Class Year <em>(if applicable)</em>:</label>
+                                                <input type="number" class="span8" name="usersClassYear" placeholder="2000" min="1776" />
+                                            </div>
+                                        </div>
+                                        <div class="controls controls-row">
+                                            <div class="span5">
+                                                <label>Street Address<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span5" name="usersStreetAddress" placeholder="1 College Road" required />
+                                            </div>
+                                            <div class="span3">
+                                                <label>Apt, Suite, Bldg. (Optional):</label>
+                                                <input type="text" class="span3" name="usersSecondaryAddress" placeholder="Apt. 1" />
+                                            </div>
+                                        </div>
+                                        <div class="controls controls-row">
+                                            <div class="span3">
+                                                <label>City<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span3" name="usersCity" placeholder="Hampden-Sydney" required />
+                                            </div>
+                                            <div class="span2">
+                                                <label>State<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span2" name="usersState" data-provide="typeahead" placeholder="Virginia" />
+                                            </div>
+                                            <div class="span3">
+                                                <label>Zip Code<sup class="requiredValue">*</sup>:</label>
+                                                <input type="number" class="span3" name="usersZip" min="00000" max="999999999" placeholder="23943" />
+                                            </div>
+                                        </div>
+                                        <div class="controls controls-row">
+                                            <div class="span4">
+                                                <label>Country:</label>
+                                                <input type="text" class="span4" name="usersCountry" placeholder="United States" />
+                                            </div>
+                                            <div class="span4">
+                                                <label>Phone<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span4" name="usersPhoneNumber" placeholder="(434) 123&ndash;4567" required />
+                                            </div>
+                                        </div>
+                                        <div class="controls controls-row">
+                                            <div class="span8">
+                                                <label>Email<sup class="requiredValue">*</sup>:</label>
+                                                <input type="email" class="span8" name="usersEmail" placeholder="John.Doe@hsc.edu" required />
+                                            </div>
+                                        </div>
+                                        
+                                    </fieldset>
+
+                                    <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
+                                    <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
+
+                                    <div class="progress">
+                                        <div class="bar bar-success" style="width: 60%;"></div>
+                                    </div>
+                                    <p class="text-center">Step 5/6</p>
+                                </div><!--end step 5-->
+
                             </form><!--/form#DonationForm-->
                         </div><!--/div.span8.formContainer-->
                     </div><!--/div.row-->
@@ -434,12 +688,45 @@ $formKey = new formKey();
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+        <script>
+            //enable tooltips
+            $("#moreInfo").tooltip();
+            $("#whatIsThis").tooltip();
+            //enable typeahead for states
+            var usStates = ['Alabama', 'Alaska', 'American Samoa', 'Armed Forces Americas', 'Armed Fources Europe, Middle East, and Canada', 'Armed Forces Pacific', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Federated States of Micronesia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Northern Mariana', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Virgin Islands', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'].sort();
+            $('[name=usersState]').typeahead({source: usStates, items: 61});
+
+            var countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Côte d\'Ivoire', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Cayman Islands', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Democratic Republic of the Congo', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Faeroe Islands', 'Falkland Islands', 'Fiji', 'Finland', 'Former Yugoslav Republic of Macedonia', 'France', 'Gabon', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norfolk Island', 'North Korea', 'Northern Marianas', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Pitcairn Islands', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Romania', 'Russia', 'São Tomé and Príncipe', 'Saint Helena', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'South Georgia and the South Sandwich Islands', 'South Korea', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'The Bahamas', 'The Gambia', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks and Caicos Islands', 'Tuvalu', 'US Virgin Islands', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Western Sahara', 'Yemen', 'Zambia', 'Zimbabwe'].sort();
+            $('[name=usersCountry]').typeahead({source: countries, items: 218});
+            //credit card function
+            $(function() {
+                $(function() {
+                    $('.vertical.maestro').hide().css({
+                        opacity: 0
+                    });
+                return $('#creditCardNumber').validateCreditCard(function(result) {
+                    if (!(result.card_type != null)) {
+                        $('.cards li').removeClass('off');
+                        $('#creditCardNumber').removeClass('valid');
+                        return;
+                    }
+                    $('.cards li').addClass('off');
+                    $('.cards .' + result.card_type.name).removeClass('off');
+
+                    if (result.length_valid && result.luhn_valid) {
+                        return $('#creditCardNumber').addClass('valid');
+                    } else {
+                        return $('#creditCardNumber').removeClass('valid');
+                    }
+                });
+                });
+            }).call(this);
         </script>
     </body>
 </html>
