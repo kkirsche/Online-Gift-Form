@@ -31,7 +31,7 @@ $formKey = new formKey();
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Hampden-Sydney College | Online Gift Form</title>
+        <title>Make A Gift Today to Hampden-Sydney College</title>
         <meta name="description" content="Hampden-Sydney College's Online Gift Form">
         <meta name="viewport" content="width=device-width">
 
@@ -610,28 +610,28 @@ $formKey = new formKey();
                                             <div class="span4">
                                                 <label>First Name<sup class="requiredValue">*</sup>:</label>
                                                 <input type="text" class="span4" name="usersFirstName" placeholder="John" required />
-                                            </div>
+                                            </div><!--/div.span4-->
                                             <div class="span4">
                                                 <label>Last Name<sup class="requiredValue">*</sup>:</label>
                                                 <input type="text" class="span4"  name="usersLastName" placeholder="Doe" required />
-                                            </div>
-                                        </div>
+                                            </div><!--/div.span4-->
+                                        </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
                                             <div class="span8">
                                                 <label>Class Year <em>(if applicable)</em>:</label>
                                                 <input type="number" class="span8" name="usersClassYear" placeholder="2000" min="1776" />
-                                            </div>
-                                        </div>
+                                            </div><!--/div.span8-->
+                                        </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
                                             <div class="span5">
                                                 <label>Street Address<sup class="requiredValue">*</sup>:</label>
                                                 <input type="text" class="span5" name="usersStreetAddress" placeholder="1 College Road" required />
-                                            </div>
+                                            </div><!--/div.span5-->
                                             <div class="span3">
                                                 <label>Apt, Suite, Bldg. (Optional):</label>
                                                 <input type="text" class="span3" name="usersSecondaryAddress" placeholder="Apt. 1" />
-                                            </div>
-                                        </div>
+                                            </div><!--/div.span3-->
+                                        </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
                                             <div class="span3">
                                                 <label>City<sup class="requiredValue">*</sup>:</label>
@@ -645,7 +645,7 @@ $formKey = new formKey();
                                                 <label>Zip Code<sup class="requiredValue">*</sup>:</label>
                                                 <input type="number" class="span3" name="usersZip" min="00000" max="999999999" placeholder="23943" />
                                             </div>
-                                        </div>
+                                        </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
                                             <div class="span4">
                                                 <label>Country:</label>
@@ -655,13 +655,13 @@ $formKey = new formKey();
                                                 <label>Phone<sup class="requiredValue">*</sup>:</label>
                                                 <input type="text" class="span4" name="usersPhoneNumber" placeholder="(434) 123&ndash;4567" required />
                                             </div>
-                                        </div>
+                                        </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
                                             <div class="span8">
                                                 <label>Email<sup class="requiredValue">*</sup>:</label>
                                                 <input type="email" class="span8" name="usersEmail" placeholder="John.Doe@hsc.edu" required />
                                             </div>
-                                        </div>
+                                        </div><!--/div.controls.controls-row-->
                                         
                                     </fieldset>
 
