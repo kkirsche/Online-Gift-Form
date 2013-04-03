@@ -1,292 +1,75 @@
 /* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   H-SC Online Gift Form
    ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-a, img {
-    border:none;
-}
-html,
-body {
-    height: 100%;
-}
-
-body {
-    background: #dbd7d7;
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-img {
-    vertical-align: middle;
-    max-width: 100%;
-    height: auto;
-}
-@media \0screen {
-  img {
-    width: auto; /* for ie 8 */
-  }
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-    width: 100%;
-}
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 14px/24px Helvetica, Verdana, Geneva, Arial, sans-serif;
-}
-h1 {
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
-}
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
-
-/* ===================
-    ALL: H-SC Theme
-   =================== */
-
-.header-container {
-    border-bottom: 20px solid #d6d6d6;
-}
-
-.main aside {
-    border-top: 20px solid #d6d6d6;
-}
-
-.header-container,
-/*.footer-container,*/
-.main aside {
-    background: #660000;
-}
-
-.title {
-    color: white;
-}
-
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #660000;
-}
-
-nav a:hover {
-    background: #d6d6d6;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
-
 /* ==========================================================================
-   Author's custom styles
+   Global
    ========================================================================== */
+body {
+  background-color: #dbd7d7;
+}
 p {
-    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
     line-height: 150%;
 }
-.centerButtons {
-    margin: 0 auto;
-    width: 550px;
-    max-width: 100%;
-}
-.hiddenByDefault {
-    display: none;
-}
-.header-container,
 footer {
-    max-width: 100%;
-    width: 100%;
-   }
-footer {
-    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
     font-size: .7em;
     line-height: 150%;
 }
-.footerText {
-    max-width: 50%;
+img {
+    max-width: 100%;
 }
-.footerText address {
-    color: #000;
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.navbar {
+    border-bottom: 20px solid #d6d6d6;
+    background: #660000;
+    width: 100%;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
 }
-.footerText a {
-    color: #660000;
+.navbar-inner {
+    border-bottom: 20px solid #d6d6d6;
+    background: #660000;
 }
-.footerText a:hover {
-    color: #c69500
-}
-.floatRight {
-  float: right;
-}
-.floatLeft {
-  float: left;
-}
-.clear {
-    clear: both;
-    margin:0;
-}
-footer a {
-    color: #dcdcdc;
-}
-footer a:hover {
-    color: #ffffff;
-}
+/* ==========================================================================
+   Top Message
+   ========================================================================== */
+    #topMessage h1 {
+        margin-top: 2em;
+        font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+        font-size: 2em;
+    }
 
-.footer-container {
-    height: auto !important;
-    margin: 0 auto -7em;
-}
-footer .wrapper {
-    height: 7em;
-}
-.push {
-    height: 7em;
-}
-.headerTagline {
-    display: block;
-    font-size: 1em;
-    font-style: italic;
-    margin-top: -7px;
-}
-.submit {
-    border:0;
-    padding:0 30px;
-    height:3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#7f0000;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    margin-top: 1em;
-    cursor:pointer;
-    -moz-box-shadow: 0 1px 2px #999;
-    -webkit-box-shadow: 0 1px 2px #999;
-}
-.submit:hover {
-    border:0;
-    padding:0 30px;
-    height: 3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#c69500;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    cursor:pointer;
-}
-.leftText {
-    text-align: left;
-}
-.centerText {
-    text-align: center;
-}
-.rightText {
-    text-align: right;
-}
+/* ==========================================================================
+   Main Form Container / General Form Elements
+   ========================================================================== */
+    .formContainer {
+        background: #ececec;
+        border-radius: 1em;
+        padding: 2em;
+    }
+    .progress {
+        margin: 0 auto;
+        width: 50%;
+    }
+/* ==========================================================================
+   Javascript Disabled
+   ========================================================================== */
+    .jsDisabled {
+        display: none;
+    }
+/* ==========================================================================
+   Step 1 — One Time Gift or Recurring Gift?
+   ========================================================================== */
+    .centerButtons {
+        margin: 0 auto;
+        width: 60%;
+        max-width: 100%;
+    }
+/* ==========================================================================
+   Giving Form Controls
+   ========================================================================== */
 .paginationBTN {
     border:0;
     padding:0 30px;
@@ -306,11 +89,6 @@ footer .wrapper {
     -webkit-box-shadow: 0 1px 2px #999;
     max-width: 50%;
 }
-.progress {
-    clear: both;
-    margin: 0 auto;
-    width: 50%;
-}
 .paginationBTN:hover {
     border:0;
     padding:0 30px;
@@ -327,297 +105,75 @@ footer .wrapper {
     cursor:pointer;
     max-width: 50%
 }
-.jsDisabled {
-    display: none;
-}
-.indented {
-    margin-left: 3%;
-}
-.requiredValue {
-    color:red;
-}
-.formStep {
-    background: #ececec;
-    border-radius: 1em;
-    margin: 2em;
-    padding: 2em;
-}
-.cards {
-  overflow: hidden;
-}
-.cards li {
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  background-image: url("http://i.imgur.com/m3DYM.png");
-  background-position: 0 0;
-  list-style: none;
-  float: left;
-  height: 32px;
-  margin-right: 8px;
-  text-indent: -9999px;
-  width: 51px;
-}
-.cards li:last-child {
-  margin-right: 0;
-}
-.cards .visa_electron {
-  background-position: 204px 0;
-}
-.cards .mastercard {
-  background-position: 153px 0;
-}
-.cards .amex {
-  background-position: 102px 0;
-}
-.cards .discover {
-  background-position: 51px 0;
-}
-.cards .visa.off {
-  background-position: 0 32px;
-}
-.cards .visa_electron.off {
-  background-position: 204px 32px;
-}
-.cards .mastercard.off {
-  background-position: 153px 32px;
-}
-.cards .amex.off {
-  background-position: 102px 32px;
-}
-.cards .discover.off {
-  background-position: 51px 32px;
-}
-form input {
-    max-width: 100%;
-    width: auto;
-}
-.break-word {
-    word-wrap: break-word;
-}
-.largeText {
-    font-size: 1.3em;
-}
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .footerText {
-    max-width: 25%;
-    }
-
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
-    }
-
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
+/* Large desktop */
+@media (min-width: 1200px) {
+    .centerButtons {
         margin: 0 auto;
-        width: 80%;
+        width: 60%;
+        max-width: 100%;
     }
 }
 
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .centerButtons {
         margin: 0 auto;
+        width: 0%;
+        max-width: 100%;
     }
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    /*Remove extranious padding so our header extends across*/
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .centerButtons {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 620px) {
+    /*Remove extranious padding so our header extends across*/
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+        margin: 0;
+    }
+    .centerButtons {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-}
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+        margin: 0;
     }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
+    .centerButtons {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
 }
