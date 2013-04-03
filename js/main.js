@@ -74,10 +74,15 @@ $("document").ready(function () {
             case "oneTimeGift":
                 $("#makingAOneTimeGift").slideToggle();
                 $("#oneTimeDonationValue").val(0);
+                $("#oneTimeDonationValidateError").text("");
+                $("#makingAOneTimeGift").removeClass("error");
                 break;
             case "recurringDonation":
+                $("#makingARecurringGift").removeClass("error");
+                $("#recurringDonationAmountValidateError").text("");
                 $("#makingARecurringGift").slideToggle();
                 $("#totalRecurringDonationValue").val(0);
+
                 break;
             default:
                 $("#makingARecurringGift").hide();
