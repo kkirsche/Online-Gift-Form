@@ -353,7 +353,7 @@ $("document").ready(function () {
                     return false;
                 }
                 if ($("#makingARecurringGift").hasClass("error")) {
-                    $("#oneTimeDonationValidateError").text("");
+                    $("#recurringDonationAmountValidateError").text("");
                     $("#makingARecurringGift").removeClass("error");
                 }
                 return true;
