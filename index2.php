@@ -83,8 +83,7 @@ $formKey = new formKey();
             <div class="row">
                 <div class="span12">
                     <div class="row">
-                        <div class="span1">&nbsp;</div>
-                        <div class="span9 formContainer">
+                        <div class="span11 formContainer">
                             <form id="DonationForm" action="processForm.php" method="post">
                                 <!--Begin Step 1-->
                                 <div id="step1">
@@ -607,25 +606,25 @@ $formKey = new formKey();
                                             Donor Information
                                         </legend>
                                         <div class="controls controls-row">
-                                            <div class="span4">
+                                            <div class="span5">
                                                 <label>First Name<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span4" name="usersFirstName" placeholder="John" required />
+                                                <input type="text" class="span5" name="usersFirstName" placeholder="John" required />
                                             </div><!--/div.span4-->
-                                            <div class="span4">
+                                            <div class="span5">
                                                 <label>Last Name<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span4"  name="usersLastName" placeholder="Doe" required />
+                                                <input type="text" class="span5"  name="usersLastName" placeholder="Doe" required />
                                             </div><!--/div.span4-->
                                         </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
-                                            <div class="span8">
+                                            <div class="span10">
                                                 <label>Class Year <em>(if applicable)</em>:</label>
-                                                <input type="number" class="span8" name="usersClassYear" placeholder="2000" min="1776" />
+                                                <input type="number" class="span10" name="usersClassYear" placeholder="2000" min="1776" />
                                             </div><!--/div.span8-->
                                         </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
-                                            <div class="span5">
+                                            <div class="span7">
                                                 <label>Street Address<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span5" name="usersStreetAddress" placeholder="1 College Road" required />
+                                                <input type="text" class="span7" name="usersStreetAddress" placeholder="1 College Road" required />
                                             </div><!--/div.span5-->
                                             <div class="span3">
                                                 <label>Apt, Suite, Bldg. (Optional):</label>
@@ -633,13 +632,13 @@ $formKey = new formKey();
                                             </div><!--/div.span3-->
                                         </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
-                                            <div class="span3">
+                                            <div class="span4">
                                                 <label>City<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span3" name="usersCity" placeholder="Hampden-Sydney" required />
+                                                <input type="text" class="span4" name="usersCity" placeholder="Hampden-Sydney" required />
                                             </div>
-                                            <div class="span2">
+                                            <div class="span3">
                                                 <label>State<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span2" name="usersState" data-provide="typeahead" placeholder="Virginia" />
+                                                <input type="text" class="span3" name="usersState" data-provide="typeahead" placeholder="Virginia" />
                                             </div>
                                             <div class="span3">
                                                 <label>Zip Code<sup class="requiredValue">*</sup>:</label>
@@ -647,19 +646,19 @@ $formKey = new formKey();
                                             </div>
                                         </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
-                                            <div class="span4">
+                                            <div class="span5">
                                                 <label>Country:</label>
-                                                <input type="text" class="span4" name="usersCountry" placeholder="United States" />
+                                                <input type="text" class="span5" name="usersCountry" placeholder="United States" />
                                             </div>
-                                            <div class="span4">
+                                            <div class="span5">
                                                 <label>Phone<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span4" name="usersPhoneNumber" placeholder="(434) 123&ndash;4567" required />
+                                                <input type="text" class="span5" name="usersPhoneNumber" placeholder="(434) 123&ndash;4567" required />
                                             </div>
                                         </div><!--/div.controls.controls-row-->
                                         <div class="controls controls-row">
-                                            <div class="span8">
+                                            <div class="span10">
                                                 <label>Email<sup class="requiredValue">*</sup>:</label>
-                                                <input type="email" class="span8" name="usersEmail" placeholder="John.Doe@hsc.edu" required />
+                                                <input type="email" class="span10" name="usersEmail" placeholder="John.Doe@hsc.edu" required />
                                             </div>
                                         </div><!--/div.controls.controls-row-->
                                         
@@ -690,16 +689,16 @@ $formKey = new formKey();
                                             <li class="amex">American Express</li>
                                         </ul>
                                         <div class="controls controls-row">
-                                            <div class="span8">
+                                            <div class="span5">
                                                 <label>Name as it appears on Credit Card<sup class="requiredValue">*</sup>:</label>
-                                                <input type="text" class="span8" name="nameOnCard" placeholder="John R. Doe" />
-                                            </div><!--/div.span8-->
-                                        </div><!--/div.controls.controls-row-->
-                                        <div class="controls controls-row">
+                                                <input type="text" class="span5" name="nameOnCard" placeholder="John R. Doe" />
+                                            </div><!--/div.span5-->
                                             <div class="span5">
                                                 <label>Credit Card Number<sup class="requiredValue">*</sup>:</label>
                                                 <input type="number" class="span5" name="numberOnCard" id="creditCardNumber" placeholder="4012888888881881" min="0" max="9999999999999999999" />
                                             </div><!--/div.span5-->
+                                        </div><!--/div.controls.controls-row-->
+                                        <div class="controls controls-row">
                                             <div class="span3">
                                                 <label>
                                                     Credit Card Verification Code 
@@ -710,17 +709,15 @@ $formKey = new formKey();
                                                 </label>
                                                 <input type="number" class="span3" name="securityCodeOnCard" placeholder="813" min="0" max="9999" />
                                             </div><!--/div.span3-->
-                                        </div><!--/div.controls.controls-row-->
-                                        <div class="controls controls-row">
-                                            <div class="span4">
+                                            <div class="span3">
                                                 <label>Expiration Month<sup class="requiredValue">*</sup>:</label>
-                                                <input type="number" class="span4" name="expirationMonthOnCard" min="01" max="12" placeholder="11" />
-                                            </div>
+                                                <input type="number" class="span3" name="expirationMonthOnCard" min="01" max="12" placeholder="11" />
+                                            </div><!--/div.span4-->
                                             <div class="span4">
                                                 <label>Expiration Year<sup class="requiredValue">*</sup>:</label>
                                                 <input type="number" class="span4" name="expirationYearOnCard" min="0" max="99" placeholder="14" />
-                                            </div>
-                                        </div>
+                                            </div><!--/div.span4-->
+                                        </div><!--/div.controls.controls-row-->
                                     </fieldset>
 
                                     <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
@@ -730,8 +727,48 @@ $formKey = new formKey();
                                         <div class="bar bar-success" style="width: 80%;"></div>
                                     </div>
                                     <p class="text-center">Step 6/6</p>
-                                </div><!--End step 6-->
+                                </div><!--/div#step6-->
+
+                                <!--Begin AJAX Results section-->
+                                <div id="showResults">
+                                    <!--when form processed using AJAX, output the response here-->
+                                </div><!--End AJAX results section-->
+                                <div class="row">
+                                    <div class="text-center">
+                                        <input type="reset" name="resetFormAndStartOver" class="paginationBTN" value="Clear Form &amp; Start Over" />
+                                    </div><!--/div.text-center-->
+                                </div><!--/div.row-->
+
                             </form><!--/form#DonationForm-->
+                            <!--Begin footer section-->
+                            <hr />
+                            <footer class="span11">
+                                <div class="row">
+                                    <div class="text-left span3 footerText">
+                                        <p>
+                                            <strong>Other Giving Methods:</strong><br />
+                                            If you would like to call us with your credit card information, you can contact us toll-free at <a href="tel:18008651776" title="Call us to donate">1-800-865-1776</a>. We are available Monday&ndash;Friday, 8:30 AM to 5:00 PM <abbr title="Eastern Standard Time">EST</abbr>.<br />
+                                            <hr />
+                                            &copy; Hampden-Sydney College | 2012&ndash;2013<br />
+                                            <a href="http://www.hsc.edu/Computing-Center/Policies/Digital-Copyright-Infringements.html" title="Copyright" target="_blank"><em>Copyright</em></a> | <a href="http://www.hsc.edu/Emergencies.html" title="Emergencies" target="_blank"><em>Emergencies</em></a> | <a href="http://www.hsc.edu/Search/A-Z-Index.html" title="Site Index" target="_blank"><em>Site Index</em></a>
+                                        </p>
+                                    </div>
+                                    <div class="text-right offset2 span3 pull-right footerText">
+                                        <strong>Address for Mailing Gifts:</strong><br />
+                                        <address>
+                                            Office of Institutional Advancement<br />
+                                            Hampden-Sydney College<br />
+                                            P.O. Box 637
+                                            Hampden-Sydney, <abbr title="Virginia">VA</abbr> 23943&ndash;0637<br />
+                                            Toll Free: <a href="tel:18008651776">(800) 865-1776</a><br />
+                                            Fax: (434) 223-6349<br />
+                                            <hr />
+                                            <a href="tel:+4342236000" title="434-223-6000">(434) 223&ndash;6000</a> | <a href="http://www.hsc.edu/Contact-the-College.html" title="Contact the College" target="_blank">Contact the College</a>
+                                        </address>
+                                    </div>
+                                </div><!--end row-->
+                                <div class="clear"></div>
+                            </footer>
                         </div><!--/div.span8.formContainer-->
                     </div><!--/div.row-->
                 </div><!--/div.span12-->

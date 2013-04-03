@@ -20,6 +20,14 @@ img {
 textarea {
     width: 100%;
 }
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -35,7 +43,9 @@ textarea {
     background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
     border-bottom: 20px solid #d6d6d6;
-    height: 10.2em;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
     width: 100%;
 }
 .navbar-static-top {
@@ -50,7 +60,9 @@ textarea {
     background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
     border-bottom: 20px solid #d6d6d6;
-    height: 10.2em;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
     width: 100%; 
 }
 .navbar-inner {
@@ -65,7 +77,9 @@ textarea {
     background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
     border-bottom: 20px solid #d6d6d6;
-    height: 10.2em;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
 }
 /* ==========================================================================
    Top Message
@@ -99,14 +113,6 @@ textarea {
    ========================================================================== */
     .jsDisabled {
         display: none;
-    }
-/* ==========================================================================
-   Step 1 — One Time Gift or Recurring Gift?
-   ========================================================================== */
-    .centerButtons {
-        margin: 0 auto;
-        width: 60%;
-        max-width: 100%;
     }
 /* ==========================================================================
    Step 3 — To where would you like to designate your gift?
@@ -209,7 +215,17 @@ textarea {
         cursor:pointer;
         max-width: 50%
     }
-
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+   .footerText {
+        font-size: 1.1em;
+        line-height: 150%;
+        padding-right: 6.5em;
+   }
+   .footerText a {
+    color: #660000;
+   }
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -217,9 +233,29 @@ textarea {
 @media (min-width: 1200px) {
     .centerButtons {
         margin: 0 auto;
-        width: 60%;
+        width: 48%;
         max-width: 100%;
     }
+}
+
+
+@media (min-width: 979px) and (max-width: 1199px) {
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .centerButtons {
+        margin: 0 auto;
+        width: 59%;
+        max-width: 100%;
+    }
+    .footerText {
+        padding-right: 3.5em;
+   }
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -234,9 +270,12 @@ textarea {
     }
     .centerButtons {
         margin: 0 auto;
-        width: 100%;
+        width: 77%;
         max-width: 100%;
     }
+    .footerText {
+        padding-right: 3.5em;
+   }
 }
 
 /* Landscape phone to portrait tablet */
@@ -255,6 +294,9 @@ textarea {
         width: 100%;
         max-width: 100%;
     }
+    .footerText {
+        padding-right: 0em;
+   }
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 620px) {
@@ -275,6 +317,9 @@ textarea {
         width: 100%;
         max-width: 100%;
     }
+    .footerText {
+        padding-right: 0em;
+   }
 }
 
 /* Landscape phones and down */
