@@ -721,17 +721,16 @@ $formKey = new formKey();
                                                 <input type="number" class="span4" name="expirationYearOnCard" min="0" max="99" placeholder="14" />
                                             </div>
                                         </div>
-                            </fieldset>
+                                    </fieldset>
+
+                                    <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
+                                    <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
                             
-                            <div class="clearfix"></div>
-                            <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
-                            <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
-                            
-                            <div class="progress">
-                                <div class="bar bar-success" style="width: 80%;"></div>
-                            </div>
-                            <p class="text-center">Step 5/6</p>
-                        </div><!--End step 6-->
+                                    <div class="progress">
+                                        <div class="bar bar-success" style="width: 80%;"></div>
+                                    </div>
+                                    <p class="text-center">Step 6/6</p>
+                                </div><!--End step 6-->
                             </form><!--/form#DonationForm-->
                         </div><!--/div.span8.formContainer-->
                     </div><!--/div.row-->
