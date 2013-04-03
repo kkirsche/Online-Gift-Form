@@ -113,7 +113,7 @@ $formKey = new formKey();
                                     <!--One Time Gift-->
                                     <div id="makingAOneTimeGift" class="text-center control-group">
                                         <fieldset>
-                                            <label class="control-label">Enter Gift Amount Here:<sup class="requiredValue">*</sup></label>
+                                            <label class="control-label"><h4>Enter Gift Amount Here:<sup class="requiredValue">*</sup></h4></label>
                                             <div class="controls">
                                                 <div class="input-prepend input-append">
                                                     <span class="add-on">$</span>
@@ -128,7 +128,7 @@ $formKey = new formKey();
                                     <!--Recurring Gift-->
                                     <div id="makingARecurringGift" class="control-group text-center">
                                         <fieldset>
-                                            <label class="control-label" for="recurringDonationValue">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
+                                            <label class="control-label" for="recurringDonationValue"><h4>Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</h4></label>
                                                 <div class="controls">
                                                 <div class="input-prepend input-append">
                                                     <span class="add-on">$</span>
@@ -246,7 +246,7 @@ $formKey = new formKey();
                                         </strong>
                                     </p>
                                     
-                                    <label class="text-center control-label largeText"><strong>I would like to designate my gift<sup class="requiredValue">*</sup>:</strong></label>
+                                    <label class="text-center control-label largeText"><h4>I would like to designate my gift<sup class="requiredValue">*</sup>:</h4></label>
                         
                                     <div class="controls">
                                     <fieldset>
@@ -390,6 +390,8 @@ $formKey = new formKey();
                                                 Tennis Racquet Club
                                             </label>
                                         </div><!--/div.ifAthleticsAreSelected.indented-->
+                                        <span id="checkboxError" class="help-block"></span>
+                                    </div><!--/div.controls-->
 
                                         <label>
                                             <strong>Is your gift in memory of someone?</strong>
@@ -405,10 +407,8 @@ $formKey = new formKey();
                                             <strong>Special Instructions</strong>
                                         </label>
                                         <textarea name="specinstr" id="specinstr" placeholder="Enter Special Instructions Here (255 character maximum)"></textarea>
-
-                                        <span id="checkboxError" class="help-block"></span>
                                     </fieldset>
-                                    </div><!--/div.controls-->
+                                    
 
                                     <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
                                     <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
@@ -603,7 +603,9 @@ $formKey = new formKey();
                                 <div id="step5">
                                     <fieldset>
                                         <legend>
-                                            Donor Information
+                                            <strong>
+                                                Donor Information
+                                            </strong>
                                         </legend>
                                         <div class="controls controls-row">
                                             <div class="span5">
@@ -721,7 +723,7 @@ $formKey = new formKey();
                                     </fieldset>
 
                                     <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
-                                    <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+                                    <button type="button" class="paginationBTN previousStep clearfix">&larr; Previous</button>
                             
                                     <div class="progress">
                                         <div class="bar bar-success" style="width: 80%;"></div>
@@ -733,11 +735,9 @@ $formKey = new formKey();
                                 <div id="showResults">
                                     <!--when form processed using AJAX, output the response here-->
                                 </div><!--End AJAX results section-->
-                                <div class="row">
                                     <div class="text-center">
                                         <input type="reset" name="resetFormAndStartOver" class="paginationBTN" value="Clear Form &amp; Start Over" />
                                     </div><!--/div.text-center-->
-                                </div><!--/div.row-->
 
                             </form><!--/form#DonationForm-->
                             <!--Begin footer section-->

@@ -81,7 +81,10 @@ $("document").ready(function () {
                 $("#makingARecurringGift").removeClass("error");
                 $("#recurringDonationAmountValidateError").text("");
                 $("#makingARecurringGift").slideToggle();
+                $("#numberOfPayments").val(0);
+                $("#recurringDonationValue").val(0);
                 $("#totalRecurringDonationValue").val(0);
+                $("#paymentFrequency").val("Monthly");
 
                 break;
             default:
