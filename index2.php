@@ -113,7 +113,7 @@ $formKey = new formKey();
                                 <div id="step2">
                                     <!--One Time Gift-->
                                     <div id="makingAOneTimeGift" class="text-center control-group">
-                                        <label class="control-label largeText">Enter Gift Amount Here:<sup class="requiredValue">*</sup></label>
+                                        <label class="control-label">Enter Gift Amount Here:<sup class="requiredValue">*</sup></label>
                                         <div class="controls">
                                             <div class="input-prepend input-append">
                                                 <span class="add-on">$</span>
@@ -126,7 +126,7 @@ $formKey = new formKey();
 
                                     <!--Recurring Gift-->
                                     <div id="makingARecurringGift" class="control-group text-center">
-                                        <label class="control-label largeText" for="recurringDonationValue">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
+                                        <label class="control-label" for="recurringDonationValue">Enter Recurring Gift Amount<sup class="requiredValue">*</sup>:</label>
                                             <div class="controls">
                                                 <div class="input-prepend input-append">
                                                     <span class="add-on">$</span>
