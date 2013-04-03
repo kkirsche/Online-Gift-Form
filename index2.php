@@ -672,8 +672,66 @@ $formKey = new formKey();
                                         <div class="bar bar-success" style="width: 60%;"></div>
                                     </div>
                                     <p class="text-center">Step 5/6</p>
-                                </div><!--end step 5-->
+                                </div><!--/div#step5-->
 
+                                <!--Begin Step 6-->
+                                <div id="step6">
+                                    <fieldset>
+                                        <legend class="largeText">
+                                            <strong>
+                                                Payment Method&mdash;Credit Card Information
+                                            </strong>
+                                        </legend>
+
+                                        <!--Show accepted credit card types-->
+                                        <ul class="cards">
+                                            <li class="visa">Visa</li>
+                                            <li class="mastercard">MasterCard</li>
+                                            <li class="amex">American Express</li>
+                                        </ul>
+                                        <div class="controls controls-row">
+                                            <div class="span8">
+                                                <label>Name as it appears on Credit Card<sup class="requiredValue">*</sup>:</label>
+                                                <input type="text" class="span8" name="nameOnCard" placeholder="John R. Doe" />
+                                            </div><!--/div.span8-->
+                                        </div><!--/div.controls.controls-row-->
+                                        <div class="controls controls-row">
+                                            <div class="span5">
+                                                <label>Credit Card Number<sup class="requiredValue">*</sup>:</label>
+                                                <input type="number" class="span5" name="numberOnCard" id="creditCardNumber" placeholder="4012888888881881" min="0" max="9999999999999999999" />
+                                            </div><!--/div.span5-->
+                                            <div class="span3">
+                                                <label>
+                                                    Credit Card Verification Code 
+                                                    <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express">
+                                                        <i class="icon-question-sign" id="whatIsThis" title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"></i>
+                                                    </abbr>
+                                                    <sup class="requiredValue">*</sup>:
+                                                </label>
+                                                <input type="number" class="span3" name="securityCodeOnCard" placeholder="813" min="0" max="9999" />
+                                            </div><!--/div.span3-->
+                                        </div><!--/div.controls.controls-row-->
+                                        <div class="controls controls-row">
+                                            <div class="span4">
+                                                <label>Expiration Month<sup class="requiredValue">*</sup>:</label>
+                                                <input type="number" class="span4" name="expirationMonthOnCard" min="01" max="12" placeholder="11" />
+                                            </div>
+                                            <div class="span4">
+                                                <label>Expiration Year<sup class="requiredValue">*</sup>:</label>
+                                                <input type="number" class="span4" name="expirationYearOnCard" min="0" max="99" placeholder="14" />
+                                            </div>
+                                        </div>
+                            </fieldset>
+                            
+                            <div class="clearfix"></div>
+                            <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
+                            <button type="button" class="paginationBTN floatLeft previousStep clearfix">&larr; Previous</button>
+                            
+                            <div class="progress">
+                                <div class="bar bar-success" style="width: 80%;"></div>
+                            </div>
+                            <p class="text-center">Step 5/6</p>
+                        </div><!--End step 6-->
                             </form><!--/form#DonationForm-->
                         </div><!--/div.span8.formContainer-->
                     </div><!--/div.row-->
@@ -685,7 +743,8 @@ $formKey = new formKey();
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-
+        
+        <script src="js/jquery.form.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script>
