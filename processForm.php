@@ -275,7 +275,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             $userCreditCardInfo['creditCardType'] = check_Credit_Card($userCreditCardInfo['creditCardNumber']);
         } else {
             $isValid = false;
-            $errorMessage .= "We're sorry, but the credit card number that you entered was invalid.<br />";
+            $errorMessage .= "We&rsquo;re sorry, but the credit card number that you entered was invalid. Please press the back button to change this number. <br />";
         }
 
 
