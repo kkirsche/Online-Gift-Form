@@ -1,5 +1,5 @@
 /* ==========================================================================
-   H-SC Online Gift Form
+   H-SC Online Gift Form v1.5
    ========================================================================== */
 /* ==========================================================================
    Global
@@ -16,6 +16,9 @@ footer {
 }
 img {
     max-width: 100%;
+}
+textarea {
+    width: 100%;
 }
 /* ==========================================================================
    Header
@@ -55,6 +58,10 @@ img {
         margin-top: .5em;
         margin-bottom: .5em;
     }
+
+    .requiredValue {
+        color: #ff0000;
+    }
 /* ==========================================================================
    Javascript Disabled
    ========================================================================== */
@@ -70,46 +77,50 @@ img {
         max-width: 100%;
     }
 /* ==========================================================================
+   Step 3 — To where would you like to designate your gift?
+   ========================================================================== */
+    .indented {
+        padding-left: 2em;
+    }
+
+/* ==========================================================================
    Giving Form Controls
    ========================================================================== */
-.paginationBTN {
-    border:0;
-    padding:0 30px;
-    height:3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#7f0000;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    margin-top: 1em;
-    cursor:pointer;
-    -moz-box-shadow: 0 1px 2px #999;
-    -webkit-box-shadow: 0 1px 2px #999;
-    max-width: 50%;
-}
-.paginationBTN:hover {
-    border:0;
-    padding:0 30px;
-    height: 3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#c69500;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    cursor:pointer;
-    max-width: 50%
-}
-.requiredValue {
-    color: #ff0000;
-}
+    .paginationBTN {
+        border:0;
+        padding:0 30px;
+        height:3em;
+        line-height:30px;
+        text-align:center;
+        font-size:.75em;
+        color:#fff;
+        text-shadow:#4f0000 0 1px 0;
+        background:#7f0000;
+        -moz-border-radius:50px;
+        -webkit-border-radius:50px;
+        border-radius:50px;
+        margin-top: 1em;
+        cursor:pointer;
+        -moz-box-shadow: 0 1px 2px #999;
+        -webkit-box-shadow: 0 1px 2px #999;
+        max-width: 50%;
+    }
+    .paginationBTN:hover {
+        border:0;
+        padding:0 30px;
+        height: 3em;
+        line-height:30px;
+        text-align:center;
+        font-size:.75em;
+        color:#fff;
+        text-shadow:#4f0000 0 1px 0;
+        background:#c69500;
+        -moz-border-radius:50px;
+        -webkit-border-radius:50px;
+        border-radius:50px;
+        cursor:pointer;
+        max-width: 50%
+    }
 
 /* ==========================================================================
    Media Queries
@@ -125,9 +136,17 @@ img {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .centerButtons {
         margin: 0 auto;
-        width: 0%;
+        width: 100%;
         max-width: 100%;
     }
 }
