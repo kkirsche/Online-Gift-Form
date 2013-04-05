@@ -744,6 +744,9 @@ $formKey = new formKey();
                             <hr />
                             <footer class="span11">
                                 <div class="row">
+                                    <p class="text-center footerText">The College’s fiscal year ends on June 30<sup>th</sup>.</p>
+                                </div>
+                                <div class="row">
                                     <div class="text-left span3 footerText">
                                         <p>
                                             <strong>Other Giving Methods:</strong><br />
