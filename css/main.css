@@ -1,38 +1,25 @@
 /* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   H-SC Online Gift Form v1.6
    ========================================================================== */
-
-html,
-button,
-input,
-select,
+/* ==========================================================================
+   Global
+   ========================================================================== */
+body {
+  background-color: #dbd7d7;
+}
+p {
+    line-height: 150%;
+}
+footer {
+    font-size: .7em;
+    line-height: 150%;
+}
+img {
+    max-width: 100%;
+}
 textarea {
-    color: #222;
+    width: 100%;
 }
-a, img {
-    border:none;
-}
-html,
-body {
-    height: 100%;
-}
-
-body {
-    background: #dbd7d7;
-    font-size: 1em;
-    line-height: 1.4;
-}
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
 hr {
     display: block;
     height: 1px;
@@ -41,583 +28,308 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
-img {
-    vertical-align: middle;
-    max-width: 100%;
-    height: auto;
-}
-@media \0screen {
-  img {
-    width: auto; /* for ie 8 */
-  }
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.navbar {
+    background: #660000 !important; /* Old browsers */ 
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2MDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2NjAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #660000 0%, #660000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#660000), color-stop(100%,#660000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #660000 0%,#660000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #660000 0%,#660000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #660000 0%,#660000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
+    border-bottom: 20px solid #d6d6d6;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
     width: 100%;
 }
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-body {
-    font: 14px/24px Helvetica, Verdana, Geneva, Arial, sans-serif;
-}
-h1 {
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
-}
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
-
-/* ===================
-    ALL: H-SC Theme
-   =================== */
-
-.header-container {
+.navbar-static-top {
+   background: #660000 !important; /* Old browsers */ 
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2MDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2NjAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #660000 0%, #660000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#660000), color-stop(100%,#660000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #660000 0%,#660000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #660000 0%,#660000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #660000 0%,#660000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
     border-bottom: 20px solid #d6d6d6;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
+    width: 100%; 
 }
-
-.main aside {
-    border-top: 20px solid #d6d6d6;
+.navbar-inner {
+    background: #660000 !important; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2MDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2NjAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #660000 0%, #660000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#660000), color-stop(100%,#660000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #660000 0%,#660000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #660000 0%,#660000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #660000 0%,#660000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #660000 0%,#660000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#660000',GradientType=0 ); /* IE6-8 */
+    border-bottom: 20px solid #d6d6d6;
+    -webkit-box-shadow: 0 5px 10px #aaa;
+    -moz-box-shadow: 0 5px 10px #aaa;
+    box-shadow: 0 5px 10px #aaa;
 }
-
-.header-container,
-/*.footer-container,*/
-.main aside {
-    background: #660000;
-}
-
-.title {
-    color: white;
-}
-
-
-/* ==============
-    MOBILE: Menu
-   ============== */
-
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #660000;
-}
-
-nav a:hover {
-    background: #d6d6d6;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
-}
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
-}
+/* ==========================================================================
+   Top Message
+   ========================================================================== */
+    #topMessage h1 {
+        margin-top: 2em;
+        font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", Times, serif;
+        font-size: 2em;
+    }
 
 /* ==========================================================================
-   Author's custom styles
+   Main Form Container / General Form Elements
    ========================================================================== */
-p {
-    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
-    line-height: 150%;
-}
-.centerButtons {
-    margin: 0 auto;
-    width: 550px;
-    max-width: 100%;
-}
-.hiddenByDefault {
-    display: none;
-}
-.header-container,
-footer {
-    max-width: 100%;
-    width: 100%;
-   }
-footer {
-    font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
-    font-size: .7em;
-    line-height: 150%;
-}
-.footerText {
-    max-width: 50%;
-}
-.footerText address {
-    color: #000;
-}
-.footerText a {
-    color: #660000;
-}
-.footerText a:hover {
-    color: #c69500
-}
-.floatRight {
-  float: right;
-}
-.floatLeft {
-  float: left;
-}
-.clear {
-    clear: both;
-    margin:0;
-}
-footer a {
-    color: #dcdcdc;
-}
-footer a:hover {
-    color: #ffffff;
-}
+    .formContainer {
+        background: #ececec;
+        border-radius: 1em;
+        padding: 2em;
+    }
+    .progress {
+        margin: 0 auto;
+        width: 50%;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
 
-.footer-container {
-    height: auto !important;
-    margin: 0 auto -7em;
-}
-footer .wrapper {
-    height: 7em;
-}
-.push {
-    height: 7em;
-}
-.headerTagline {
-    display: block;
-    font-size: 1em;
-    font-style: italic;
-    margin-top: -7px;
-}
-.submit {
-    border:0;
-    padding:0 30px;
-    height:3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#7f0000;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    margin-top: 1em;
-    cursor:pointer;
-    -moz-box-shadow: 0 1px 2px #999;
-    -webkit-box-shadow: 0 1px 2px #999;
-}
-.submit:hover {
-    border:0;
-    padding:0 30px;
-    height: 3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#c69500;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    cursor:pointer;
-}
-.leftText {
-    text-align: left;
-}
-.centerText {
-    text-align: center;
-}
-.rightText {
-    text-align: right;
-}
-.paginationBTN {
-    border:0;
-    padding:0 30px;
-    height:3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#7f0000;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    margin-top: 1em;
-    cursor:pointer;
-    -moz-box-shadow: 0 1px 2px #999;
-    -webkit-box-shadow: 0 1px 2px #999;
-    max-width: 50%;
-}
-.progress {
-    clear: both;
-    margin: 0 auto;
-    width: 50%;
-}
-.paginationBTN:hover {
-    border:0;
-    padding:0 30px;
-    height: 3em;
-    line-height:30px;
-    text-align:center;
-    font-size:.75em;
-    color:#fff;
-    text-shadow:#4f0000 0 1px 0;
-    background:#c69500;
-    -moz-border-radius:50px;
-    -webkit-border-radius:50px;
-    border-radius:50px;
-    cursor:pointer;
-    max-width: 50%
-}
-.jsDisabled {
-    display: none;
-}
-.indented {
-    margin-left: 3%;
-}
-.requiredValue {
-    color:red;
-}
-.formStep {
-    background: #ececec;
-    border-radius: 1em;
-    margin: 2em;
-    padding: 2em;
-}
-.cards {
-  overflow: hidden;
-}
-.cards li {
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  background-image: url("http://i.imgur.com/m3DYM.png");
-  background-position: 0 0;
-  list-style: none;
-  float: left;
-  height: 32px;
-  margin-right: 8px;
-  text-indent: -9999px;
-  width: 51px;
-}
-.cards li:last-child {
-  margin-right: 0;
-}
-.cards .visa_electron {
-  background-position: 204px 0;
-}
-.cards .mastercard {
-  background-position: 153px 0;
-}
-.cards .amex {
-  background-position: 102px 0;
-}
-.cards .discover {
-  background-position: 51px 0;
-}
-.cards .visa.off {
-  background-position: 0 32px;
-}
-.cards .visa_electron.off {
-  background-position: 204px 32px;
-}
-.cards .mastercard.off {
-  background-position: 153px 32px;
-}
-.cards .amex.off {
-  background-position: 102px 32px;
-}
-.cards .discover.off {
-  background-position: 51px 32px;
-}
-form input {
-    max-width: 100%;
-    width: auto;
-}
-.break-word {
-    word-wrap: break-word;
-}
-.largeText {
-    font-size: 1.3em;
-}
+    .requiredValue {
+        color: #ff0000;
+    }
+/* ==========================================================================
+   Javascript Disabled
+   ========================================================================== */
+    .jsDisabled {
+        display: none;
+    }
+/* ==========================================================================
+   Step 3 — To where would you like to designate your gift?
+   ========================================================================== */
+    .indented {
+        padding-left: 2em;
+    }
+/* ==========================================================================
+   Step 4 — How would you like to allocate your gift?
+   ========================================================================== */
+    .hiddenByDefault {
+        display: none;
+    }
+/* ==========================================================================
+   Step 6 — Credit Card Information
+   ========================================================================== */
+    .cards {
+      overflow: hidden;
+    }
+    .cards li {
+      -webkit-transition: all 0.2s;
+      -moz-transition: all 0.2s;
+      -ms-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      background-image: url("http://i.imgur.com/m3DYM.png");
+      background-position: 0 0;
+      list-style: none;
+      float: left;
+      height: 32px;
+      margin-right: 8px;
+      text-indent: -9999px;
+      width: 51px;
+    }
+    .cards li:last-child {
+      margin-right: 0;
+    }
+    .cards .visa_electron {
+      background-position: 204px 0;
+    }
+    .cards .mastercard {
+      background-position: 153px 0;
+    }
+    .cards .amex {
+      background-position: 102px 0;
+    }
+    .cards .discover {
+      background-position: 51px 0;
+    }
+    .cards .visa.off {
+      background-position: 0 32px;
+    }
+    .cards .visa_electron.off {
+      background-position: 204px 32px;
+    }
+    .cards .mastercard.off {
+      background-position: 153px 32px;
+    }
+    .cards .amex.off {
+      background-position: 102px 32px;
+    }
+    .cards .discover.off {
+      background-position: 51px 32px;
+    }
+/* ==========================================================================
+   Giving Form Controls
+   ========================================================================== */
+    .paginationBTN {
+        border:0;
+        padding:0 30px;
+        height:3em;
+        line-height:30px;
+        text-align:center;
+        font-size:.75em;
+        color:#fff;
+        text-shadow:#4f0000 0 1px 0;
+        background:#7f0000;
+        -moz-border-radius:50px;
+        -webkit-border-radius:50px;
+        border-radius:50px;
+        margin-top: 1em;
+        cursor:pointer;
+        -moz-box-shadow: 0 1px 2px #999;
+        -webkit-box-shadow: 0 1px 2px #999;
+        max-width: 50%;
+    }
+    .paginationBTN:hover {
+        border:0;
+        padding:0 30px;
+        height: 3em;
+        line-height:30px;
+        text-align:center;
+        font-size:.75em;
+        color:#fff;
+        text-shadow:#4f0000 0 1px 0;
+        background:#c69500;
+        -moz-border-radius:50px;
+        -webkit-border-radius:50px;
+        border-radius:50px;
+        cursor:pointer;
+        max-width: 50%
+    }
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+   .footerText {
+        font-size: 1.1em;
+        line-height: 150%;
+        padding-right: 6.5em;
+   }
+   .footerText a {
+    color: #660000;
+   }
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-
-@media only screen and (min-width: 480px) {
-
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
-
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
-
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
-
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
-        margin: 0 0.7%;
+/* Large desktop */
+@media (min-width: 1200px) {
+    .centerButtons {
+        margin: 0 auto;
+        width: 48%;
+        max-width: 100%;
     }
 }
 
-@media only screen and (min-width: 768px) {
+
+@media (min-width: 979px) and (max-width: 1199px) {
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .centerButtons {
+        margin: 0 auto;
+        width: 59%;
+        max-width: 100%;
+    }
     .footerText {
-    max-width: 25%;
+        padding-right: 3.5em;
+   }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    body {
+        padding: 0;
     }
-
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== */
-
-    .header-container,
-    .main aside {
-        -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
     }
-
-/* ============
-    WIDE: Menu
-   ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
-
-/* ============
-    WIDE: Main
-   ============ */
-
-    .main article {
+    .centerButtons {
         margin: 0 auto;
-        width: 80%;
+        width: 77%;
+        max-width: 100%;
     }
+    .footerText {
+        padding-right: 3.5em;
+   }
 }
 
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    /*Remove extranious padding so our header extends across*/
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .centerButtons {
         margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
+    .footerText {
+        padding-right: 0em;
+   }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 620px) {
+    /*Remove extranious padding so our header extends across*/
+    body {
+        padding: 0;
+    }
+    /*But we want the content to not touch the edges*/
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+        margin: 0;
+    }
+    .centerButtons {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .footerText {
+        padding-right: 0em;
+   }
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
-}
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+        margin: 0;
     }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
+    .centerButtons {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
 }
