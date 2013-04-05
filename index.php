@@ -752,7 +752,7 @@ $formKey = new formKey();
                                             <strong>Other Giving Methods:</strong><br />
                                             If you would like to call us with your credit card information, you can contact us toll-free at <a href="tel:18008651776" title="Call us to donate">1-800-865-1776</a>. We are available Monday&ndash;Friday, 8:30 AM to 5:00 PM <abbr title="Eastern Standard Time">EST</abbr>.<br />
                                             <hr />
-                                            &copy; Hampden-Sydney College | 2012&ndash;2013<br />
+                                            &copy; Hampden-Sydney College | 2012&ndash;<?php echo date("Y"); ?><br />
                                             <a href="http://www.hsc.edu/Computing-Center/Policies/Digital-Copyright-Infringements.html" title="Copyright" target="_blank"><em>Copyright</em></a> | <a href="http://www.hsc.edu/Emergencies.html" title="Emergencies" target="_blank"><em>Emergencies</em></a> | <a href="http://www.hsc.edu/Search/A-Z-Index.html" title="Site Index" target="_blank"><em>Site Index</em></a>
                                         </p>
                                     </div>
