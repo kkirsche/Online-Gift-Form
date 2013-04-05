@@ -300,7 +300,6 @@ $("document").ready(function () {
             //This checks to make sure that they selected a donation type.
         case 1:
             return true;
-        //break; Can't break due to return
 
         //This verifies donation type and checks to make sure they entered a donation amount 
         case 2:
