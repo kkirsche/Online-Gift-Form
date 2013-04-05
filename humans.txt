@@ -1,20 +1,15 @@
-/* the humans responsible & colophon */
-/* humanstxt.org */
+# humanstxt.org/
+# The humans responsible & technology colophon
 
+# TEAM
 
-/* TEAM */
-  Graphic Designer: Kevin Kirsche
-  Site: http://razerdesign.com
-  Twitter: http://twitter.com/kkirsche
-  Location: Hampden-Sydney, VA
+    Kevin Kirsche -- Designer/Developer -- @kkirsche
+    Cheryle Dixon -- Webmaster
 
-  Web Master: Cheryle Dixon
+# TECHNOLOGY COLOPHON
 
-/* SITE */
-  Standards: HTML5, CSS3, PHP5
-  Components: Modernizr, jQuery
-  Software:
-
+    HTML5, CSS3
+    jQuery, Modernizr
 
                         .s$$$Ss.
             .8,         $$$. _. .              ..sS$$$$$"  ...,.;
