@@ -306,11 +306,11 @@ $formKey = new formKey();
                                         </div><!--/div.ifScholarshipsSelected-->
 
                                         <label class="checkbox">
-                                            <input type="checkbox" name="toAcademics" value="to_Academics" class="AcademicSelection" />
+                                            <input type="checkbox" name="toCollegePrograms" value="to_CollegePrograms" class="toCollegePrograms" />
                                             <strong>to College Programs</strong>
                                         </label>
                                         <!--College Programs Dropdown if selected-->
-                                        <div class="ifAcademicsSelected indented">
+                                        <div class="ifCollegeProgramsSelected indented">
                                             <em>Please select the program(s) below</em>
                                             <label class="checkbox">
                                                 <input type="checkbox" id="showAtkinsonMuseumAllocation" name="list-items[]" value="Atkinson_Museum" />
@@ -430,66 +430,66 @@ $formKey = new formKey();
 
                                         <div class="showUnrestricted input-append">
                                             <label for="unrestricted-Allocation">&#37; to the Unrestricted Fund</label>
-                                            <input type="number" name="unrestricted-Allocation" min="0" max="100" value="0" />
+                                            <input type="number" name="unrestricted-Allocation" class="span10" min="0" max="100" value="0" />
                                         </div>
 
                                         <!--Scholarship Allocation Section-->
                                         <div class="ifScholarshipsSelected">
                                             <div id="GoodMenGoodCitizensAllocation" class="input-append hiddenByDefault">
                                                 <label for="Good_Men_Good_Citizens-Allocation">&#37; to the Good Men, Good Citizens Scholarship</label>
-                                                <input type="number" name="Good_Men_Good_Citizens-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Good_Men_Good_Citizens-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2012Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2012-Allocation">&#37; to the Class of 2012 Scholarship <abbr title="In Honor Of">IHO</abbr> Mr. Jason M. Ferguson &rsquo;96</label>
-                                                <input type="number" name="Class_Of_2012-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2012-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2011Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2011-Allocation">&#37; to the Class of 2011 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Anita Garland</label>
-                                                <input type="number" name="Class_Of_2011-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2011-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2010Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2010-Allocation">&#37; to the Class of 2010 Scholarship <abbr title="In Honor Of">IHO</abbr> Mrs. Dottie Fahrner</label>
-                                                <input type="number" name="Class_Of_2010-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2010-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2009Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2009-Allocation">&#37; to the Class of 2009 Scholarship</label>
-                                                <input type="number" name="Class_Of_2009-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2009-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2008Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2008-Allocation">&#37; to the Class of 2008 Scholarship <abbr title="In Honor Of">IHO</abbr> Ms. Gerry Pettus</label>
-                                                <input type="number" name="Class_Of_2008-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2008-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2007Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2007-Allocation">&#37; to the Class of 2007 Scholarship <abbr title="In Honor Of">IHO</abbr> Lt. Gen. Sam Wilson</label>
-                                                <input type="number" name="Class_Of_2007-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2007-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2006Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2006-Allocation">&#37; to the Class of 2006 Scholarship <abbr title="In Memory Of">IMO</abbr> Peter C. Bance Jr.</label>
-                                                <input type="number" name="Class_Of_2006-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2006-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2005Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2005-Allocation">&#37; to the Class of 2005 Scholarship <abbr title="In Memory Of">IMO</abbr> Prof. Lee Cohen</label>
-                                                <input type="number" name="Class_Of_2005-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2005-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2004Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2004-Allocation">&#37; to the Class of 2004 Scholarship <abbr title="In Memory Of">IMO</abbr> C. Frazier &rsquo;04 &amp; <abbr title="In Honor Of">IHO</abbr> W. Simms</label>
-                                                <input type="number" name="Class_Of_2004-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2004-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf2003Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_2003-Allocation">&#37; to the Class of 2003 Scholarship <abbr title="In Honor Of">IHO</abbr> Ralph A. Crawley</label>
-                                                <input type="number" name="Class_Of_2003-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_2003-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf1980Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_1980-Allocation">&#37; to the Class of 1980 Endowed Scholarship</label>
-                                                <input type="number" name="Class_Of_1980-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_1980-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf1961Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_1961-Allocation">&#37; to the Class of 1961 Good Men Good Citizens Scholarship</label>
-                                                <input type="number" name="Class_Of_1961-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_1961-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf1960Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_1960-Allocation">&#37; to the Class of 1960 Good Men Good Citizens Scholarship</label>
-                                                <input type="number" name="Class_Of_1960-Allocation" min="0" max="100" value="0" />
+                                                <input type="number" name="Class_Of_1960-Allocation" class="span10" min="0" max="100" value="0" />
                                             </div>
                                             <div id="ClassOf1958Allocation" class="hiddenByDefault">
                                                 <label for="Class_Of_1958-Allocation">&#37; to the Class of 1958 Summer College Endowment Fund</label>
@@ -514,7 +514,7 @@ $formKey = new formKey();
                                         </div><!--/div.ifScholarshipsSelected-->
 
                                         <!--Begin College Programs Allocation Section-->
-                                        <div class="ifAcademicsSelected">
+                                        <div class="ifCollegeProgramsSelected">
                                             <div id="AtkinsonMuseumAllocation" class="hiddenByDefault">
                                                 <label for="Atkinson_Museum-Allocation">&#37; to the Atkinson Museum</label>
                                                 <input type="number" name="Atkinson_Museum-Allocation" min="0" max="100" value="0" />
@@ -535,7 +535,7 @@ $formKey = new formKey();
                                                 <label for="Other_Academic-Allocation">&#37; to the Other Academic Area &mdash; <em>as specified in your special instructions</em></label>
                                                 <input type="number" name="Other_Academic-Allocation" min="0" max="100" value="0" />
                                             </div>
-                                        </div><!--/div.ifAcademicsSelected-->
+                                        </div><!--/div.ifCollegeProgramsSelected-->
 
                                         <!--Begin Athletic Allocation Section-->
                                         <div class="ifAthleticsAreSelected">

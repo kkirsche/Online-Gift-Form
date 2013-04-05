@@ -11,7 +11,8 @@ $("document").ready(function () {
     Step Visibility Controls
     ========================================================================== */
     function hideSteps() {
-        for (var i = 2; i < 7; i++) {
+        var i;
+        for (i = 2; i < 7; i++) {
             $("#step" + i).hide();
         }
         $("#showResults").hide();
@@ -210,9 +211,9 @@ $("document").ready(function () {
     Step 3 dropdown's
     ========================================================================== */
     //Let's add the ability to show and hide fields via the checkboxes
-    function addInteractivity() {
-        var hiddenFields = [".showUnrestricted", ".ifScholarshipsSelected", ".ifClassScholarshipSelected", ".ifAcademicsSelected", ".ifAthleticsAreSelected"];
-        for (var i = 0; i < (hiddenFields.length - 1); i++) {
+    function makeDropdownMenus() {
+        var hiddenFields = [".showUnrestricted", ".ifScholarshipsSelected", ".ifClassScholarshipSelected", ".ifCollegeProgramsSelected", ".ifAthleticsAreSelected"], i;
+        for (i = 0; i < (hiddenFields.length); i++) {
             $(hiddenFields[i]).css("display", "none");
         }
         //to unrestricted fund
@@ -244,11 +245,11 @@ $("document").ready(function () {
             }
         });
     //to a academics
-        $(".AcademicSelection").click(function () {
-            if ($("input[name=toAcademics]:checked").val() === "to_Academics") {
-                $(".ifAcademicsSelected").slideToggle("fast"); //Slide Down Effect
+        $(".toCollegePrograms").click(function () {
+            if ($("input[name=toCollegePrograms]:checked").val() === "to_CollegePrograms") {
+                $(".ifCollegeProgramsSelected").slideToggle("fast"); //Slide Down Effect
             } else {
-                $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
+                $(".ifCollegeProgramsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
     //Would you like to donate to athletic funds?
@@ -269,7 +270,7 @@ $("document").ready(function () {
         $("div.ifScholarshipsSelected input[type=\"checkbox\"]").click(function () {
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
         });
-        $("div.ifAcademicsSelected input[type=\"checkbox\"]").click(function () {
+        $("div.ifCollegeProgramsSelected input[type=\"checkbox\"]").click(function () {
             $("#" + $(this).val().replace(/_/g, "") + "Allocation").slideToggle("fast");
         });
         $("div.ifAthleticsAreSelected input[type=\"checkbox\"]").click(function () {
@@ -368,11 +369,11 @@ $("document").ready(function () {
             }
 
             //Check Acadmics
-            if ($("[name=toAcademics]").is(":checked")) {
-                checkAcademicsFields = $(".ifAcademicsSelected input:checkbox:checked");
+            if ($("[name=toCollegePrograms]").is(":checked")) {
+                checkAcademicsFields = $(".ifCollegeProgramsSelected input:checkbox:checked");
                 if (checkAcademicsFields.length === 0) {
                     $("#step3").addClass("error");
-                    $("#checkboxError").text("Please choose which academic fund you would like to donate to.");
+                    $("#checkboxError").text("Please choose which College program you would like to donate to.");
                     return false;
                 }
                 if ($("#step3").hasClass("error")) {
@@ -470,7 +471,7 @@ $("document").ready(function () {
     ========================================================================== */
     currentStep = 1;
     hideSteps();
-    addInteractivity();
+    makeDropdownMenus();
     showResepectiveAllocation();
     $("#recurringDonationValue, #numberOfPayments, #paymentFrequency").change(function () {
         replaceRecurringDonationValue();
