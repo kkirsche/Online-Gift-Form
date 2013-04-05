@@ -1,26 +1,22 @@
+/* ==========================================================================
+   H-SC Online Gift Form v1.5
+   ========================================================================== */
 $("document").ready(function () {
     "use strict";
+/* ==========================================================================
+    Global
+    ========================================================================== */
     var currentStep, stepsMovedForward, stepsMovedBackward;
-    //Hide additional steps and the differences between the two steps if they have Javascript
+/* ==========================================================================
+    Step Visibility Controls
+    ========================================================================== */
     function hideSteps() {
-        //hide the divs
-        $("#step2").hide();
-        $("#step3").hide();
-        $("#step4").hide();
-        $("#step5").hide();
-        $("#step6").hide();
+        for (var i = 2; i < 7; i++) {
+            $("#step" + i).hide();
+        }
         $("#showResults").hide();
         $("#makingAOneTimeGift").hide();
         $("#makingARecurringGift").hide();
-    }
-    function resetTheFormAndStartOver(currentStep) {
-        if (currentStep > 1) {
-            $("#step" + currentStep).slideToggle("slow"); //hide the first step
-            $("#makingAOneTimeGift").hide();
-            $("#makingARecurringGift").hide();
-            currentStep = 1; //Reset their step to step 1
-            $("#step1").slideToggle("slow"); //Show step 1
-        }
     }
     function showNextStep(currentStep) {
         var chosenDonationType, checkedAllocations, selectedAllocationValue, stepsMoved = 1;
@@ -106,48 +102,21 @@ $("document").ready(function () {
         $("#step" + currentStep).slideToggle("slow");
         return stepsMoved;
     }
-
+    function resetTheFormAndStartOver(currentStep) {
+        if (currentStep > 1) {
+            $("#step" + currentStep).slideToggle("slow"); //hide the first step
+            $("#makingAOneTimeGift").hide();
+            $("#makingARecurringGift").hide();
+            currentStep = 1; //Reset their step to step 1
+            $("#step1").slideToggle("slow"); //Show step 1
+        }
+    }
     function showResults(currentStep) {
         $("#showResults").slideToggle("slow");
     }
-    function validateBeforeSubmitContent(e) {
-        var error = "";
-            //credit card number was valid, now let's check to ensure that have the other info
-            if ($("[name=nameOnCard]").val() === "") {
-                error += "Please enter the name as it appears on the credit card. ";
-            }
-            if ($("[name=numberOnCard]").val() === "") {
-                error += "Please enter the credit card number. ";
-            }
-            if (!$("[name=numberOnCard]").hasClass("valid")) {
-                error += "Please enter a valid credit card number. "; 
-            }
-            if ($("[name=securityCodeOnCard]").val() === "") {
-                //we don't have a security code
-                error += "Please enter the security code for your credit card. ";
-            }
-            if($("[name=expirationMonthOnCard]").val() === "") {
-                //we don't have a month
-                error += "Please enter the expiration month of your credit card. ";
-            } else if ($("[name=expirationMonthOnCard]").val() > 12) {
-                error += "Please enter a valid expiration month between 1 and 12. ";
-            } else if ($("[name=expirationMonthOnCard]").val() < 1) {
-                error += "Please enter a valid expiration month between 1 and 12. ";
-            }
-            if($("[name=expirationYearOnCard]").val() === "") {
-                //we don't have a year
-                error += "Please enter the expiration year on the card. ";
-            }
-            if (error != "") {
-                alert(error);
-                e.preventDefault();
-                return false;
-            } else {
-                $("[name=resetFormAndStartOver]").hide();
-                return true;
-            }
-    }
-
+/* ==========================================================================
+    Update values within the page
+    ========================================================================== */
     function replaceDonationAmount() {
         //check which they used
         var donationAmount, OneTimeDonation, RecurringDonation, currencyOneTimeDonation, currencyRecurringDonation;
@@ -165,7 +134,6 @@ $("document").ready(function () {
         }
         $("#showTotalDonationAmount").text(donationAmount);
     }
-
     //Replace the Recurring donation amount so they know how much their total gift amount.
     function replaceRecurringDonationValue() {
         //Let's get the values and store them in our variables
@@ -238,6 +206,63 @@ $("document").ready(function () {
         replaceDonationAmount();
 
     }
+/* ==========================================================================
+    Step 3 dropdown's
+    ========================================================================== */
+    //Let's add the ability to show and hide fields via the checkboxes
+    function addInteractivity() {
+        var hiddenFields = [".showUnrestricted", ".ifScholarshipsSelected", ".ifClassScholarshipSelected", ".ifAcademicsSelected", ".ifAthleticsAreSelected"];
+        for (var i = 0; i < (hiddenFields.length - 1); i++) {
+            $(hiddenFields[i]).css("display", "none");
+        }
+        //to unrestricted fund
+        $("#unrestrictedFund").click(function () {
+            if ($("#unrestrictedFund:checked").val() === "unrestricted") {
+                $(".showUnrestricted").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".showUnrestricted").slideToggle("fast");  //Slide Up Effect
+            }
+        });
+        //to a specific scholarship
+        $(".ScholashipSelection").click(function () {
+            if ($("input[name=ScholashipSelection]:checked").val() === "to_Scholarships") {
+                $(".ifScholarshipsSelected").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".ifScholarshipsSelected").slideToggle("fast");  //Slide Up Effect
+            }
+        });
+        //to a class scholarship
+        $(".showClassScholarshipAllocation").click(function () {
+            if ($("input.showClassScholarshipAllocation:checked").val() === "Class_Scholarship") {
+                $(".ifClassScholarshipSelected").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".ifClassScholarshipSelected").slideToggle("fast");  //Slide Up Effect
+                if ($("[name=classYearScholarshipSelection]").val() != "N/A") {
+                    $("[name=classYearScholarshipSelection]").val("N/A");
+                    $("[name=classYearScholarshipSelection]").trigger("change");
+                }
+            }
+        });
+    //to a academics
+        $(".AcademicSelection").click(function () {
+            if ($("input[name=toAcademics]:checked").val() === "to_Academics") {
+                $(".ifAcademicsSelected").slideToggle("fast"); //Slide Down Effect
+            } else {
+                $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
+            }
+        });
+    //Would you like to donate to athletic funds?
+        $(".enableAthletics").click(function () {
+            if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
+                $(".ifAthleticsAreSelected").slideDown("fast"); //Slide Down Effect
+            } else {
+                $(".ifAthleticsAreSelected").slideUp("fast");  //Slide Up Effect
+            }
+        });
+    }
+/* ==========================================================================
+    Step 4 Allocations
+    ========================================================================== */
     function showResepectiveAllocation() {
         var lastSelected = "";
         //scholarship functions
@@ -265,59 +290,9 @@ $("document").ready(function () {
             }
         });
     }
-    //Let's add the ability to show and hide fields via the checkboxes
-    function addInteractivity() {
-        //to unrestricted fund
-        $(".showUnrestricted").css("display", "none");
-        $("#unrestrictedFund").click(function () {
-            if ($("#unrestrictedFund:checked").val() === "unrestricted") {
-                $(".showUnrestricted").slideToggle("fast"); //Slide Down Effect
-            } else {
-                $(".showUnrestricted").slideToggle("fast");  //Slide Up Effect
-            }
-        });
-        //to a specific scholarship
-        $(".ifScholarshipsSelected").css("display", "none");
-        $(".ScholashipSelection").click(function () {
-            if ($("input[name=ScholashipSelection]:checked").val() === "to_Scholarships") {
-                $(".ifScholarshipsSelected").slideToggle("fast"); //Slide Down Effect
-            } else {
-                $(".ifScholarshipsSelected").slideToggle("fast");  //Slide Up Effect
-            }
-        });
-        //to a class scholarship
-        $(".ifClassScholarshipSelected").css("display", "none");
-        $(".showClassScholarshipAllocation").click(function () {
-            if ($("input.showClassScholarshipAllocation:checked").val() === "Class_Scholarship") {
-                $(".ifClassScholarshipSelected").slideToggle("fast"); //Slide Down Effect
-            } else {
-                $(".ifClassScholarshipSelected").slideToggle("fast");  //Slide Up Effect
-                if ($("[name=classYearScholarshipSelection]").val() != "N/A") {
-                    $("[name=classYearScholarshipSelection]").val("N/A");
-                    $("[name=classYearScholarshipSelection]").trigger("change");
-                }
-            }
-        });
-    //to a academics
-        $(".ifAcademicsSelected").css("display", "none");
-        $(".AcademicSelection").click(function () {
-            if ($("input[name=toAcademics]:checked").val() === "to_Academics") {
-                $(".ifAcademicsSelected").slideToggle("fast"); //Slide Down Effect
-            } else {
-                $(".ifAcademicsSelected").slideToggle("fast");  //Slide Up Effect
-            }
-        });
-    //Would you like to donate to athletic funds?
-        $(".ifAthleticsAreSelected").css("display", "none");
-        $(".enableAthletics").click(function () {
-            if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
-                $(".ifAthleticsAreSelected").slideDown("fast"); //Slide Down Effect
-            } else {
-                $(".ifAthleticsAreSelected").slideUp("fast");  //Slide Up Effect
-            }
-        });
-    }
-
+/* ==========================================================================
+    Validation
+    ========================================================================== */
     function validateCurrentStep(currentStep) {
         var chosenDonationType, validateTotalAllocationAmount = 0, validateOneTimeDonationAmount, fields, checkAcademicsFields, checkAthleticsFields, checkScholarshipFields, validateRecurringDonationAmount, validateNumberOfPayments, validatePaymentFrequency, validateTotalRecurringDonationAmount;
         chosenDonationType = $("[name=donationType]").val();
@@ -454,7 +429,46 @@ $("document").ready(function () {
             return false;
         } //end currentStep switch
     }
-
+    function validateBeforeSubmitContent(e) {
+        var error = "";
+            //credit card number was valid, now let's check to ensure that have the other info
+            if ($("[name=nameOnCard]").val() === "") {
+                error += "Please enter the name as it appears on the credit card. ";
+            }
+            if ($("[name=numberOnCard]").val() === "") {
+                error += "Please enter the credit card number. ";
+            }
+            if (!$("[name=numberOnCard]").hasClass("valid")) {
+                error += "Please enter a valid credit card number. "; 
+            }
+            if ($("[name=securityCodeOnCard]").val() === "") {
+                //we don't have a security code
+                error += "Please enter the security code for your credit card. ";
+            }
+            if($("[name=expirationMonthOnCard]").val() === "") {
+                //we don't have a month
+                error += "Please enter the expiration month of your credit card. ";
+            } else if ($("[name=expirationMonthOnCard]").val() > 12) {
+                error += "Please enter a valid expiration month between 1 and 12. ";
+            } else if ($("[name=expirationMonthOnCard]").val() < 1) {
+                error += "Please enter a valid expiration month between 1 and 12. ";
+            }
+            if($("[name=expirationYearOnCard]").val() === "") {
+                //we don't have a year
+                error += "Please enter the expiration year on the card. ";
+            }
+            if (error != "") {
+                alert(error);
+                e.preventDefault();
+                return false;
+            } else {
+                $("[name=resetFormAndStartOver]").hide();
+                return true;
+            }
+    }
+/* ==========================================================================
+    End functions. Begin the actual calls for the document
+    ========================================================================== */
     currentStep = 1;
     hideSteps();
     addInteractivity();
