@@ -1,28 +1,3 @@
-<?php
-//Start the session
-if (version_compare(PHP_VERSION, "5.4.0") >= 0) {
-    if(session_status() != PHP_SESSION_ACTIVE) {
-        session_start();
-    }
-} else {
-    session_start();
-}
-//For compatibility before PHP 5.3.0
-if (!defined('__DIR__')) {
-    class __FILE_CLASS__ {
-        function __toString() {
-            $X = debug_backtrace();
-            return dirname($X[1]['file']);
-        }
-    }
-    define('__DIR__', new __FILE_CLASS__);
-}
-
-require(__DIR__ . "/functions.php");
-//Start the form key class
-$formKey = new formKey();
-
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -45,6 +20,16 @@ $formKey = new formKey();
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-39917786-1', 'github.io');
+          ga('send', 'pageview');
+
+        </script>
         <noscript>
             <style>
                 .jsEnabled {
@@ -87,7 +72,6 @@ $formKey = new formKey();
                             <form id="DonationForm" action="processForm.php" method="post">
                                 <!--Begin Step 1-->
                                 <div id="step1">
-                                    <?php $formKey->outputKey(); ?>
                                     <!--Ask whether it's a one-time gift or a recurring gift-->
                                     <div class="centerButtons">
                                         <a href="#" class="nextStep" id="oneTimeGift"><img src="img/One-TimeGift.png" width="250" height="250" onMouseOver="this.src='img/One-TimeGift_hover.png';" onmouseout="this.src='img/One-TimeGift.png';"  class="OTG" alt="I would like to make a one-time gift" /></a>
@@ -135,7 +119,7 @@ $formKey = new formKey();
                                                     <input type="number" min="0" name="recurringDonationValue" id="recurringDonationValue" class="watchForChange" value="0" />
                                                     <span class="add-on">.00</span>
                                                 </div><!--/div.input-prepend.input-append-->
-                                                
+
                                                 <br />
 
                                                 I would like to make this gift
@@ -201,7 +185,7 @@ $formKey = new formKey();
                                                     <option value="58">58</option>
                                                     <option value="59">59</option>
                                                     <option value="60">60</option>
-                                                </select> 
+                                                </select>
                                                 times.<sup class="requiredValue">*</sup>
 
                                                 <br />
@@ -212,9 +196,9 @@ $formKey = new formKey();
                                                     <option value="Quarterly">Quarterly</option>
                                                     <option value="Annually">Annually.</option>
                                                 </select>
-                                    
+
                                                 <br />
-                                                
+
                                                 <div class="text-center">
                                                     Total Gift Amount of
                                                     <div class="input-prepend input-append">
@@ -228,7 +212,7 @@ $formKey = new formKey();
                                             </div><!--/div.controls-->
                                         </div><!--/div#makingARecurringGift.control-group.text-center-->
                                         </fieldset>
-                        
+
                                         <button type="button" id="replaceDonationAmountNow" class="paginationBTN pull-right nextStep">Next &rarr;</button>
                                         <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
 
@@ -245,9 +229,9 @@ $formKey = new formKey();
                                             Thank you for your gift of <span class="jsEnabled">$<span id="showTotalDonationAmount">GIFT_AMOUNT</span>. If this amount is incorrect, please press the previous button.</span>
                                         </strong>
                                     </p>
-                                    
+
                                     <label class="text-center control-label largeText"><h4>I would like to designate my gift<sup class="requiredValue">*</sup>:</h4></label>
-                        
+
                                     <div class="controls">
                                     <fieldset>
                                         <label class="checkbox">
@@ -259,7 +243,7 @@ $formKey = new formKey();
                                             <input type="checkbox" name="ScholashipSelection" value="to_Scholarships" class="ScholashipSelection" />
                                             <strong>to a Specific Scholarship</strong>
                                         </label>
-                                
+
                                         <!--Scholarship Dropdown if selected-->
                                         <div class="ifScholarshipsSelected indented">
                                             <em>Please select the Scholarship(s) below</em>
@@ -295,7 +279,7 @@ $formKey = new formKey();
                                                     <option value="1953">Class of 1953 Scholarship Endowment</option>
                                                     <option value="1951">Class of 1951 Memorial Scholarship</option>
                                                 </select>
-                                                
+
                                                 <input name="Class_Of_N/A-Allocation" type="hidden" value="0" />
                                             </div><!--/div.ifClassScholarshipSelected-->
 
@@ -332,7 +316,7 @@ $formKey = new formKey();
                                                 <input type="checkbox" id="showOtherAcademicAllocation" name="list-items[]" value="Other_Academic_Area" />
                                                 Other <em>(please specify in special instructions)</em>
                                             </label>
-                                        </div><!--/div.ifAcademicsSelected.indented-->  
+                                        </div><!--/div.ifAcademicsSelected.indented-->
 
                                         <label class="checkbox">
                                             <input type="checkbox" name="toAthletics" value="to_athletics" class="enableAthletics" />
@@ -408,11 +392,11 @@ $formKey = new formKey();
                                         </label>
                                         <textarea name="specinstr" id="specinstr" placeholder="Enter Special Instructions Here (255 character maximum)"></textarea>
                                     </fieldset>
-                                    
+
 
                                     <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
                                     <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
-                        
+
                                     <div class="progress">
                                         <div class="bar bar-success" style="width: 33.3%;"></div>
                                     </div>
@@ -592,7 +576,7 @@ $formKey = new formKey();
 
                                     <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
                                     <button type="button" class="paginationBTN previousStep">&larr; Previous</button>
-                                    
+
                                     <div class="progress">
                                         <div class="bar bar-success" style="width: 50%;"></div>
                                     </div>
@@ -663,7 +647,7 @@ $formKey = new formKey();
                                                 <input type="email" class="span10" name="usersEmail" placeholder="John.Doe@hsc.edu" required />
                                             </div>
                                         </div><!--/div.controls.controls-row-->
-                                        
+
                                     </fieldset>
 
                                     <button type="button" class="paginationBTN pull-right nextStep">Next &rarr;</button>
@@ -703,7 +687,7 @@ $formKey = new formKey();
                                         <div class="controls controls-row">
                                             <div class="span3">
                                                 <label>
-                                                    Credit Card Verification Code 
+                                                    Credit Card Verification Code
                                                     <abbr title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express">
                                                         <i class="icon-question-sign" id="whatIsThis" title="CVC2 for MasterCard, CVV2 for Visa, CID for American Express"></i>
                                                     </abbr>
@@ -724,7 +708,7 @@ $formKey = new formKey();
 
                                     <input class="btn btn-success pull-right" type="submit" name="submit_form" id="submit_form" value="Submit" />
                                     <button type="button" class="paginationBTN previousStep clearfix">&larr; Previous</button>
-                            
+
                                     <div class="progress">
                                         <div class="bar bar-success" style="width: 80%;"></div>
                                     </div>
@@ -782,16 +766,10 @@ $formKey = new formKey();
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        
+
         <script src="js/jquery.form.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
         <script>
             //enable tooltips
             $("#moreInfo").tooltip();
