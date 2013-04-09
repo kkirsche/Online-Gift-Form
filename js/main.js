@@ -11,20 +11,19 @@ $("document").ready(function () {
     Step Visibility Controls
     ========================================================================== */
     function hideSteps() {
-        var i;
+        var i, sectionsToHide = ["#showResults", "#makingAOneTimeGift", "#makingARecurringGift"];
         for (i = 2; i < 7; i++) {
             $("#step" + i).hide();
         }
-        $("#showResults").hide();
-        $("#makingAOneTimeGift").hide();
-        $("#makingARecurringGift").hide();
+        for (i = 0; i < 3; i++) {
+            $(sectionsToHide[i]).hide();
+        }
     }
     function showNextStep(currentStep) {
         var chosenDonationType, checkedAllocations, selectedAllocationValue, stepsMoved = 1;
         $("#step" + currentStep).slideToggle("slow");
 
         if (currentStep === 1) {
-            //figure out what kind of donation they are making
             chosenDonationType = $("[name=donationType]").val();
             //show the apppropriate slide
             switch (chosenDonationType) {
@@ -38,11 +37,9 @@ $("document").ready(function () {
                 $("#makingARecurringGift").show();
                 $("#step" + currentStep).slideToggle("slow");
                 break;
-                //if somehow they changed it to something else, ignore them and return false.
             default:
                 stepsMoved = 0;
                 return false;
-                //break; not needed due to return
             }//end switch
         } else if (currentStep === 3) {
             checkedAllocations = $("#step3 :checkbox:checked");
@@ -82,7 +79,6 @@ $("document").ready(function () {
                 $("#recurringDonationValue").val(0);
                 $("#totalRecurringDonationValue").val(0);
                 $("#paymentFrequency").val("Monthly");
-
                 break;
             default:
                 $("#makingARecurringGift").hide();
@@ -104,7 +100,7 @@ $("document").ready(function () {
         return stepsMoved;
     }
     function resetTheFormAndStartOver(currentStep) {
-        if (currentStep > 1) {
+        if (currentStep > 1 || currentStep < 1) {
             $("#step" + currentStep).slideToggle("slow"); //hide the first step
             $("#makingAOneTimeGift").hide();
             $("#makingARecurringGift").hide();
@@ -311,9 +307,7 @@ $("document").ready(function () {
                     $("#makingAOneTimeGift").addClass("error");
                     $("#oneTimeDonationValidateError").text("Sorry, we have a $5 donation minimum.");
                     return false;
-                }
-
-                if ($("#makingAOneTimeGift").hasClass("error")) {
+                } else if ($("#makingAOneTimeGift").hasClass("error")) {
                     $("#oneTimeDonationValidateError").text("");
                     $("#makingAOneTimeGift").removeClass("error");
                 }
