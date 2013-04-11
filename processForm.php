@@ -293,7 +293,7 @@ $errorMessage = "<h3>There was an error</h3><hr />";
             echo "Success! The form has been submitted, and all of your information was correct!";
         } else {
             print_r($userInfo);
-            echo "<p class=\"centerText\">".$errorMessage."</p>";
+            echo "<p class=\"text-center\">".$errorMessage."</p>";
         }
     }
     //close the database connection.
