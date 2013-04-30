@@ -240,7 +240,7 @@ $("document").ready(function () {
                 }
             }
         });
-    //to a academics
+        //to a academics
         $(".toCollegePrograms").click(function () {
             if ($("input[name=toCollegePrograms]:checked").val() === "to_CollegePrograms") {
                 $(".ifCollegeProgramsSelected").slideToggle("fast"); //Slide Down Effect
@@ -248,7 +248,7 @@ $("document").ready(function () {
                 $(".ifCollegeProgramsSelected").slideToggle("fast");  //Slide Up Effect
             }
         });
-    //Would you like to donate to athletic funds?
+        //Would you like to donate to athletic funds?
         $(".enableAthletics").click(function () {
             if ($('input[name=toAthletics]:checked').val() === "to_athletics") {
                 $(".ifAthleticsAreSelected").slideDown("fast"); //Slide Down Effect
