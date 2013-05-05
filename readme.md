@@ -1,6 +1,8 @@
 # Online Gift Form
 
-This gift form utilizes the HTML5 Boilerplate project to create a more successful payment option for users. This project focuses on the ease of use and adaptability among devices and orientations.
+This gift form utilizes the HTML5 Boilerplate project to create a more successful payment option for users. This project focuses on the ease of use and adaptability among devices and orientations. 
+
+###Please note that this repository does NOT contain the most up to date versions of the processform.php file for security reasons!
 
 ### Version 1.6
 #### [Demo](http://kkirsche.github.io/Online-Gift-Form/)
